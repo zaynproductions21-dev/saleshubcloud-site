@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Sales Hub Cloud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c-purple:#7C6FF7;--c-purple-light:#EDE9FE;--c-purple-mid:#A89CF8;--c-purple-dark:#5A4FD6;
+  --c-teal:#5BC4C0;--c-teal-light:#E0F5F4;
+  --c-coral:#F4967E;--c-coral-light:#FDE8E2;
+  --c-green:#6DD8A0;--c-green-light:#DFFAEE;
+  --c-amber:#F7B955;--c-amber-light:#FEF3DC;
+  --c-bg:#FAF0F6;--c-bg2:#F3EFF9;--c-white:#FFFFFF;--c-surface:#FAFAFF;
+  --c-border:#EAE4F5;--c-border2:#D8CEFB;
+  --c-text:#1E1A3C;--c-text2:#5A5478;--c-text3:#9E99BE;
+  --ff:'Plus Jakarta Sans',sans-serif;
+  --shadow:0 1px 4px rgba(124,111,247,0.06),0 4px 20px rgba(124,111,247,0.06);
+  --shadow-md:0 4px 12px rgba(124,111,247,0.1),0 16px 48px rgba(124,111,247,0.1);
+}
+html{scroll-behavior:smooth}
+body{background:var(--c-bg);color:var(--c-text);font-family:var(--ff);font-size:16px;line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,240,246,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:1.1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.03em;display:flex;align-items:center;gap:0.5rem;}
+.nav-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;}
+.nav-links{display:flex;gap:0.25rem;list-style:none;}
+.nav-links a{color:var(--c-text2);font-size:0.875rem;font-weight:500;padding:0.4rem 0.8rem;border-radius:8px;transition:background .15s,color .15s;}
+.nav-links a:hover,.nav-links a.active{background:var(--c-purple-light);color:var(--c-purple);}
+.nav-right{display:flex;align-items:center;gap:0.75rem;}
+.btn-ghost{color:var(--c-text2);font-size:0.875rem;font-weight:500;padding:0.45rem 1rem;border-radius:8px;border:1px solid var(--c-border2);background:var(--c-white);font-family:var(--ff);cursor:pointer;transition:border-color .15s,color .15s;}
+.btn-ghost:hover{border-color:var(--c-purple);color:var(--c-purple);}
+.btn-nav{background:var(--c-purple);color:#fff;font-size:0.875rem;font-weight:700;padding:0.5rem 1.35rem;border-radius:9px;border:none;cursor:pointer;font-family:var(--ff);box-shadow:0 4px 14px rgba(124,111,247,0.35);transition:background .15s,transform .1s;display:inline-block;}
+.btn-nav:hover{background:var(--c-purple-dark);transform:translateY(-1px);}
+
+/* HERO */
+.contact-hero{
+  padding:8rem 2rem 4rem;
+  background:linear-gradient(160deg,#F3EFF9 0%,#FAF0F6 60%,#EEF9F8 100%);
+  position:relative;overflow:hidden;
+}
+.contact-hero::before{
+  content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+  width:900px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(124,111,247,0.1),transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative;}
+.hero-tag{display:inline-flex;align-items:center;gap:0.5rem;background:var(--c-white);color:var(--c-purple);border:1px solid var(--c-border2);border-radius:100px;padding:0.35rem 1rem;font-size:0.8rem;font-weight:600;margin-bottom:1.5rem;box-shadow:var(--shadow);}
+.hero-tag-dot{width:7px;height:7px;border-radius:50%;background:var(--c-teal);box-shadow:0 0 6px var(--c-teal);}
+.hero-h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;letter-spacing:-0.04em;line-height:1.05;margin-bottom:1rem;}
+.hero-h1 em{font-style:normal;background:linear-gradient(135deg,var(--c-purple),var(--c-teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:1.05rem;color:var(--c-text2);max-width:500px;line-height:1.75;}
+
+/* MAIN LAYOUT */
+.contact-body{max-width:1160px;margin:0 auto;padding:4rem 2rem 6rem;display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;}
+@media(max-width:860px){.contact-body{grid-template-columns:1fr;gap:3rem;}}
+
+/* LEFT PANEL */
+.contact-info{display:flex;flex-direction:column;gap:1.5rem;}
+
+.info-card{background:var(--c-white);border:1px solid var(--c-border);border-radius:16px;padding:1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .2s,box-shadow .2s;}
+.info-card:hover{border-color:var(--c-border2);box-shadow:var(--shadow);}
+.info-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;}
+.info-label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.3rem;}
+.info-value{font-size:0.95rem;font-weight:600;color:var(--c-text);margin-bottom:0.2rem;}
+.info-note{font-size:0.8rem;color:var(--c-text3);}
+.info-value a{color:var(--c-purple);}
+.info-value a:hover{text-decoration:underline;}
+
+.hours-card{background:var(--c-white);border:1px solid var(--c-border);border-radius:16px;padding:1.5rem;}
+.hours-title{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--c-text3);margin-bottom:1rem;}
+.hours-row{display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;border-bottom:1px solid var(--c-border);font-size:0.875rem;}
+.hours-row:last-child{border-bottom:none;}
+.hours-day{color:var(--c-text2);font-weight:500;}
+.hours-time{color:var(--c-text);font-weight:600;}
+.hours-closed{color:var(--c-text3);font-weight:500;}
+
+.response-card{background:linear-gradient(135deg,var(--c-purple-light),var(--c-teal-light));border:1px solid var(--c-border2);border-radius:16px;padding:1.5rem;}
+.response-title{font-size:0.875rem;font-weight:700;color:var(--c-purple);margin-bottom:0.4rem;}
+.response-body{font-size:0.85rem;color:var(--c-text2);line-height:1.6;}
+
+/* RIGHT PANEL — FORM */
+.contact-form-wrap{background:var(--c-white);border:1px solid var(--c-border);border-radius:20px;padding:2.5rem;box-shadow:var(--shadow);}
+.form-heading{font-size:1.4rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.4rem;}
+.form-sub{font-size:0.875rem;color:var(--c-text2);margin-bottom:2rem;line-height:1.55;}
+
+/* TABS */
+.form-tabs{display:flex;gap:0.5rem;margin-bottom:2rem;background:var(--c-bg2);border-radius:10px;padding:4px;}
+.form-tab{flex:1;padding:0.55rem 0.5rem;border:none;background:none;font-family:var(--ff);font-size:0.85rem;font-weight:600;color:var(--c-text3);border-radius:8px;cursor:pointer;transition:background .15s,color .15s;}
+.form-tab.active{background:var(--c-white);color:var(--c-purple);box-shadow:var(--shadow);}
+
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+.form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+.form-group label{font-size:0.8rem;font-weight:600;color:var(--c-text2);}
+.form-group input,.form-group select,.form-group textarea{
+  font-family:var(--ff);font-size:0.9rem;color:var(--c-text);
+  background:var(--c-surface);border:1.5px solid var(--c-border);
+  border-radius:10px;padding:0.7rem 1rem;outline:none;
+  transition:border-color .15s,box-shadow .15s;width:100%;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--c-purple);box-shadow:0 0 0 3px rgba(124,111,247,0.12);
+}
+.form-group textarea{resize:vertical;min-height:110px;}
+.form-submit{
+  width:100%;padding:0.9rem;border-radius:10px;
+  font-family:var(--ff);font-size:0.95rem;font-weight:700;
+  background:var(--c-purple);color:#fff;border:none;cursor:pointer;
+  box-shadow:0 4px 14px rgba(124,111,247,0.35);
+  transition:background .15s,transform .1s;margin-top:0.25rem;
+}
+.form-submit:hover{background:var(--c-purple-dark);transform:translateY(-1px);}
+.form-submit:disabled{background:var(--c-purple-mid);cursor:not-allowed;transform:none;}
+.form-note{font-size:0.75rem;color:var(--c-text3);text-align:center;margin-top:0.75rem;line-height:1.5;}
+.form-error{background:var(--c-coral-light);border:1px solid rgba(244,150,126,0.3);border-radius:8px;padding:0.75rem 1rem;font-size:0.85rem;color:#b94a2c;margin-bottom:1rem;}
+.form-success{text-align:center;padding:2.5rem 1rem;}
+.form-success-icon{font-size:3rem;margin-bottom:1rem;}
+.form-success h3{font-size:1.25rem;font-weight:800;margin-bottom:0.5rem;}
+.form-success p{font-size:0.9rem;color:var(--c-text2);line-height:1.6;}
+.form-success-back{
+  margin-top:1.5rem;display:inline-flex;align-items:center;gap:0.4rem;
+  background:var(--c-purple-light);color:var(--c-purple);
+  border:none;font-family:var(--ff);font-size:0.875rem;font-weight:600;
+  padding:0.6rem 1.25rem;border-radius:8px;cursor:pointer;transition:background .15s;
+}
+.form-success-back:hover{background:var(--c-border2);}
+
+/* REASON SELECT ICONS */
+.reason-option{display:flex;align-items:center;gap:0.5rem;}
+
+/* MAP / ADDRESS STRIP */
+.address-strip{background:var(--c-white);border-top:1px solid var(--c-border);}
+.address-strip-inner{max-width:1160px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+@media(max-width:700px){.address-strip-inner{grid-template-columns:1fr;}}
+.address-label{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-purple);margin-bottom:0.75rem;}
+.address-name{font-size:1.2rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:0.5rem;}
+.address-lines{font-size:0.9rem;color:var(--c-text2);line-height:1.8;}
+.address-reg{font-size:0.78rem;color:var(--c-text3);margin-top:0.75rem;}
+.map-embed{border-radius:14px;overflow:hidden;border:1px solid var(--c-border);height:220px;background:var(--c-bg2);display:flex;align-items:center;justify-content:center;}
+.map-embed iframe{width:100%;height:100%;border:none;display:block;}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(135deg,var(--c-purple) 0%,#6058D8 50%,var(--c-teal) 100%);padding:4rem 2rem;text-align:center;}
+.cta-strip h2{font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:0.75rem;}
+.cta-strip p{color:rgba(255,255,255,0.75);font-size:0.95rem;margin-bottom:2rem;}
+.btn-white{background:#fff;color:var(--c-purple);padding:0.8rem 2rem;border-radius:10px;font-size:0.9rem;font-weight:700;font-family:var(--ff);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:transform .1s,box-shadow .15s;display:inline-flex;align-items:center;gap:0.5rem;}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.18);}
+
+/* FOOTER */
+footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2.5rem 2rem;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-logo{font-size:0.95rem;font-weight:800;color:var(--c-text);letter-spacing:-0.02em;}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap;}
+.footer-links a{font-size:0.8rem;color:var(--c-text3);font-weight:500;transition:color .15s;}
+.footer-links a:hover{color:var(--c-purple);}
+.footer-copy{font-size:0.78rem;color:var(--c-text3);}
+
+@media(max-width:900px){.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-mark">S</div>SalesHub Cloud</a>
+    <ul class="nav-links">
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#platform">Platform</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-ghost" onclick="window.location.href='index.html#pricing'">View pricing</button>
+      <a href="index.html" class="btn-nav" onclick="event.preventDefault();window.location.href='index.html';setTimeout(()=>{if(window.openTrial)openTrial();},300);">Start free trial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="hero-tag-dot"></span> We'd love to hear from you</div>
+    <h1 class="hero-h1">Get in touch with<br><em>the team</em></h1>
+    <p class="hero-sub">Whether you want to book a demo, ask a question, or just find out if Sales Hub Cloud is right for your firm — we're here.</p>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="contact-body">
+
+  <!-- LEFT: INFO -->
+  <div class="contact-info">
+
+    <div class="info-card">
+      <div class="info-icon" style="background:var(--c-purple-light);">📧</div>
+      <div>
+        <div class="info-label">General enquiries</div>
+        <div class="info-value"><a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a></div>
+        <div class="info-note">Sales, demos, and general questions</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon" style="background:var(--c-teal-light);">🔒</div>
+      <div>
+        <div class="info-label">Privacy &amp; data</div>
+        <div class="info-value"><a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a></div>
+        <div class="info-note">GDPR requests, data subject rights, DPA</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon" style="background:var(--c-coral-light);">🛠️</div>
+      <div>
+        <div class="info-label">Support</div>
+        <div class="info-value"><a href="mailto:support@saleshubcloud.com">support@saleshubcloud.com</a></div>
+        <div class="info-note">Technical issues and account help</div>
+      </div>
+    </div>
+
+    <div class="hours-card">
+      <div class="hours-title">Support hours</div>
+      <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">9:00am – 6:00pm</span></div>
+      <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">10:00am – 2:00pm</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-closed">Closed</span></div>
+      <div style="margin-top:0.75rem;font-size:0.78rem;color:var(--c-text3);">All times UK (GMT/BST). Public holidays may vary.</div>
+    </div>
+
+    <div class="response-card">
+      <div class="response-title">⚡ Response time</div>
+      <div class="response-body">We aim to respond to all enquiries within <strong>4 business hours</strong>. Priority support is available on the Scale plan with a guaranteed 1-hour response window.</div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: FORM -->
+  <div class="contact-form-wrap">
+    <div class="form-heading">Send us a message</div>
+    <div class="form-sub">Fill in the form and we'll get back to you shortly. Or email us directly if you prefer.</div>
+
+    <div class="form-tabs">
+      <button class="form-tab active" onclick="switchTab('general',this)">General enquiry</button>
+      <button class="form-tab" onclick="switchTab('demo',this)">Book a demo</button>
+      <button class="form-tab" onclick="switchTab('support',this)">Support</button>
+    </div>
+
+    <div id="formSuccess" class="form-success" style="display:none;">
+      <div class="form-success-icon">✅</div>
+      <h3>Message sent!</h3>
+      <p>Thanks for getting in touch. We'll get back to you within 4 business hours.</p>
+      <button class="form-success-back" onclick="resetForm()">← Send another message</button>
+    </div>
+
+    <div id="formBody">
+      <div id="trialError" class="form-error" style="display:none;"></div>
+
+      <!-- GENERAL TAB -->
+      <div class="tab-panel active" id="tab-general">
+        <div class="form-row">
+          <div class="form-group"><label>First name</label><input type="text" id="g-fname" placeholder="Sarah"></div>
+          <div class="form-group"><label>Last name</label><input type="text" id="g-lname" placeholder="Ahmed"></div>
+        </div>
+        <div class="form-group"><label>Work email</label><input type="email" id="g-email" placeholder="sarah@smithsolicitors.co.uk"></div>
+        <div class="form-group"><label>Organisation</label><input type="text" id="g-org" placeholder="Smith &amp; Co Solicitors"></div>
+        <div class="form-group">
+          <label>What's this about?</label>
+          <select id="g-reason">
+            <option value="">Select a reason…</option>
+            <option value="pricing">Pricing &amp; plans</option>
+            <option value="features">Feature question</option>
+            <option value="integration">Integration / WhatsApp setup</option>
+            <option value="trial">Free trial question</option>
+            <option value="partnership">Partnership or reseller</option>
+            <option value="press">Press &amp; media</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea id="g-message" placeholder="Tell us what you'd like to know…"></textarea></div>
+        <button class="form-submit" onclick="submitForm('general')">Send message →</button>
+        <p class="form-note">We'll respond within 4 business hours on weekdays.</p>
+      </div>
+
+      <!-- DEMO TAB -->
+      <div class="tab-panel" id="tab-demo">
+        <div class="form-row">
+          <div class="form-group"><label>First name</label><input type="text" id="d-fname" placeholder="Sarah"></div>
+          <div class="form-group"><label>Last name</label><input type="text" id="d-lname" placeholder="Ahmed"></div>
+        </div>
+        <div class="form-group"><label>Work email</label><input type="email" id="d-email" placeholder="sarah@smithsolicitors.co.uk"></div>
+        <div class="form-group"><label>Organisation name</label><input type="text" id="d-org" placeholder="Smith &amp; Co Solicitors"></div>
+        <div class="form-group"><label>Phone number</label><input type="tel" id="d-phone" placeholder="+44 7700 900000"></div>
+        <div class="form-group">
+          <label>Team size</label>
+          <select id="d-size">
+            <option value="">Select…</option>
+            <option value="1-3">1–3 people</option>
+            <option value="4-10">4–10 people</option>
+            <option value="11-25">11–25 people</option>
+            <option value="25+">25+ people</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Anything specific you'd like to see?</label><textarea id="d-notes" placeholder="e.g. WhatsApp automation, TikTok lead ads, e-signing…" style="min-height:80px;"></textarea></div>
+        <button class="form-submit" onclick="submitForm('demo')">Request a demo →</button>
+        <p class="form-note">We'll reach out to schedule a time that works for you.</p>
+      </div>
+
+      <!-- SUPPORT TAB -->
+      <div class="tab-panel" id="tab-support">
+        <div class="form-row">
+          <div class="form-group"><label>Your name</label><input type="text" id="s-name" placeholder="Sarah Ahmed"></div>
+          <div class="form-group"><label>Account email</label><input type="email" id="s-email" placeholder="sarah@smithsolicitors.co.uk"></div>
+        </div>
+        <div class="form-group">
+          <label>Issue type</label>
+          <select id="s-type">
+            <option value="">Select…</option>
+            <option value="login">Can't log in / access issue</option>
+            <option value="whatsapp">WhatsApp not working</option>
+            <option value="email">Email sync issue</option>
+            <option value="leads">Lead ads not syncing</option>
+            <option value="billing">Billing or subscription</option>
+            <option value="data">Data / export request</option>
+            <option value="bug">Bug or unexpected behaviour</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Describe the issue</label>
+          <textarea id="s-desc" placeholder="Please describe what's happening, any error messages, and steps to reproduce if possible…"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Urgency</label>
+          <select id="s-urgency">
+            <option value="normal">Normal — can wait a few hours</option>
+            <option value="high">High — blocking my work</option>
+            <option value="critical">Critical — system down</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="submitForm('support')">Submit support request →</button>
+        <p class="form-note">Critical issues are escalated immediately. Scale plan customers receive priority response.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADDRESS STRIP -->
+<div class="address-strip">
+  <div class="address-strip-inner">
+    <div>
+      <div class="address-label">Registered address</div>
+      <div class="address-name">Zayn Productions Ltd</div>
+      <div class="address-lines">
+        1 Alvin Street<br>
+        Gloucester<br>
+        England<br>
+        GL1 3EJ
+      </div>
+      <div class="address-reg">Company No. 16892199 · Registered in England &amp; Wales</div>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.3!2d-2.2471!3d51.8642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48711b4e5a000001%3A0x1!2sAlvin+St%2C+Gloucester+GL1+3EJ!5e0!3m2!1sen!2suk!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Zayn Productions Ltd location">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Rather just try it?</h2>
+  <p>14-day free trial. No credit card. Full access from day one.</p>
+  <a href="index.html" class="btn-white" onclick="event.preventDefault();window.location.href='index.html';">Start free trial →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">SalesHub Cloud</div>
+      <div class="footer-copy" style="margin-top:0.25rem;">© 2025 Zayn Productions Ltd · Co. No. 16892199 · Gloucester, England</div>
+    </div>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="cookies.html">Cookie Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* TAB SWITCHING */
+function switchTab(name, btn) {
+  document.querySelectorAll('.form-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('trialError').style.display = 'none';
+}
+
+/* FORM SUBMIT */
+async function submitForm(type) {
+  const errEl = document.getElementById('trialError');
+  errEl.style.display = 'none';
+
+  let payload = { type };
+  let valid = true;
+
+  if(type === 'general') {
+    const fname = document.getElementById('g-fname').value.trim();
+    const lname = document.getElementById('g-lname').value.trim();
+    const email = document.getElementById('g-email').value.trim();
+    const org   = document.getElementById('g-org').value.trim();
+    const reason = document.getElementById('g-reason').value;
+    const msg   = document.getElementById('g-message').value.trim();
+    if(!fname || !lname || !email || !msg) valid = false;
+    payload = {...payload, fname, lname, email, org, reason, message: msg};
+  } else if(type === 'demo') {
+    const fname = document.getElementById('d-fname').value.trim();
+    const lname = document.getElementById('d-lname').value.trim();
+    const email = document.getElementById('d-email').value.trim();
+    const org   = document.getElementById('d-org').value.trim();
+    const phone = document.getElementById('d-phone').value.trim();
+    const size  = document.getElementById('d-size').value;
+    const notes = document.getElementById('d-notes').value.trim();
+    if(!fname || !lname || !email || !org) valid = false;
+    payload = {...payload, fname, lname, email, org, phone, size, notes};
+  } else if(type === 'support') {
+    const name  = document.getElementById('s-name').value.trim();
+    const email = document.getElementById('s-email').value.trim();
+    const issue = document.getElementById('s-type').value;
+    const desc  = document.getElementById('s-desc').value.trim();
+    const urgency = document.getElementById('s-urgency').value;
+    if(!name || !email || !desc) valid = false;
+    payload = {...payload, name, email, issue, description: desc, urgency};
+  }
+
+  if(!valid) {
+    errEl.textContent = 'Please fill in all required fields.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  const btn = document.querySelector(`#tab-${type} .form-submit`);
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    /* 
+      Wire this to your contact endpoint when ready:
+      POST /api/public/contact  with payload as JSON
+    */
+    await new Promise(r => setTimeout(r, 800)); // simulated delay
+    document.getElementById('formBody').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  } catch(err) {
+    errEl.textContent = 'Something went wrong. Please email hello@saleshubcloud.com directly.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = type === 'demo' ? 'Request a demo →' : type === 'support' ? 'Submit support request →' : 'Send message →';
+  }
+}
+
+function resetForm() {
+  document.getElementById('formSuccess').style.display = 'none';
+  document.getElementById('formBody').style.display = 'block';
+}
+</script>
+</body>
+</html>
