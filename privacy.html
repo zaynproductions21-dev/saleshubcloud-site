@@ -53,12 +53,39 @@ li{color:var(--c-text2);font-size:0.95rem;line-height:1.65;}
 .highlight-box{background:var(--c-purple-light);border:1px solid rgba(124,111,247,0.2);border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
 .highlight-box p{color:var(--c-purple);margin:0;font-size:0.9rem;}
 
-footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2rem;}
-.footer-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+
+
+
+
+
+
+
+/* ── FOOTER FULL ── */
+footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:1160px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:280px 1fr;gap:4rem;margin-bottom:2.5rem;}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr;gap:2rem;}}
+.footer-logo-row{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;}
+.footer-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;flex-shrink:0;}
+.footer-logo-text{font-size:1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.02em;}
+.footer-tagline{font-size:0.825rem;color:var(--c-text3);line-height:1.6;margin-bottom:1.25rem;}
+.footer-social{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.social-btn{width:34px;height:34px;border-radius:8px;background:var(--c-bg2);border:1px solid var(--c-border);display:flex;align-items:center;justify-content:center;color:var(--c-text3);transition:background .15s,color .15s,border-color .15s;}
+.social-btn:hover{background:var(--c-purple-light);color:var(--c-purple);border-color:var(--c-border2);}
+.footer-nav-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+@media(max-width:580px){.footer-nav-cols{grid-template-columns:1fr 1fr;}}
+.footer-col{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}
+.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}
+.footer-col a:hover{color:var(--c-purple);}
+.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:0.78rem;color:var(--c-text3);}
-.footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-size:0.8rem;color:var(--c-text3);font-weight:500;}
-.footer-links a:hover{color:var(--c-purple);}
+.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}
+.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 4px;height:26px;}
+.stripe-badge{padding:3px 8px;background:#f6f9fc;}
+.stripe-badge svg{height:16px;width:auto;}
+
 </style>
 </head>
 <body>
@@ -103,7 +130,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
 
     <h2 id="who-we-are">1. Who we are</h2>
     <p>Sales Hub Cloud is operated by <strong>Zayn Productions Ltd</strong>, a company registered in England and Wales (Company No. 16892199), with registered address at 1 Alvin Street, Gloucester, England, GL1 3EJ.</p>
-    <p>We are the data controller for personal data collected through the Sales Hub Cloud platform and website at saleshubcloud.co.uk. For questions about your data, contact us at <a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a>.</p>
+    <p>We are the data controller for personal data collected through the Sales Hub Cloud platform and website at saleshubcloud.co.uk. For questions about your data, contact us at <a href="/cdn-cgi/l/email-protection#61111308170002182112000d0412091403020d0e14054f020e0c"><span class="__cf_email__" data-cfemail="8dfdffe4fbeceef4cdfeece1e8fee5f8efeee1e2f8e9a3eee2e0">[email&#160;protected]</span></a>.</p>
 
     <div class="divider"></div>
 
@@ -201,7 +228,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
       <li><strong>Right to object</strong> — object to processing based on legitimate interests or for direct marketing</li>
       <li><strong>Rights related to automated decision-making</strong> — we do not make solely automated decisions with significant legal effects</li>
     </ul>
-    <p>To exercise any of these rights, email <a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>.</p>
+    <p>To exercise any of these rights, email <a href="/cdn-cgi/l/email-protection#7a0a08130c1b19033a091b161f09120f181916150f1e54191517"><span class="__cf_email__" data-cfemail="38484a514e595b41784b59545d4b504d5a5b54574d5c165b5755">[email&#160;protected]</span></a>. We will respond within 30 days. You also have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>.</p>
 
     <div class="divider"></div>
 
@@ -238,23 +265,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
     <h2 id="contact">11. Contact us</h2>
     <p>For any privacy-related questions, requests, or complaints:</p>
     <ul>
-      <li><strong>Email:</strong> <a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a></li>
+      <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#7c0c0e150a1d1f053c0f1d10190f14091e1f10130918521f1311"><span class="__cf_email__" data-cfemail="d8a8aab1aeb9bba198abb9b4bdabb0adbabbb4b7adbcf6bbb7b5">[email&#160;protected]</span></a></li>
       <li><strong>Post:</strong> Zayn Productions Ltd, 1 Alvin Street, Gloucester, England, GL1 3EJ</li>
     </ul>
-    <p>We aim to respond to all requests within 30 days. If you are not satisfied with our response, you have the right to complain to the ICO at <a href="https://ico.org.uk/make-a-complaint/" target="_blank">ico.org.uk/make-a-complaint</a>.</p>
-
-  </div>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <span class="footer-copy">© 2025 Zayn Productions Ltd · Co. No. 16892199 · Gloucester, England</span>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="cookies.html">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+    <p>We aim to respond to all requests within 30 days. If you are not satisfied with our response, you have the right to complain to the ICO at <a href="https://ico.org.uk/make-a-complaint

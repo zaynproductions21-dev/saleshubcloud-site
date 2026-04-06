@@ -54,12 +54,39 @@ li{color:var(--c-text2);font-size:0.95rem;line-height:1.65;}
 .badge-functional{background:var(--c-purple-light);color:var(--c-purple);}
 .badge-analytics{background:#FEF3DC;color:#92600A;}
 
-footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2rem;}
-.footer-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+
+
+
+
+
+
+
+/* ── FOOTER FULL ── */
+footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:1160px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:280px 1fr;gap:4rem;margin-bottom:2.5rem;}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr;gap:2rem;}}
+.footer-logo-row{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;}
+.footer-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;flex-shrink:0;}
+.footer-logo-text{font-size:1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.02em;}
+.footer-tagline{font-size:0.825rem;color:var(--c-text3);line-height:1.6;margin-bottom:1.25rem;}
+.footer-social{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.social-btn{width:34px;height:34px;border-radius:8px;background:var(--c-bg2);border:1px solid var(--c-border);display:flex;align-items:center;justify-content:center;color:var(--c-text3);transition:background .15s,color .15s,border-color .15s;}
+.social-btn:hover{background:var(--c-purple-light);color:var(--c-purple);border-color:var(--c-border2);}
+.footer-nav-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+@media(max-width:580px){.footer-nav-cols{grid-template-columns:1fr 1fr;}}
+.footer-col{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}
+.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}
+.footer-col a:hover{color:var(--c-purple);}
+.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:0.78rem;color:var(--c-text3);}
-.footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-size:0.8rem;color:var(--c-text3);font-weight:500;}
-.footer-links a:hover{color:var(--c-purple);}
+.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}
+.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 4px;height:26px;}
+.stripe-badge{padding:3px 8px;background:#f6f9fc;}
+.stripe-badge svg{height:16px;width:auto;}
+
 </style>
 </head>
 <body>
@@ -175,7 +202,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
     </ul>
 
     <h3>Opting out of analytics</h3>
-    <p>You can opt out of anonymised analytics tracking at any time via your account settings under <strong>Privacy &amp; Data</strong>, or by contacting us at <a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a>.</p>
+    <p>You can opt out of anonymised analytics tracking at any time via your account settings under <strong>Privacy &amp; Data</strong>, or by contacting us at <a href="/cdn-cgi/l/email-protection#0777756e7166647e4774666b62746f7265646b6872632964686a"><span class="__cf_email__" data-cfemail="b6c6c4dfc0d7d5cff6c5d7dad3c5dec3d4d5dad9c3d298d5d9db">[email&#160;protected]</span></a>.</p>
 
     <div class="divider"></div>
 
@@ -187,7 +214,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
     <h2>Contact us</h2>
     <p>If you have any questions about how we use cookies:</p>
     <ul>
-      <li><strong>Email:</strong> <a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a></li>
+      <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#fc8c8e958a9d9f85bc8f9d90998f94899e9f90938998d29f9391"><span class="__cf_email__" data-cfemail="b7c7c5dec1d6d4cef7c4d6dbd2c4dfc2d5d4dbd8c2d399d4d8da">[email&#160;protected]</span></a></li>
       <li><strong>Post:</strong> Zayn Productions Ltd, 1 Alvin Street, Gloucester, England, GL1 3EJ</li>
     </ul>
   </div>
@@ -195,13 +222,4 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-copy">© 2025 Zayn Productions Ltd · Co. No. 16892199 · Gloucester, England</span>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="cookies.html">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+    <span class="footer-copy">© 20

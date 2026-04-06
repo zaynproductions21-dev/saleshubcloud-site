@@ -49,12 +49,39 @@ li{color:var(--c-text2);font-size:0.95rem;line-height:1.65;}
 .highlight-box p{color:var(--c-purple);margin:0;font-size:0.9rem;}
 .warn-box{background:#FEF3DC;border:1px solid rgba(247,185,85,0.3);border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;}
 .warn-box p{color:#92600A;margin:0;font-size:0.9rem;}
-footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2rem;}
-.footer-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+
+
+
+
+
+
+
+/* ── FOOTER FULL ── */
+footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:1160px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:280px 1fr;gap:4rem;margin-bottom:2.5rem;}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr;gap:2rem;}}
+.footer-logo-row{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;}
+.footer-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;flex-shrink:0;}
+.footer-logo-text{font-size:1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.02em;}
+.footer-tagline{font-size:0.825rem;color:var(--c-text3);line-height:1.6;margin-bottom:1.25rem;}
+.footer-social{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.social-btn{width:34px;height:34px;border-radius:8px;background:var(--c-bg2);border:1px solid var(--c-border);display:flex;align-items:center;justify-content:center;color:var(--c-text3);transition:background .15s,color .15s,border-color .15s;}
+.social-btn:hover{background:var(--c-purple-light);color:var(--c-purple);border-color:var(--c-border2);}
+.footer-nav-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+@media(max-width:580px){.footer-nav-cols{grid-template-columns:1fr 1fr;}}
+.footer-col{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}
+.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}
+.footer-col a:hover{color:var(--c-purple);}
+.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-copy{font-size:0.78rem;color:var(--c-text3);}
-.footer-links{display:flex;gap:1.5rem;}
-.footer-links a{font-size:0.8rem;color:var(--c-text3);font-weight:500;}
-.footer-links a:hover{color:var(--c-purple);}
+.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}
+.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 4px;height:26px;}
+.stripe-badge{padding:3px 8px;background:#f6f9fc;}
+.stripe-badge svg{height:16px;width:auto;}
+
 </style>
 </head>
 <body>
@@ -174,7 +201,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
     <h2 id="your-data">7. Your data</h2>
     <p>You retain full ownership of all data you upload or create in Sales Hub Cloud ("Your Data"). We process Your Data only on your instructions to provide the Service.</p>
     <p>You are responsible for ensuring that Your Data — including your clients' personal data — is processed in accordance with all applicable data protection laws (including UK GDPR). You confirm that you have a lawful basis for storing and processing your clients' personal data in the Service.</p>
-    <p>Our Data Processing Agreement, which forms part of these Terms for business customers, is available on request at <a href="mailto:privacy@saleshubcloud.com">privacy@saleshubcloud.com</a>.</p>
+    <p>Our Data Processing Agreement, which forms part of these Terms for business customers, is available on request at <a href="/cdn-cgi/l/email-protection#82f2f0ebf4e3e1fbc2f1e3eee7f1eaf7e0e1eeedf7e6ace1edef"><span class="__cf_email__" data-cfemail="1363617a6572706a5360727f76607b6671707f7c66773d707c7e">[email&#160;protected]</span></a>.</p>
     <p>On termination of your account, you may request an export of Your Data within 90 days. After 90 days, we may permanently delete it.</p>
 
     <div class="divider"></div>
@@ -187,7 +214,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
 
     <h2 id="availability">9. Availability and support</h2>
     <p>We aim to maintain high availability of the Service but do not guarantee uninterrupted access. Planned maintenance will be communicated in advance where possible.</p>
-    <p>Support is provided via email at <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a>. Priority support is available on the Scale plan.</p>
+    <p>Support is provided via email at <a href="/cdn-cgi/l/email-protection#5d35383131321d2e3c31382e35283f3e31322839733e3230"><span class="__cf_email__" data-cfemail="f29a979e9e9db281939e97819a8790919e9d8796dc919d9f">[email&#160;protected]</span></a>. Priority support is available on the Scale plan.</p>
 
     <div class="divider"></div>
 
@@ -228,22 +255,5 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:2r
     <h2 id="contact">14. Contact</h2>
     <p>For questions about these Terms:</p>
     <ul>
-      <li><strong>Email:</strong> <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a></li>
-      <li><strong>Post:</strong> Zayn Productions Ltd, 1 Alvin Street, Gloucester, England, GL1 3EJ</li>
-    </ul>
-
-  </div>
-</div>
-
-<footer>
-  <div class="footer-inner">
-    <span class="footer-copy">© 2025 Zayn Productions Ltd · Co. No. 16892199 · Gloucester, England</span>
-    <div class="footer-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="cookies.html">Cookie Policy</a>
-    </div>
-  </div>
-</footer>
-</body>
-</html>
+      <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#8ee6ebe2e2e1cefdefe2ebfde6fbecede2e1fbeaa0ede1e3"><span class="__cf_email__" data-cfemail="761e131a1a193605171a13051e0314151a1903125815191b">[email&#160;protected]</span></a></li>
+      <li><strong>Post:</strong> Zayn Productions Ltd, 1 Alvin Stre
