@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build a 5-Step Lead Follow-Up Sequence — Sales Hub Cloud Blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c-purple:#7C6FF7;--c-purple-light:#EDE9FE;--c-purple-mid:#A89CF8;--c-purple-dark:#5A4FD6;
+  --c-teal:#5BC4C0;--c-teal-light:#E0F5F4;
+  --c-coral:#F4967E;--c-coral-light:#FDE8E2;
+  --c-green:#6DD8A0;--c-green-light:#DFFAEE;
+  --c-amber:#F7B955;--c-amber-light:#FEF3DC;
+  --c-bg:#FAF0F6;--c-bg2:#F3EFF9;--c-white:#FFFFFF;
+  --c-border:#EAE4F5;--c-border2:#D8CEFB;
+  --c-text:#1E1A3C;--c-text2:#5A5478;--c-text3:#9E99BE;
+  --ff:'Plus Jakarta Sans',sans-serif;
+  --shadow:0 1px 4px rgba(124,111,247,0.06),0 4px 20px rgba(124,111,247,0.06);
+}
+html{scroll-behavior:smooth}
+body{background:var(--c-bg);color:var(--c-text);font-family:var(--ff);font-size:16px;line-height:1.6;overflow-x:hidden;}
+a{color:var(--c-purple);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,240,246,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-size:1.1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.03em;display:flex;align-items:center;gap:0.5rem;text-decoration:none;}
+.nav-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;}
+.nav-right{display:flex;align-items:center;gap:0.75rem;}
+.nav-back{font-size:0.875rem;color:var(--c-text2);font-weight:500;display:flex;align-items:center;gap:0.35rem;text-decoration:none;}
+.nav-back:hover{color:var(--c-purple);text-decoration:none;}
+.btn-nav{background:var(--c-purple);color:#fff;font-size:0.875rem;font-weight:700;padding:0.5rem 1.35rem;border-radius:9px;border:none;cursor:pointer;font-family:var(--ff);box-shadow:0 4px 14px rgba(124,111,247,0.35);transition:background .15s;display:inline-block;text-decoration:none;}
+.btn-nav:hover{background:var(--c-purple-dark);text-decoration:none;}
+
+/* POST HERO */
+.post-hero{
+  padding:8rem 2rem 4rem;
+  background:linear-gradient(160deg,#F3EFF9 0%,#FAF0F6 100%);
+  position:relative;overflow:hidden;
+}
+.post-hero::before{
+  content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);
+  width:900px;height:600px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(124,111,247,0.08),transparent 70%);
+  pointer-events:none;
+}
+.post-hero-inner{max-width:760px;margin:0 auto;position:relative;}
+.breadcrumb{display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--c-text3);margin-bottom:1.5rem;flex-wrap:wrap;}
+.breadcrumb a{color:var(--c-purple);font-weight:500;text-decoration:none;}
+.breadcrumb a:hover{text-decoration:underline;}
+.breadcrumb-sep{color:var(--c-text3);}
+.post-cat-badge{
+  display:inline-flex;align-items:center;gap:0.35rem;
+  background:var(--c-purple-light);color:var(--c-purple);
+  border-radius:100px;padding:0.3rem 0.85rem;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.04em;margin-bottom:1.25rem;
+}
+.post-title{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.04em;line-height:1.1;margin-bottom:1.25rem;}
+.post-excerpt-lead{font-size:1.1rem;color:var(--c-text2);line-height:1.75;margin-bottom:2rem;font-weight:400;}
+.post-meta-bar{
+  display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;
+  padding-top:1.5rem;border-top:1px solid var(--c-border);
+}
+.author-block{display:flex;align-items:center;gap:0.75rem;}
+.author-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:800;background:var(--c-purple-light);color:var(--c-purple);}
+.author-name{font-size:0.875rem;font-weight:700;color:var(--c-text);}
+.author-role{font-size:0.75rem;color:var(--c-text3);}
+.meta-items{display:flex;align-items:center;gap:1rem;font-size:0.8rem;color:var(--c-text3);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--c-text3);}
+
+/* HERO IMAGE */
+.post-hero-img{
+  max-width:760px;margin:0 auto;
+  height:320px;border-radius:20px;overflow:hidden;
+  background:linear-gradient(135deg,#EDE9FE,#D8CEFB);
+  display:flex;align-items:center;justify-content:center;
+  font-size:5rem;border:1px solid var(--c-border);
+  margin-top:0;
+}
+
+/* LAYOUT */
+.post-layout{
+  max-width:1160px;margin:0 auto;padding:3rem 2rem 5rem;
+  display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:start;
+}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;gap:2rem;}}
+
+/* ARTICLE */
+article h2{font-size:1.5rem;font-weight:800;letter-spacing:-0.02em;margin:2.5rem 0 1rem;color:var(--c-text);}
+article h3{font-size:1.1rem;font-weight:700;margin:1.75rem 0 0.65rem;color:var(--c-text);}
+article p{font-size:0.95rem;color:var(--c-text2);line-height:1.8;margin-bottom:1.25rem;}
+article ul,article ol{margin:0.75rem 0 1.25rem 1.5rem;display:flex;flex-direction:column;gap:0.5rem;}
+article li{font-size:0.95rem;color:var(--c-text2);line-height:1.65;}
+article strong{color:var(--c-text);font-weight:700;}
+article a{color:var(--c-purple);}
+.article-divider{height:1px;background:var(--c-border);margin:2.5rem 0;}
+
+.callout{border-radius:14px;padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.callout-purple{background:var(--c-purple-light);border-left:3px solid var(--c-purple);}
+.callout-teal{background:var(--c-teal-light);border-left:3px solid var(--c-teal);}
+.callout-amber{background:var(--c-amber-light);border-left:3px solid var(--c-amber);}
+.callout p{margin:0;font-size:0.9rem;}
+.callout-purple p{color:var(--c-purple);}
+.callout-teal p{color:#0f7a76;}
+.callout-amber p{color:#7a4a00;}
+.callout strong{color:inherit;}
+
+/* STEP CARDS */
+.step-card{
+  background:var(--c-white);border:1px solid var(--c-border);border-radius:14px;
+  padding:1.5rem;margin:1rem 0;display:flex;gap:1rem;align-items:flex-start;
+}
+.step-num{
+  width:36px;height:36px;border-radius:50%;background:var(--c-purple);
+  color:#fff;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+.step-content h4{font-size:0.95rem;font-weight:700;margin-bottom:0.3rem;color:var(--c-text);}
+.step-content p{font-size:0.875rem;color:var(--c-text2);line-height:1.65;margin:0;}
+.step-tag{display:inline-block;font-size:0.68rem;font-weight:700;border-radius:4px;padding:0.1rem 0.4rem;margin-left:0.4rem;vertical-align:middle;}
+
+/* SHARE BAR */
+.share-bar{
+  display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;
+  padding:1.5rem;background:var(--c-bg2);border-radius:14px;margin-top:2.5rem;
+}
+.share-label{font-size:0.8rem;font-weight:700;color:var(--c-text3);text-transform:uppercase;letter-spacing:0.06em;}
+.share-btn{
+  padding:0.45rem 1rem;border-radius:8px;border:1px solid var(--c-border2);
+  background:var(--c-white);font-family:var(--ff);font-size:0.8rem;font-weight:600;
+  color:var(--c-text2);cursor:pointer;transition:border-color .15s,color .15s;
+}
+.share-btn:hover{border-color:var(--c-purple);color:var(--c-purple);}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:1.25rem;}
+.sidebar-card{background:var(--c-white);border:1px solid var(--c-border);border-radius:16px;padding:1.5rem;}
+.sidebar-title{font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--c-text3);margin-bottom:1rem;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.toc-list li a{font-size:0.85rem;color:var(--c-text2);font-weight:500;text-decoration:none;display:block;padding:0.3rem 0.5rem;border-radius:6px;transition:background .15s,color .15s;}
+.toc-list li a:hover{background:var(--c-purple-light);color:var(--c-purple);text-decoration:none;}
+.toc-list li a.active{background:var(--c-purple-light);color:var(--c-purple);font-weight:600;}
+
+.trial-card{
+  background:linear-gradient(135deg,var(--c-purple),var(--c-purple-dark));
+  border-radius:16px;padding:1.5rem;color:#fff;
+}
+.trial-card h4{font-size:1rem;font-weight:800;margin-bottom:0.5rem;}
+.trial-card p{font-size:0.82rem;line-height:1.6;opacity:0.85;margin-bottom:1.25rem;}
+.trial-card-btn{
+  width:100%;padding:0.7rem;border-radius:9px;background:#fff;color:var(--c-purple);
+  font-family:var(--ff);font-size:0.85rem;font-weight:700;border:none;cursor:pointer;
+  transition:opacity .15s;
+}
+.trial-card-btn:hover{opacity:0.9;}
+
+.related-post{display:flex;gap:0.75rem;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid var(--c-border);}
+.related-post:last-child{border-bottom:none;padding-bottom:0;}
+.related-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.related-title{font-size:0.82rem;font-weight:700;color:var(--c-text);line-height:1.3;margin-bottom:0.2rem;}
+.related-title a{text-decoration:none;color:var(--c-text);}
+.related-title a:hover{color:var(--c-purple);}
+.related-meta{font-size:0.72rem;color:var(--c-text3);}
+
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(135deg,var(--c-purple) 0%,#6058D8 50%,var(--c-teal) 100%);padding:4rem 2rem;text-align:center;}
+.cta-strip h2{font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:0.75rem;}
+.cta-strip p{color:rgba(255,255,255,0.75);font-size:0.95rem;margin-bottom:2rem;}
+.btn-white{background:#fff;color:var(--c-purple);padding:0.8rem 2rem;border-radius:10px;font-size:0.9rem;font-weight:700;font-family:var(--ff);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.15);transition:transform .1s;display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;}
+.btn-white:hover{transform:translateY(-2px);text-decoration:none;}
+
+
+
+
+
+
+
+
+
+@media(max-width:900px){.nav-links{display:none;}}
+
+/* ── FOOTER FULL ── */
+footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3rem 2rem 2rem;}
+.footer-inner{max-width:1160px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:280px 1fr;gap:4rem;margin-bottom:2.5rem;}
+@media(max-width:860px){.footer-top{grid-template-columns:1fr;gap:2rem;}}
+.footer-logo-row{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem;}
+.footer-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;flex-shrink:0;}
+.footer-logo-text{font-size:1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.02em;}
+.footer-tagline{font-size:0.825rem;color:var(--c-text3);line-height:1.6;margin-bottom:1.25rem;}
+.footer-social{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.social-btn{width:34px;height:34px;border-radius:8px;background:var(--c-bg2);border:1px solid var(--c-border);display:flex;align-items:center;justify-content:center;color:var(--c-text3);transition:background .15s,color .15s,border-color .15s;}
+.social-btn:hover{background:var(--c-purple-light);color:var(--c-purple);border-color:var(--c-border2);}
+.footer-nav-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+@media(max-width:580px){.footer-nav-cols{grid-template-columns:1fr 1fr;}}
+.footer-col{display:flex;flex-direction:column;gap:0.5rem;}
+.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}
+.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}
+.footer-col a:hover{color:var(--c-purple);}
+.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-copy{font-size:0.78rem;color:var(--c-text3);}
+.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}
+.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}
+.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 4px;height:26px;}
+.stripe-badge{padding:3px 8px;background:#f6f9fc;}
+.stripe-badge svg{height:16px;width:auto;}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-mark">S</div>SalesHub Cloud</a>
+    <div class="nav-right">
+      <a href="blog.html" class="nav-back">← Back to Blog</a>
+      <a href="index.html" class="btn-nav">Start free trial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <div class="post-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="blog.html">Blog</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Lead Follow-Up Sequences</span>
+    </div>
+    <div class="post-cat-badge">⚡ Automation</div>
+    <h1 class="post-title">How to Build a 5-Step Lead Follow-Up Sequence That Converts</h1>
+    <p class="post-excerpt-lead">Most law firms lose enquiries not because they're not good enough — but because they're too slow to follow up. Here's exactly how to build a multi-channel drip sequence that turns cold leads into booked consultations, automatically.</p>
+    <div class="post-meta-bar">
+      <div class="author-block">
+        <div class="author-avatar">SH</div>
+        <div>
+          <div class="author-name">Sales Hub Team</div>
+          <div class="author-role">Sales Hub Cloud</div>
+        </div>
+      </div>
+      <div class="meta-items">
+        <span>12 March 2025</span>
+        <div class="meta-dot"></div>
+        <span>8 min read</span>
+        <div class="meta-dot"></div>
+        <span>Automation</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:760px;margin:2rem auto 0;padding:0 2rem;">
+  <div class="post-hero-img">📬</div>
+</div>
+
+<!-- POST LAYOUT -->
+<div class="post-layout">
+  <article>
+
+    <h2 id="problem">The problem: speed beats quality</h2>
+    <p>Research consistently shows that leads contacted within 5 minutes of enquiring are <strong>9x more likely to convert</strong> than those contacted after 30 minutes. For law firms juggling caseloads, a 5-minute response window is almost impossible — unless it's automated.</p>
+    <p>The answer isn't to hire more staff. It's to build a sequence that responds immediately, nurtures over days, and only escalates to a human when the lead is warm.</p>
+
+    <div class="callout callout-purple">
+      <p><strong>What is a drip sequence?</strong> A drip sequence is a series of pre-written messages sent automatically over time — across email, WhatsApp, SMS, or phone. In Sales Hub Cloud, you build them once and they run on autopilot whenever a new lead arrives.</p>
+    </div>
+
+    <h2 id="sequence">The 5-step sequence</h2>
+    <p>This is the sequence we recommend for immigration and housing law firms. It runs across 3 days and uses three channels. Adjust the timing to match your firm's working hours.</p>
+
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Immediate WhatsApp message <span class="step-tag" style="background:var(--c-teal-light);color:var(--c-teal);">+0 minutes</span></h4>
+        <p>Send a personalised WhatsApp message the moment a lead comes in. Thank them for enquiring, confirm you've received their details, and let them know a team member will be in touch shortly. This builds trust fast — most firms don't respond for hours.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Follow-up email with intake form <span class="step-tag" style="background:var(--c-purple-light);color:var(--c-purple);">+30 minutes</span></h4>
+        <p>Send a branded email with a link to your client intake form. This does two things: it gathers information you need before the consultation, and it filters out unserious enquiries. Anyone who fills in the form is a high-intent lead — flag them for immediate human follow-up.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>SMS nudge <span class="step-tag" style="background:var(--c-amber-light);color:var(--c-amber);">+4 hours</span></h4>
+        <p>A short, direct SMS: "Hi [Name], just checking you received our WhatsApp earlier. We'd love to help with your case — reply here or book a call at [link]." SMS open rates are over 90%. Most leads haven't even opened the email yet.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h4>AI phone call <span class="step-tag" style="background:var(--c-coral-light);color:var(--c-coral);">+Day 2</span></h4>
+        <p>On day 2, trigger an ElevenLabs AI call. The call introduces the firm, explains the next step, and asks the lead to confirm their interest. If they press 1 to continue, a task is created for a caseworker to call them back. This filters the pipeline beautifully.</p>
+      </div>
+    </div>
+
+    <div class="step-card">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h4>Final WhatsApp + close <span class="step-tag" style="background:var(--c-teal-light);color:var(--c-teal);">+Day 3</span></h4>
+        <p>A final WhatsApp message: "We haven't heard back — no worries at all. If you'd still like to discuss your case, our calendar is open [link]. We'll close this enquiry in 24 hours." Urgency without pressure. This reactivates 15–20% of silent leads.</p>
+      </div>
+    </div>
+
+    <div class="article-divider"></div>
+
+    <h2 id="stop-conditions">Setting stop conditions</h2>
+    <p>A sequence without stop conditions is spam. In Sales Hub Cloud, you configure exactly when a sequence should stop for a lead:</p>
+    <ul>
+      <li><strong>On reply</strong> — if the lead replies to any message, the sequence stops and a task is created for a human to take over</li>
+      <li><strong>On booking</strong> — if they book a consultation, all remaining steps are cancelled</li>
+      <li><strong>On stage change</strong> — if a caseworker moves the lead to "Qualified" or beyond, the automated sequence stops</li>
+      <li><strong>Manual stop</strong> — any team member can stop a sequence on a specific lead at any time</li>
+    </ul>
+
+    <div class="callout callout-teal">
+      <p><strong>Pro tip:</strong> Always stop the sequence on reply. Nothing damages trust faster than a lead responding "I'm interested" and then receiving an automated "We haven't heard from you" message two hours later.</p>
+    </div>
+
+    <h2 id="setup">Setting it up in Sales Hub Cloud</h2>
+    <p>Go to <strong>Automation → Sequences → New Sequence</strong>. Give it a name, select the trigger (new lead arrives, or lead enters a specific stage), then add each step:</p>
+    <ol>
+      <li>Add step → WhatsApp message → write your template with merge fields like <code>&#123;&#123;lead.firstName&#125;&#125;</code></li>
+      <li>Set delay (0 minutes for the first step)</li>
+      <li>Add next step → Email → attach your intake form link</li>
+      <li>Continue building steps with appropriate delays</li>
+      <li>Configure stop conditions in the sequence settings</li>
+      <li>Set the sequence to active</li>
+    </ol>
+    <p>The sequence will now fire automatically for every new lead that matches the trigger. Check the Sequence Performance report after 2 weeks to see delivery rates, stop reasons, and conversion attribution.</p>
+
+    <div class="callout callout-amber">
+      <p><strong>Important:</strong> Make sure your WhatsApp Business account is connected and your message templates are approved before activating sequences. WhatsApp requires pre-approved templates for outbound messages to new contacts.</p>
+    </div>
+
+    <h2 id="results">What to expect</h2>
+    <p>Firms using this exact sequence typically see:</p>
+    <ul>
+      <li>60–75% WhatsApp open rate on the first message</li>
+      <li>25–35% intake form completion rate from warmed leads</li>
+      <li>15–20% reactivation from the day-3 final message</li>
+      <li>40–60% reduction in the time caseworkers spend on initial outreach</li>
+    </ul>
+    <p>The biggest win isn't the conversion rate — it's the time saved. Your team stops chasing leads and starts handling the ones that are already warm.</p>
+
+    <div class="article-divider"></div>
+
+    <h2 id="next-steps">Next steps</h2>
+    <p>If you're not already using automated sequences, start with a single 3-step sequence — just the WhatsApp, the email, and the SMS nudge. Get comfortable with the format before adding the AI call. Once you see the data, you'll never go back to manual follow-up.</p>
+    <p>Ready to try it? <a href="index.html">Start a 14-day free trial</a> and build your first sequence today — no credit card required.</p>
+
+    <!-- SHARE BAR -->
+    <div class="share-bar">
+      <span class="share-label">Share</span>
+      <button class="share-btn" onclick="copyLink()">🔗 Copy link</button>
+      <button class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?text=How+to+Build+a+5-Step+Lead+Follow-Up+Sequence+%E2%80%94+Sales+Hub+Cloud+Blog&url='+encodeURIComponent(window.location.href))">𝕏 Twitter</button>
+      <button class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href))">in LinkedIn</button>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <!-- TOC -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">In this article</div>
+      <ul class="toc-list">
+        <li><a href="#problem">The problem: speed beats quality</a></li>
+        <li><a href="#sequence">The 5-step sequence</a></li>
+        <li><a href="#stop-conditions">Setting stop conditions</a></li>
+        <li><a href="#setup">Setting it up in Sales Hub Cloud</a></li>
+        <li><a href="#results">What to expect</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+      </ul>
+    </div>
+
+    <!-- TRIAL CTA -->
+    <div class="trial-card">
+      <h4>Try it for free</h4>
+      <p>Build your first automated sequence in Sales Hub Cloud. 14-day free trial, no credit card required.</p>
+      <button class="trial-card-btn" onclick="window.location.href='index.html'">Start free trial →</button>
+    </div>
+
+    <!-- RELATED POSTS -->
+    <div class="sidebar-card">
+      <div class="sidebar-title">Related articles</div>
+      <div class="related-post">
+        <div class="related-icon" style="background:var(--c-teal-light);">💬</div>
+        <div>
+          <div class="related-title"><a href="blog.html">WhatsApp Business for Solicitors: The Complete Setup Guide</a></div>
+          <div class="related-meta">8 min read · Automation</div>
+        </div>
+      </div>
+      <div class="related-post">
+        <div class="related-icon" style="background:var(--c-purple-light);">🤖</div>
+        <div>
+          <div class="related-title"><a href="blog.html">AI Phone Calls for Lead Qualification: An Honest Review</a></div>
+          <div class="related-meta">7 min read · AI &amp; Technology</div>
+        </div>
+      </div>
+      <div class="related-post">
+        <div class="related-icon" style="background:var(--c-coral-light);">📱</div>
+        <div>
+          <div class="related-title"><a href="blog.html">TikTok Lead Ads for Immigration Law: A Step-by-Step Guide</a></div>
+          <div class="related-meta">9 min read · Lead Generation</div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Ready to automate your follow-up?</h2>
+  <p>14-day free trial. No credit card. Full access from day one.</p>
+  <a href="index.html" class="btn-white">Start free trial →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <!-- BRAND -->
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-mark">S</div>
+          <span class="footer-logo-text">SalesHub Cloud</span>
+        </div>
+        <p class="footer-tagline">The all-in-one CRM built for law firms that need to move fast.</p>
+        <!-- SOCIAL -->
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://twitter.com/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="Twitter / X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://facebook.com/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://instagram.com/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://tiktok.com/@saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- NAV COLUMNS -->
+      <div class="footer-nav-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#platform">Platform</a>
+          <a href="index.html#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact us</a>
+          <a href="contact.html">Book a demo</a>
+          <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        © 2025 Zayn Productions Ltd · Co. No. 16892199 · 1 Alvin Street, Gloucester, GL1 3EJ
+      </div>
+      <div class="footer-payment">
+        <span class="footer-payment-label">Secure payments</span>
+        <!-- Stripe wordmark (SVG inline) -->
+        <div class="payment-badge stripe-badge" title="Powered by Stripe">
+          <svg height="20" viewBox="0 0 60 25" xmlns="http://www.w3.org/2000/svg" aria-label="Stripe">
+            <path fill="#6772e5" d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a14.36 14.36 0 01-4.83.86c-4.21 0-6.86-2.7-6.86-7.06 0-3.82 2.21-7.07 6.37-7.07 4.14 0 5.95 3.28 5.95 7.01 0 .48-.04 1.06-.08 1.34h-.74zm-5.14-5.01c-1.06 0-2.06.75-2.06 2.5h4.09c0-1.75-.97-2.5-2.03-2.5zM36.73 6.11c1.77 0 2.95.81 3.62 1.44l.24-1.14h3.87v16.5l-3.93-.83V21a5.84 5.84 0 01-3.8 1.38c-3.94 0-6.37-3.07-6.37-6.87 0-4.17 2.6-7.06 6.37-7.06v-.34zm.84 3.61c-1.72 0-2.97 1.2-2.97 3.45 0 2.27 1.25 3.48 2.97 3.48.74 0 1.5-.26 2-.82V10.5a2.65 2.65 0 00-2-.78zM22.65 6.41l.25 1.27c.66-.92 1.97-1.57 3.41-1.57.37 0 .73.05 1.08.13v3.73a5.45 5.45 0 00-1.49-.2c-1.36 0-2.52.55-3 1.49v11.12h-3.98V6.41h3.73zM14.94 2.25c1.36 0 2.18.9 2.18 2.16 0 1.26-.82 2.17-2.18 2.17-1.38 0-2.19-.91-2.19-2.17s.81-2.16 2.19-2.16zM13 6.41h3.98v15.92H13V6.41zM7.39 10.22c0-1.05.87-1.47 2.25-1.47.93 0 2.09.28 3.04.76V5.82A13.4 13.4 0 009.52 5.3C6.08 5.3 4 7.04 4 9.97c0 4.64 6.37 3.91 6.37 5.9 0 1.23-1.05 1.62-2.48 1.62-1.37 0-2.86-.41-4.08-1.03v3.68c1.14.5 2.59.86 4.08.86 3.53 0 5.94-1.74 5.94-4.8 0-4.91-6.44-4.01-6.44-5.98z"/>
+          </svg>
+        </div>
+        <!-- Visa -->
+        <div class="payment-badge" title="Visa">
+          <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visa">
+            <rect width="38" height="24" rx="3" fill="#1A1F71"/>
+            <path d="M15.82 8.18l-2.56 7.64H11.1L9.56 9.6c-.09-.36-.17-.49-.45-.64A7.86 7.86 0 007 8.45l.06-.27h3.48c.44 0 .84.3.94.8l.86 4.56 2.12-5.36h2.36zm9.16 5.14c.01-2.1-2.9-2.22-2.88-3.15.01-.29.28-.59.87-.67a3.87 3.87 0 012.02.35l.36-1.69a5.49 5.49 0 00-1.92-.35c-2.03 0-3.46 1.08-3.47 2.62-.01 1.14 1.02 1.78 1.8 2.16.8.38 1.07.63 1.07.97-.01.52-.64.75-1.24.76a4.35 4.35 0 01-2.13-.51l-.38 1.75c.49.22 1.39.42 2.32.43 2.19 0 3.62-1.08 3.62-2.67zm5.46 2.5H32.5l-1.72-7.64h-1.94c-.44 0-.81.25-.97.64L25.5 15.82h2.18l.43-1.2h2.66l.25 1.2zM28.6 9.67l.63 3.01h-1.72l1.09-3zm-8.74-1.49l-1.72 7.64h-2.07l1.72-7.64h2.07z" fill="#fff"/>
+          </svg>
+        </div>
+        <!-- Mastercard -->
+        <div class="payment-badge" title="Mastercard">
+          <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mastercard">
+            <rect width="38" height="24" rx="3" fill="#252525"/>
+            <circle cx="15" cy="12" r="7" fill="#EB001B"/>
+            <circle cx="23" cy="12" r="7" fill="#F79E1B"/>
+            <path d="M19 7.1a7 7 0 010 9.8A7 7 0 0119 7.1z" fill="#FF5F00"/>
+          </svg>
+        </div>
+        <!-- American Express -->
+        <div class="payment-badge" title="American Express">
+          <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="American Express">
+            <rect width="38" height="24" rx="3" fill="#2557D6"/>
+            <path d="M7 9h2.5l.6 1.4.6-1.4H13v5h-1.5v-3.5L10.7 14H9.9l-.8-3.5V14H7V9zm7 0h4.5v1.2H15.5v.9h2.8v1.1h-2.8v.9H18.5V14H14V9zm5.5 0H22l1.5 2.1L25 9h2.5v.1L25 12l2.5 2v.1H25l-1.5-2.1L22 14h-2.5v-.1L22 12l-2.5-2.9V9z" fill="white"/>
+          </svg>
+        </div>
+        <!-- Apple Pay -->
+        <div class="payment-badge" title="Apple Pay">
+          <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apple Pay">
+            <rect width="38" height="24" rx="3" fill="#000"/>
+            <path d="M14.2 8.5c.4-.5.7-1.2.6-1.9-.6 0-1.3.4-1.7.9-.4.4-.7 1.1-.6 1.8.6.1 1.3-.3 1.7-.8zm.6 1c-.9-.1-1.7.5-2.2.5s-1.1-.5-1.9-.5c-.9 0-1.8.5-2.3 1.4-1 1.7-.3 4.3.7 5.7.5.7 1.1 1.5 1.8 1.5.7 0 1-.5 1.9-.5.9 0 1.1.5 1.9.5.7 0 1.2-.7 1.7-1.4.5-.8.7-1.5.7-1.5-.1-.1-1.4-.5-1.4-2 0-1.3 1-1.9 1.1-2-.6-.9-1.5-1-.8-1zm4.3-1.5v9h1.4v-3h2c1.8 0 3.1-1 3.1-3s-1.3-3-3.1-3h-3.4zm1.4 1.2h1.7c1.2 0 1.9.6 1.9 1.8s-.7 1.8-1.9 1.8h-1.7V9.2z" fill="white"/>
+          </svg>
+        </div>
+        <!-- Google Pay -->
+        <div class="payment-badge" title="Google Pay">
+          <svg width="38" height="24" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Google Pay">
+            <rect width="38" height="24" rx="3" fill="#fff" stroke="#E6E6E6" stroke-width="1"/>
+            <path d="M19.2 12.2c0 .6-.1 1.1-.2 1.5h-4.4c.3 1 1.3 1.7 2.4 1.7.7 0 1.3-.2 1.8-.7l1.1 1.1a4 4 0 01-2.9 1.1 4 4 0 01-4-4 4 4 0 014-4c2.1 0 3.7 1.5 3.7 3.7 0 .2 0 .4-.05.6h-5.15a2.3 2.3 0 002.25 1.8c.7 0 1.35-.3 1.8-.8l1.05 1.05a3.9 3.9 0 01-2.85 1.15 4 4 0 01-4-4zm-5.5 0a2.3 2.3 0 002.25 2.3 2.3 2.3 0 002.25-2.3 2.3 2.3 0 00-2.25-2.3 2.3 2.3 0 00-2.25 2.3zm-3.5-2.5h-2.5v2h2.3c-.05.2-.05.4-.05.5a2.55 2.55 0 105.1 0h-1.7a.85.85 0 01-1.7 0c0-.5.4-.9.85-.9.2 0 .4.1.55.2l1.2-1.2a2.5 2.5 0 00-1.75-.6 2.55 2.55 0 00-2.3 1.5h-.05V9.7h.05z" fill="#5F6368"/>
+            <text x="10" y="16" font-family="Arial" font-size="7" font-weight="700" fill="#5F6368">G Pay</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function copyLink() {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    const btn = event.target;
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = '🔗 Copy link', 2000);
+  });
+}
+
+/* Highlight active TOC item on scroll */
+const headings = document.querySelectorAll('article h2[id]');
+const tocLinks = document.querySelectorAll('.toc-list a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  headings.forEach(h => { if(window.scrollY >= h.offsetTop - 120) current = h.id; });
+  tocLinks.forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
