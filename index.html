@@ -249,8 +249,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .stripe-badge svg{height:16px;width:auto;}
 
 
-@media(max-width:768px){
-  .nav-links,.nav-actions,.nav-right,.btn-ghost,.btn-nav{display:none!important;}
+
   .burger{display:flex!important;}
   .mobile-menu{display:block;}
   .mobile-menu.open{display:block!important;}
@@ -264,12 +263,15 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .mobile-menu a,.mobile-menu button{display:block;padding:0.85rem 0;font-size:1rem;font-weight:600;color:var(--c-text2);text-decoration:none;border:none;background:none;border-bottom:1px solid var(--c-border);width:100%;text-align:left;cursor:pointer;font-family:var(--ff);}
 .mobile-menu a:last-child,.mobile-menu button:last-child{border-bottom:none;}
 .mobile-menu .mob-cta{margin-top:1rem;background:var(--c-purple);color:white;border-radius:10px;padding:0.85rem 1.5rem;text-align:center;font-weight:700;border:none;}
-.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}@media(max-width:768px){.nav-logo-text{font-size:0.875rem;}.nav-logo svg{width:26px!important;height:26px!important;}.nav-inner{padding:0 1rem;}.burger{margin-left:auto;}}.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap!important;flex-shrink:0;flex-wrap:nowrap;}</style>
+.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}.nav-logo svg{width:26px!important;height:26px!important;}.nav-inner{padding:0 1rem;}.burger{margin-left:auto;}}.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap!important;flex-shrink:0;flex-wrap:nowrap;}.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;}.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}@media(max-width:768px){.nav-links{display:none!important;}.nav-right{display:none!important;}.burger{display:flex!important;}.nav-inner{padding:0 1rem!important;}.nav-logo-text{font-size:0.875rem;}}</style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text" style="white-space:nowrap;font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;">SalesHub Cloud</span></a>
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg>
+      <span class="nav-logo-text">SalesHub Cloud</span>
+    </a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
@@ -282,12 +284,8 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
       <button class="btn-ghost" onclick="openDemo()">Book a demo</button>
       <button class="btn-nav" onclick="openTrial()">Start free trial</button>
     </div>
-    <button class=burger id=burgerBtn aria-label=Menu><span></span><span></span><span></span></button>
+    <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
-
-  <button class="burger" id="burgerBtn" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#features">Features</a>
