@@ -33,9 +33,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,240,246,
 .nav-links a{color:var(--c-text2);font-size:0.875rem;font-weight:500;padding:0.4rem 0.8rem;border-radius:8px;transition:background .15s,color .15s;}
 .nav-links a:hover{background:var(--c-purple-light);color:var(--c-purple);}
 .nav-right{display:flex;align-items:center;gap:0.75rem;}
-.btn-ghost{color:var(--c-text2);font-size:0.875rem;font-weight:500;padding:0.45rem 1rem;border-radius:8px;border:1px solid var(--c-border2);background:var(--c-white);font-family:var(--ff);cursor:pointer;transition:border-color .15s,color .15s;}
+.btn-ghost{color:var(--c-text2);font-size:0.875rem;font-weight:500;padding:0.45rem 1rem;border-radius:8px;border:1px solid var(--c-border2);background:var(--c-white);font-family:var(--ff);cursor:pointer;transition:border-color .15s,color .15s;white-space:nowrap;}
 .btn-ghost:hover{border-color:var(--c-purple);color:var(--c-purple);}
-.btn-nav{background:var(--c-purple);color:#fff;font-size:0.875rem;font-weight:700;padding:0.5rem 1.35rem;border-radius:9px;border:none;cursor:pointer;font-family:var(--ff);box-shadow:0 4px 14px rgba(124,111,247,0.35);transition:background .15s,transform .1s;}
+.btn-nav{background:var(--c-purple);color:#fff;font-size:0.875rem;font-weight:700;padding:0.5rem 1.35rem;border-radius:9px;border:none;cursor:pointer;font-family:var(--ff);box-shadow:0 4px 14px rgba(124,111,247,0.35);transition:background .15s,transform .1s;white-space:nowrap;}
 .btn-nav:hover{background:var(--c-purple-dark);transform:translateY(-1px);}
 .hero{padding:9rem 2rem 5rem;text-align:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#F3EFF9 0%,#FAF0F6 60%,#EEF9F8 100%);}
 .hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(124,111,247,0.12),transparent 70%);pointer-events:none;}
@@ -53,7 +53,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,240,246,
 .hero-proof strong{color:var(--c-text2);font-weight:600;}
 .hero-trial-note{font-size:0.78rem;color:var(--c-text3);display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
 .hero-trial-note span::before{content:'✓ ';color:var(--c-teal);font-weight:700;}
-.hero-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.hero-stats{display:flex;gap:12px;justify-content:center;flex-wrap:nowrap;}
 .hero-stat{background:var(--c-white);border:1px solid var(--c-border);border-radius:100px;padding:0.5rem 1.25rem;display:flex;align-items:center;gap:0.6rem;box-shadow:var(--shadow);font-size:0.875rem;font-weight:600;color:var(--c-text2);}
 .hero-stat-dot{width:8px;height:8px;border-radius:50%;}
 .marquee-wrap{overflow:hidden;padding:0.9rem 0;background:var(--c-purple);}
@@ -610,7 +610,7 @@ document.querySelectorAll('.mobile-menu a').forEach(function(a){
       <!-- BRAND -->
       <div class="footer-brand">
         <div class="footer-logo-row">
-          <div class="footer-logo-mark">S</div>
+          <svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg>
           <span class="footer-logo-text">SalesHub Cloud</span>
         </div>
         <p class="footer-tagline">The all-in-one CRM built for law firms that need to move fast.</p>
