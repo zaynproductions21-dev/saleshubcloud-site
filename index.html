@@ -26,7 +26,7 @@ body{background:var(--c-bg);color:var(--c-text);font-family:var(--ff);font-size:
 a{color:inherit;text-decoration:none;}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,240,246,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);box-shadow:0 2px 16px rgba(124,111,247,0.08);}
 .nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-size:1.1rem;font-weight:800;color:var(--c-text);letter-spacing:-0.03em;display:flex;align-items:center;gap:0.5rem;}
+
 .nav-logo-mark{width:32px;height:32px;border-radius:9px;background:var(--c-purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:800;}
 .nav-links{display:flex;gap:0.25rem;list-style:none;}
 .nav-links a{color:var(--c-text2);font-size:0.875rem;font-weight:500;padding:0.4rem 0.8rem;border-radius:8px;transition:background .15s,color .15s;}
@@ -263,12 +263,12 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .mobile-menu a,.mobile-menu button{display:block;padding:0.85rem 0;font-size:1rem;font-weight:600;color:var(--c-text2);text-decoration:none;border:none;background:none;border-bottom:1px solid var(--c-border);width:100%;text-align:left;cursor:pointer;font-family:var(--ff);}
 .mobile-menu a:last-child,.mobile-menu button:last-child{border-bottom:none;}
 .mobile-menu .mob-cta{margin-top:1rem;background:var(--c-purple);color:white;border-radius:10px;padding:0.85rem 1.5rem;text-align:center;font-weight:700;border:none;}
-.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;}@media(max-width:768px){.nav-logo-text{font-size:0.875rem;}.nav-logo svg{width:26px!important;height:26px!important;}.nav-inner{padding:0 1rem;}.burger{margin-left:auto;}}</style>
+.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}@media(max-width:768px){.nav-logo-text{font-size:0.875rem;}.nav-logo svg{width:26px!important;height:26px!important;}.nav-inner{padding:0 1rem;}.burger{margin-left:auto;}}.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap!important;flex-shrink:0;flex-wrap:nowrap;}</style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a>
+    <a href="index.html" class="nav-logo"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text" style="white-space:nowrap;font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;">SalesHub Cloud</span></a>
     <ul class="nav-links">
       <li><a href="#features">Features</a></li>
       <li><a href="#pricing">Pricing</a></li>
