@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You Ñ SalesHub Cloud</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%237C6FF7%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%235BC4C0%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%274%27 fill=%27white%27/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#FAF0F6;font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;}
+.card{background:#fff;border:1px solid #EAE4F5;border-radius:20px;padding:3rem 2.5rem;max-width:520px;width:100%;text-align:center;box-shadow:0 4px 32px rgba(124,111,247,0.10);}
+.icon{width:72px;height:72px;border-radius:50%;background:#EDE9FE;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2rem;}
+.ref{display:inline-block;background:#F3EFF9;color:#7C6FF7;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:1.25rem;}
+h1{font-size:1.75rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.03em;margin-bottom:0.75rem;}
+p{font-size:0.95rem;color:#5A5478;line-height:1.7;margin-bottom:1.5rem;}
+.steps{background:#F3EFF9;border-radius:12px;padding:1.25rem 1.5rem;text-align:left;margin-bottom:1.75rem;}
+.steps-title{font-size:0.75rem;font-weight:700;color:#7C6FF7;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.75rem;}
+.step{display:flex;align-items:flex-start;gap:0.75rem;margin-bottom:0.6rem;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:20px;height:20px;border-radius:50%;background:#7C6FF7;color:white;font-size:0.7rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.step-text{font-size:0.85rem;color:#5A5478;line-height:1.5;}
+.btn{display:inline-block;background:#7C6FF7;color:#fff;font-size:0.9rem;font-weight:700;padding:0.75rem 2rem;border-radius:10px;text-decoration:none;transition:background .15s;}
+.btn:hover{background:#5A4FD6;}
+.footer-note{margin-top:1.25rem;font-size:0.78rem;color:#9E99BE;}
+.footer-note a{color:#7C6FF7;font-weight:600;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="icon">?</div>
+  <div class="ref" id="refNum">REF #SHC-000000</div>
+  <h1>We've got your message</h1>
+  <p>Thanks for reaching out to SalesHub Cloud. Our team will be in touch within <strong>4 business hours</strong>.</p>
+
+  <div class="steps">
+    <div class="steps-title">What happens next</div>
+    <div class="step"><div class="step-num">1</div><div class="step-text">You'll receive a confirmation email shortly</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">A member of our team will review your enquiry</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">We'll be in touch to book a call or demo</div></div>
+  </div>
+
+  <a href="index.html" class="btn">Back to home</a>
+  <div class="footer-note">
+    Questions? Email us at <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a><br>
+    or call <a href="tel:+442039605143">+44 20 3960 5143</a>
+  </div>
+</div>
+
+<script>
+// Generate reference number
+var ref = 'SHC-' + Date.now().toString(36).toUpperCase().slice(-6);
+document.getElementById('refNum').textContent = 'REF #' + ref;
+
+// ?? GA4 conversion event (uncomment when GA4 is set up) ??
+// gtag('event', 'generate_lead', { currency: 'GBP', value: 99 });
+
+// ?? Meta Pixel conversion event (uncomment when Pixel is set up) ??
+// fbq('track', 'Lead', { currency: 'GBP', value: 99 });
+</script>
+</body>
+</html>

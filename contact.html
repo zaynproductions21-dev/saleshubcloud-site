@@ -194,11 +194,11 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .stripe-badge{padding:3px 8px;background:#f6f9fc;}
 .stripe-badge svg{height:16px;width:auto;}
 
-</style>
+.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:var(--c-white);border:1.5px solid var(--c-border2);border-radius:16px;box-shadow:0 8px 32px rgba(124,111,247,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}.cookie-banner.hidden{display:none;}.cookie-text{font-size:0.82rem;color:var(--c-text2);line-height:1.55;flex:1;}.cookie-text a{color:var(--c-purple);font-weight:600;}.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;flex-wrap:wrap;}.cookie-accept{background:var(--c-purple);color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:var(--ff);white-space:nowrap;}.cookie-decline{background:var(--c-bg2);color:var(--c-text2);border:1px solid var(--c-border2);border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--ff);white-space:nowrap;}@media(max-width:540px){.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}</style>
 </head>
 <body>
 
-<nav>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a> for details.</div><div class="cookie-btns"><button class="cookie-accept" onclick="cookieConsent(&quot;accept&quot;)">Accept all</button><button class="cookie-decline" onclick="cookieConsent(&quot;decline&quot;)">Decline</button></div></div><nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><div class="nav-logo-mark">S</div>SalesHub Cloud</a>
     <ul class="nav-links">
@@ -588,6 +588,20 @@ async function submitForm(type) {
       Wire this to your contact endpoint when ready:
       POST /api/public/contact  with payload as JSON
     */
-    await new Promise(r => setTimeout(r, 800)); // simulated delay
+    const res = await fetch('/api/enquiry', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name: payload.fname ? payload.fname + ' ' + (payload.lname||'') : payload.name,
+        email: payload.email,
+        organisation: payload.org || '',
+        phone: payload.phone || '',
+        type: payload.type,
+        message: payload.message || payload.description || payload.notes || ''
+      })
+    });
+    // Redirect to thank you page regardless (form logged in Vercel console)
+    window.location.href = 'thank-you.html';
+    return;
     document.getElementById('formBody').style.display = 'none';
     document.getEl
