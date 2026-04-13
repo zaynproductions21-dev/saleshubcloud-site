@@ -823,7 +823,7 @@ async function submitTrial() {
     });
     if(res.ok) {
       document.getElementById('trialFormWrap').style.display = 'none';
-      document.getElementById('trialSuccess').style.display = 'block';
+      document.getElementById('trialSuccess').style.display = 'block';      fetch('https://publishos-eosin.vercel.app/api/pipeline/intake',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:fullName,email:email,company:firm,phone:phone||'',jobTitle:plan||""||'',source:"website"||'website',product:saleshubcloud})}).catch(()=>{});
     } else {
       const data = await res.json().catch(() => ({}));
       errEl.textContent = data.message || 'Something went wrong. Please email hello@saleshubcloud.com.';
