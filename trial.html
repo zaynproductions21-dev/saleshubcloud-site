@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Start Free Trial — SalesHub Cloud</title>
-  <meta name="description" content="Start your 14-day free trial of SalesHub Cloud. AI-driven sales intelligence for UK sales teams. No credit card required." />
+  <meta name="description" content="Start your 14-day free trial of SalesHub Cloud. AI-driven CRM for UK sales teams. No credit card required." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
   <style>
@@ -20,7 +20,6 @@
     .badge { font-size: 11px; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 4px 10px; border-radius: 20px; border: 1px solid #bfdbfe; }
     .pill { display: inline-block; padding: 4px 14px; border-radius: 20px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 11px; font-weight: 700; color: #2563eb; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .field { margin-bottom: 0; }
     label { font-size: 11px; font-weight: 700; color: #475569; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
     input, select { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid #e2e8f0; font-size: 14px; font-family: inherit; color: #1e293b; background: #fff; transition: all 0.15s; }
     input:hover, select:hover { border-color: #bfdbfe; }
@@ -32,15 +31,6 @@
     .fine-print { font-size: 11px; color: #94a3b8; text-align: center; line-height: 1.6; }
     .fine-print a { color: #2563eb; }
     .error { padding: 10px 14px; background: #fef2f2; border-radius: 8px; border: 1px solid #fecaca; font-size: 12px; color: #dc2626; }
-    .success-card { text-align: center; }
-    .success-icon { font-size: 56px; margin-bottom: 16px; }
-    .success-title { font-size: 26px; font-weight: 800; color: #1e293b; margin-bottom: 12px; }
-    .success-text { font-size: 14px; color: #64748b; line-height: 1.7; margin-bottom: 24px; }
-    .success-tip { padding: 16px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe; font-size: 13px; color: #2563eb; font-weight: 500; }
-    .social-proof { margin-top: 28px; text-align: center; max-width: 480px; }
-    .proof-text { font-size: 12px; color: #94a3b8; margin-bottom: 10px; }
-    .proof-items { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .proof-item { font-size: 11px; color: #64748b; font-weight: 600; }
     @media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } .card { padding: 28px 20px; } }
   </style>
 </head>
@@ -50,52 +40,54 @@
     <span class="logo-text">SalesHub Cloud</span>
   </a>
 
+  <!-- Form -->
   <div class="card" id="formCard">
     <div style="text-align:center;margin-bottom:24px;">
       <span class="pill">14-Day Free Trial</span>
-      <h1>Close more deals with AI-powered sales intelligence</h1>
+      <h1>Close more deals with AI-powered CRM</h1>
       <p class="subtitle">Join UK sales teams already using SalesHub Cloud. No credit card required.</p>
     </div>
     <div class="badge-row">
-      <span class="badge">✓ Lead scoring AI</span>
+      <span class="badge">✓ AI case notes</span>
       <span class="badge">✓ Pipeline automation</span>
       <span class="badge">✓ UK data residency</span>
     </div>
     <form id="trialForm" class="form-stack">
       <div class="grid2">
-        <div class="field">
+        <div>
           <label>Full Name *</label>
           <input type="text" id="name" placeholder="James Clarke" required />
         </div>
-        <div class="field">
+        <div>
           <label>Work Email *</label>
           <input type="email" id="email" placeholder="james@company.co.uk" required />
         </div>
       </div>
-      <div class="field">
+      <div>
         <label>Company Name *</label>
         <input type="text" id="company" placeholder="Clarke & Associates" required />
       </div>
       <div class="grid2">
-        <div class="field">
+        <div>
           <label>Phone</label>
           <input type="tel" id="phone" placeholder="+44 7700 900000" />
         </div>
-        <div class="field">
+        <div>
           <label>Your Role</label>
           <select id="jobTitle">
             <option value="">Select role...</option>
             <option>Sales Director</option>
             <option>Head of Sales</option>
+            <option>Managing Partner</option>
             <option>Account Executive</option>
-            <option>Sales Development Rep</option>
+            <option>Business Development Manager</option>
             <option>Revenue Operations</option>
             <option>Founder / CEO</option>
             <option>Other</option>
           </select>
         </div>
       </div>
-      <div class="field">
+      <div>
         <label>How did you hear about us?</label>
         <select id="source">
           <option value="">Select...</option>
@@ -111,53 +103,125 @@
     </form>
   </div>
 
-  <div class="card success-card" id="successCard" style="display:none;max-width:480px;">
-    <div class="success-icon">🎉</div>
-    <h2 class="success-title">You're on the list!</h2>
-    <p class="success-text">We'll send your trial access to <strong id="successEmail"></strong> within 24 hours. Our team will reach out to help you get set up.</p>
-    <div class="success-tip">💡 In the meantime, explore our <a href="/#features" style="color:#2563eb;font-weight:700;">features</a> to see what's included.</div>
+  <!-- Success screen -->
+  <div class="card" id="successCard" style="display:none;max-width:480px;text-align:center;">
+    <div style="font-size:56px;margin-bottom:16px;">🎉</div>
+    <h2 style="font-size:26px;font-weight:800;color:#1e293b;margin-bottom:12px;" id="successTitle">Your account is ready!</h2>
+    <p style="font-size:14px;color:#64748b;line-height:1.7;margin-bottom:20px;">
+      We've sent your login details to <strong id="successEmail"></strong>.
+      Your 14-day free trial starts now — full access, no credit card needed.
+    </p>
+    <div id="trialBadge" style="display:none;padding:12px 16px;background:#eff6ff;border-radius:10px;border:1px solid #bfdbfe;font-size:13px;color:#2563eb;font-weight:600;margin-bottom:20px;"></div>
+    <div id="loginBtnWrap" style="display:none;margin-bottom:16px;">
+      <a id="loginBtn" href="https://crm-duplicate.replit.app" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#2563eb;color:#fff;font-size:14px;font-weight:700;text-decoration:none;">Go to SalesHub Cloud →</a>
+    </div>
+    <div id="waitingMsg" style="padding:16px;background:#eff6ff;border-radius:12px;border:1px solid #bfdbfe;font-size:13px;color:#2563eb;font-weight:500;">
+      💡 Explore our <a href="/#features" style="color:#2563eb;font-weight:700;">features</a> while we set up your account.
+    </div>
   </div>
 
-  <div class="social-proof">
-    <p class="proof-text">Trusted by UK sales teams</p>
-    <div class="proof-items">
-      <span class="proof-item">✓ AI lead scoring</span>
-      <span class="proof-item">✓ 14-day free trial</span>
-      <span class="proof-item">✓ No credit card</span>
-      <span class="proof-item">✓ UK data storage</span>
+  <div style="margin-top:28px;text-align:center;max-width:480px;">
+    <p style="font-size:12px;color:#94a3b8;margin-bottom:10px;">Trusted by UK sales teams</p>
+    <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+      <span style="font-size:11px;color:#64748b;font-weight:600;">✓ AI lead scoring</span>
+      <span style="font-size:11px;color:#64748b;font-weight:600;">✓ 14-day free trial</span>
+      <span style="font-size:11px;color:#64748b;font-weight:600;">✓ No credit card</span>
+      <span style="font-size:11px;color:#64748b;font-weight:600;">✓ UK data storage</span>
     </div>
   </div>
 
   <script>
-    const INTAKE_URL = 'https://publishos-eosin.vercel.app/api/pipeline/intake';
+    const PUBLISHOS_INTAKE  = 'https://publishos-eosin.vercel.app/api/pipeline/intake';
+    const PUBLISHOS_CONFIRM = 'https://publishos-eosin.vercel.app/api/pipeline/confirm';
+    // ⚠️ To be built in Replit — see Trials chat
+    const SALESHUB_APP_SIGNUP = 'https://crm-duplicate.replit.app/api/public/trial-signup';
+    const SALESHUB_APP_URL    = 'https://crm-duplicate.replit.app';
+
     document.getElementById('trialForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = document.getElementById('submitBtn');
+      const btn   = document.getElementById('submitBtn');
       const errEl = document.getElementById('errorMsg');
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const company = document.getElementById('company').value.trim();
-      const phone = document.getElementById('phone').value.trim();
+
+      const name     = document.getElementById('name').value.trim();
+      const email    = document.getElementById('email').value.trim();
+      const company  = document.getElementById('company').value.trim();
+      const phone    = document.getElementById('phone').value.trim();
       const jobTitle = document.getElementById('jobTitle').value;
-      const source = document.getElementById('source').value;
+      const source   = document.getElementById('source').value;
+
       if (!name || !email || !company) return;
       btn.disabled = true;
-      btn.textContent = 'Starting your trial...';
+      btn.textContent = 'Creating your account...';
       errEl.style.display = 'none';
+
       try {
-        const res = await fetch(INTAKE_URL, {
+        // ── Step 1: POST to PublishOS pipeline ──────────────────────────
+        await fetch(PUBLISHOS_INTAKE, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, email, company, phone, jobTitle, source, product: 'saleshubcloud' })
+          body: JSON.stringify({ name, email, company, phone, jobTitle, source, product: 'saleshubcloud' }),
         });
-        if (res.ok || res.status === 409) {
-          document.getElementById('successEmail').textContent = email;
-          document.getElementById('formCard').style.display = 'none';
-          document.getElementById('successCard').style.display = 'block';
-        } else {
-          throw new Error('Failed');
+        // 409 = duplicate, continue anyway
+
+        // ── Step 2: POST to SalesHub Replit app ─────────────────────────
+        let appData = null;
+        let appReady = false;
+        try {
+          const appRes = await fetch(SALESHUB_APP_SIGNUP, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name, email,
+              organisationName: company,
+              phone: phone || undefined,
+              jobTitle: jobTitle || undefined,
+            }),
+          });
+          if (appRes.ok) {
+            appData = await appRes.json();
+            appReady = appData && appData.success;
+          }
+        } catch (_) {
+          appReady = false; // Replit endpoint not built yet — fail gracefully
         }
-      } catch {
+
+        // ── Step 3: Confirm back to PublishOS ───────────────────────────
+        if (appReady && appData) {
+          fetch(PUBLISHOS_CONFIRM, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email, product: 'saleshubcloud',
+              trialEndsAt: appData.trialEndsAt,
+              appLoginUrl: appData.loginUrl || SALESHUB_APP_URL,
+              organisationId: String(appData.organisationId || ''),
+            }),
+          }).catch(() => {});
+        }
+
+        // ── Step 4: Show success screen ─────────────────────────────────
+        document.getElementById('successEmail').textContent = email;
+
+        if (appReady && appData) {
+          document.getElementById('successTitle').textContent = 'Your account is ready!';
+          if (appData.trialEndsAt) {
+            const expiry = new Date(appData.trialEndsAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+            const badge = document.getElementById('trialBadge');
+            badge.textContent = '✓ Trial active — expires ' + expiry;
+            badge.style.display = 'block';
+          }
+          document.getElementById('loginBtnWrap').style.display = 'block';
+          document.getElementById('waitingMsg').style.display = 'none';
+        } else {
+          document.getElementById('successTitle').textContent = "You're on the list!";
+          document.getElementById('loginBtnWrap').style.display = 'none';
+          document.getElementById('waitingMsg').style.display = 'block';
+        }
+
+        document.getElementById('formCard').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+
+      } catch (_) {
         errEl.textContent = 'Something went wrong. Please try again or email hello@saleshubcloud.com';
         errEl.style.display = 'block';
         btn.disabled = false;
