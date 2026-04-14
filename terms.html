@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%237C6FF7%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%235BC4C0%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%274%27 fill=%27white%27/%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — Sales Hub Cloud</title>
@@ -82,178 +83,34 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .stripe-badge{padding:3px 8px;background:#f6f9fc;}
 .stripe-badge svg{height:16px;width:auto;}
 
+
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+.burger span{display:block;width:22px;height:2px;background:var(--c-text);border-radius:2px;transition:transform .2s,opacity .2s;}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(250,240,246,0.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);padding:1rem 1.5rem 1.5rem;z-index:99;flex-direction:column;gap:0;box-shadow:0 4px 20px rgba(124,111,247,0.1);}
+.mobile-menu.open{display:flex!important;}
+.mobile-menu a{display:block;padding:0.9rem 0;font-size:0.95rem;font-weight:600;color:var(--c-text2);text-decoration:none;border-bottom:1px solid var(--c-border);}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu a:hover{color:var(--c-purple);}
+.mob-cta-wrap{display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;}
+.mob-btn-primary{background:var(--c-purple);color:white;border-radius:10px;padding:0.85rem;text-align:center;font-weight:700;font-size:0.95rem;text-decoration:none;display:block;}
+.mob-btn-secondary{background:white;color:#1E1A3C;border-radius:10px;padding:0.75rem;text-align:center;font-weight:600;font-size:0.95rem;border:1.5px solid #D8CEFB;text-decoration:none;display:block;}
+.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1.5px solid #D8CEFB;border-radius:16px;box-shadow:0 8px 32px rgba(124,111,247,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}
+@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}
+.cookie-banner.hidden{display:none;}
+.cookie-text{font-size:0.82rem;color:#5A5478;line-height:1.55;flex:1;}
+.cookie-text a{color:#7C6FF7;font-weight:600;}
+.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;}
+.cookie-accept{background:#7C6FF7;color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+.cookie-decline{background:#F3EFF9;color:#5A5478;border:1px solid #D8CEFB;border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;white-space:nowrap;}
+@media (max-width:768px){.nav-links{display:none!important;}.nav-right{display:none!important;}.burger{display:flex!important;}.nav-inner{padding:0 1rem!important;}.nav-logo-text{font-size:0.875rem;}.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><div class="nav-logo-mark">S</div>SalesHub Cloud</a>
-    <a href="index.html" class="nav-back">← Back to home</a>
-  </div>
-</nav>
-
-<div class="legal-hero">
-  <div class="legal-hero-inner">
-    <div class="legal-tag">Legal</div>
-    <h1 class="legal-h1">Terms of Service</h1>
-    <p class="legal-meta">Last updated: <strong>1 January 2025</strong> · Governing law: <strong>England and Wales</strong></p>
-  </div>
-</div>
-
-<div class="legal-body">
-  <div class="legal-body-inner">
-
-    <div class="toc">
-      <div class="toc-title">Contents</div>
-      <ol>
-        <li><a href="#agreement">Agreement to these terms</a></li>
-        <li><a href="#service">The service</a></li>
-        <li><a href="#accounts">Accounts and organisations</a></li>
-        <li><a href="#trial">Free trial</a></li>
-        <li><a href="#subscriptions">Subscriptions and payment</a></li>
-        <li><a href="#acceptable-use">Acceptable use</a></li>
-        <li><a href="#your-data">Your data</a></li>
-        <li><a href="#ip">Intellectual property</a></li>
-        <li><a href="#availability">Availability and support</a></li>
-        <li><a href="#liability">Limitation of liability</a></li>
-        <li><a href="#termination">Termination</a></li>
-        <li><a href="#changes">Changes to these terms</a></li>
-        <li><a href="#governing-law">Governing law</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ol>
-    </div>
-
-    <div class="highlight-box">
-      <p><strong>Plain English summary:</strong> By using Sales Hub Cloud you agree to these terms. Pay on time, use the service lawfully, own your data. We limit our liability and can suspend accounts that breach these terms.</p>
-    </div>
-
-    <h2 id="agreement">1. Agreement to these terms</h2>
-    <p>By accessing or using Sales Hub Cloud ("the Service"), you agree to be bound by these Terms of Service ("Terms"). If you are using the Service on behalf of an organisation, you confirm that you have authority to bind that organisation to these Terms.</p>
-    <p>These Terms form a legally binding agreement between you (or your organisation) and <strong>Zayn Productions Ltd</strong> (Company No. 16892199), trading as Sales Hub Cloud, registered at 1 Alvin Street, Gloucester, England, GL1 3EJ ("we", "us", "our").</p>
-
-    <div class="divider"></div>
-
-    <h2 id="service">2. The service</h2>
-    <p>Sales Hub Cloud is a software-as-a-service (SaaS) CRM and client management platform. We grant you a limited, non-exclusive, non-transferable licence to access and use the Service during your subscription period, subject to these Terms.</p>
-    <p>We reserve the right to modify, update, or discontinue features of the Service at any time. Where we make material changes, we will provide reasonable notice.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="accounts">3. Accounts and organisations</h2>
-    <ul>
-      <li>You must provide accurate and complete information when creating an account.</li>
-      <li>You are responsible for maintaining the security of your password and account credentials.</li>
-      <li>You must notify us immediately of any unauthorised access to your account.</li>
-      <li>Each organisation operates in a fully isolated environment. You must not attempt to access another organisation's data.</li>
-      <li>You are responsible for all activity that occurs under your account and for all users you add to your organisation.</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2 id="trial">4. Free trial</h2>
-    <p>We offer a <strong>14-day free trial</strong> on all plans. No credit card is required to start a trial.</p>
-    <ul>
-      <li>Trial accounts have full access to the features of the selected plan for 14 days.</li>
-      <li>At the end of the trial period, your account will be paused unless you subscribe.</li>
-      <li>Trial data is retained for 30 days after expiry, after which it may be permanently deleted.</li>
-      <li>We reserve the right to terminate or refuse a trial at our discretion if we believe the Service is being misused.</li>
-      <li>Only one free trial per organisation is permitted.</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2 id="subscriptions">5. Subscriptions and payment</h2>
-    <h3>Plans and pricing</h3>
-    <p>Subscriptions are billed on a per-user, per-month basis. Current pricing is published at <a href="index.html#pricing">saleshubcloud.co.uk/#pricing</a>. Prices are in GBP and exclude VAT where applicable.</p>
-    <h3>Billing</h3>
-    <ul>
-      <li>Subscriptions renew automatically at the start of each billing period.</li>
-      <li>You authorise us (or our payment processor) to charge the payment method on file.</li>
-      <li>If payment fails, we will make reasonable attempts to collect and may suspend access after 7 days of non-payment.</li>
-    </ul>
-    <h3>Cancellation and refunds</h3>
-    <ul>
-      <li>You may cancel your subscription at any time. Cancellation takes effect at the end of the current billing period.</li>
-      <li>We do not offer refunds for partial months or unused periods, except where required by law.</li>
-      <li>If we terminate your account for breach of these Terms, no refund will be issued.</li>
-    </ul>
-    <h3>Price changes</h3>
-    <p>We may change our pricing with at least 30 days' notice. Continued use of the Service after the notice period constitutes acceptance of the new pricing.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="acceptable-use">6. Acceptable use</h2>
-    <p>You agree not to use the Service to:</p>
-    <ul>
-      <li>Send spam, unsolicited messages, or bulk communications without consent</li>
-      <li>Violate any applicable law or regulation, including UK GDPR and data protection law</li>
-      <li>Harass, abuse, or harm any person</li>
-      <li>Attempt to gain unauthorised access to any part of the Service or other users' data</li>
-      <li>Reverse engineer, decompile, or attempt to extract the source code of the Service</li>
-      <li>Use the Service to store or transmit malicious code</li>
-      <li>Resell, sublicense, or white-label the Service without our written permission</li>
-      <li>Use automated scripts or bots to access the Service in a way that causes disproportionate load</li>
-    </ul>
-    <p>Breach of these provisions may result in immediate suspension or termination of your account.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="your-data">7. Your data</h2>
-    <p>You retain full ownership of all data you upload or create in Sales Hub Cloud ("Your Data"). We process Your Data only on your instructions to provide the Service.</p>
-    <p>You are responsible for ensuring that Your Data — including your clients' personal data — is processed in accordance with all applicable data protection laws (including UK GDPR). You confirm that you have a lawful basis for storing and processing your clients' personal data in the Service.</p>
-    <p>Our Data Processing Agreement, which forms part of these Terms for business customers, is available on request at <a href="/cdn-cgi/l/email-protection#82f2f0ebf4e3e1fbc2f1e3eee7f1eaf7e0e1eeedf7e6ace1edef"><span class="__cf_email__" data-cfemail="1363617a6572706a5360727f76607b6671707f7c66773d707c7e">[email&#160;protected]</span></a>.</p>
-    <p>On termination of your account, you may request an export of Your Data within 90 days. After 90 days, we may permanently delete it.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="ip">8. Intellectual property</h2>
-    <p>The Sales Hub Cloud platform, including its design, code, features, and branding, is owned by Zayn Productions Ltd and protected by intellectual property law. These Terms do not grant you any rights to our intellectual property beyond the limited licence to use the Service.</p>
-    <p>You grant us a limited licence to host, process, and display Your Data solely as necessary to provide the Service.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="availability">9. Availability and support</h2>
-    <p>We aim to maintain high availability of the Service but do not guarantee uninterrupted access. Planned maintenance will be communicated in advance where possible.</p>
-    <p>Support is provided via email at <a href="/cdn-cgi/l/email-protection#5d35383131321d2e3c31382e35283f3e31322839733e3230"><span class="__cf_email__" data-cfemail="f29a979e9e9db281939e97819a8790919e9d8796dc919d9f">[email&#160;protected]</span></a>. Priority support is available on the Scale plan.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="liability">10. Limitation of liability</h2>
-    <div class="warn-box">
-      <p><strong>Important:</strong> Please read this section carefully as it limits our liability to you.</p>
-    </div>
-    <p>To the maximum extent permitted by law:</p>
-    <ul>
-      <li>The Service is provided "as is" without warranties of any kind, express or implied.</li>
-      <li>We are not liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill.</li>
-      <li>Our total aggregate liability to you in any 12-month period will not exceed the fees you paid to us in that same period.</li>
-    </ul>
-    <p>Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, fraud, or any other liability that cannot be excluded under English law.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="termination">11. Termination</h2>
-    <p>Either party may terminate the agreement at any time:</p>
-    <ul>
-      <li><strong>You</strong> may cancel your subscription at any time via your account settings or by contacting us.</li>
-      <li><strong>We</strong> may suspend or terminate your account immediately if you breach these Terms, fail to pay, or if we reasonably suspect fraudulent or harmful activity.</li>
-    </ul>
-    <p>On termination, your access to the Service will cease. Provisions that by their nature should survive termination (including data ownership, IP, and liability) will continue to apply.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="changes">12. Changes to these terms</h2>
-    <p>We may update these Terms from time to time. We will notify you of material changes by email or by displaying a notice in the platform at least 14 days before they take effect. Continued use of the Service after that date constitutes acceptance of the updated Terms.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="governing-law">13. Governing law</h2>
-    <p>These Terms are governed by the laws of <strong>England and Wales</strong>. Any disputes arising from these Terms or your use of the Service will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="contact">14. Contact</h2>
-    <p>For questions about these Terms:</p>
-    <ul>
-      <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#8ee6ebe2e2e1cefdefe2ebfde6fbecede2e1fbeaa0ede1e3"><span class="__cf_email__" data-cfemail="761e131a1a193605171a13051e0314151a1903125815191b">[email&#160;protected]</span></a></li>
-      <li><strong>Post:</strong> Zayn Productions Ltd, 1 Alvin Stre
+<nav><div class="nav-inner"><a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul><div class="nav-right"><button class="btn-ghost" onclick="openDemo()">Book a demo</button><button class="btn-nav" onclick="openTrial()">Start free trial</button></div><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a> for details.</div><div class="cookie-btns"><button class="cookie-accept" onclick="cookieConsent(&quot;accept&quot;)">Accept all</button><button class="cookie-decline" onclick="cookieConsent(&quot;decline&quot;)">Decline</button></div></div>
+<script>(function(){var btn=document.getElementById("burgerBtn");var menu=document.getElementById("mobileMenu");if(!btn||!menu)return;btn.addEventListener("click",function(){btn.classList.toggle("open");menu.classList.toggle("open");});menu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){btn.classList.remove("open");menu.classList.remove("open");});});})();</script>

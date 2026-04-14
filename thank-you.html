@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You Ñ SalesHub Cloud</title>
+<title>Thank You Ã‘ SalesHub Cloud</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%237C6FF7%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%235BC4C0%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%274%27 fill=%27white%27/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -24,6 +24,31 @@ p{font-size:0.95rem;color:#5A5478;line-height:1.7;margin-bottom:1.5rem;}
 .btn:hover{background:#5A4FD6;}
 .footer-note{margin-top:1.25rem;font-size:0.78rem;color:#9E99BE;}
 .footer-note a{color:#7C6FF7;font-weight:600;}
+
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+.burger span{display:block;width:22px;height:2px;background:var(--c-text);border-radius:2px;transition:transform .2s,opacity .2s;}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(250,240,246,0.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);padding:1rem 1.5rem 1.5rem;z-index:99;flex-direction:column;gap:0;box-shadow:0 4px 20px rgba(124,111,247,0.1);}
+.mobile-menu.open{display:flex!important;}
+.mobile-menu a{display:block;padding:0.9rem 0;font-size:0.95rem;font-weight:600;color:var(--c-text2);text-decoration:none;border-bottom:1px solid var(--c-border);}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu a:hover{color:var(--c-purple);}
+.mob-cta-wrap{display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;}
+.mob-btn-primary{background:var(--c-purple);color:white;border-radius:10px;padding:0.85rem;text-align:center;font-weight:700;font-size:0.95rem;text-decoration:none;display:block;}
+.mob-btn-secondary{background:white;color:#1E1A3C;border-radius:10px;padding:0.75rem;text-align:center;font-weight:600;font-size:0.95rem;border:1.5px solid #D8CEFB;text-decoration:none;display:block;}
+.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1.5px solid #D8CEFB;border-radius:16px;box-shadow:0 8px 32px rgba(124,111,247,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}
+@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}
+.cookie-banner.hidden{display:none;}
+.cookie-text{font-size:0.82rem;color:#5A5478;line-height:1.55;flex:1;}
+.cookie-text a{color:#7C6FF7;font-weight:600;}
+.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;}
+.cookie-accept{background:#7C6FF7;color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+.cookie-decline{background:#F3EFF9;color:#5A5478;border:1px solid #D8CEFB;border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;white-space:nowrap;}
+@media (max-width:768px){.nav-links{display:none!important;}.nav-right{display:none!important;}.burger{display:flex!important;}.nav-inner{padding:0 1rem!important;}.nav-logo-text{font-size:0.875rem;}.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}
 </style>
 </head>
 <body>
@@ -60,4 +85,4 @@ document.getElementById('refNum').textContent = 'REF #' + ref;
 // fbq('track', 'Lead', { currency: 'GBP', value: 99 });
 </script>
 </body>
-</html>
+</html><script>(function(){if(localStorage.getItem("shc_cookie_consent"))document.getElementById("cookieBanner").classList.add("hidden");})();function cookieConsent(c){localStorage.setItem("shc_cookie_consent",c);document.getElementById("cookieBanner").classList.add("hidden");}</script>

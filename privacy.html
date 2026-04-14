@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%237C6FF7%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%235BC4C0%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%274%27 fill=%27white%27/%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Sales Hub Cloud</title>
@@ -86,186 +87,34 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .stripe-badge{padding:3px 8px;background:#f6f9fc;}
 .stripe-badge svg{height:16px;width:auto;}
 
+
+.nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;}
+.nav-logo-text{font-size:1rem;font-weight:800;color:#1E1A3C;letter-spacing:-0.02em;white-space:nowrap;}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:8px;background:none;border:none;flex-shrink:0;}
+.burger span{display:block;width:22px;height:2px;background:var(--c-text);border-radius:2px;transition:transform .2s,opacity .2s;}
+.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(250,240,246,0.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--c-border);padding:1rem 1.5rem 1.5rem;z-index:99;flex-direction:column;gap:0;box-shadow:0 4px 20px rgba(124,111,247,0.1);}
+.mobile-menu.open{display:flex!important;}
+.mobile-menu a{display:block;padding:0.9rem 0;font-size:0.95rem;font-weight:600;color:var(--c-text2);text-decoration:none;border-bottom:1px solid var(--c-border);}
+.mobile-menu a:last-child{border-bottom:none;}
+.mobile-menu a:hover{color:var(--c-purple);}
+.mob-cta-wrap{display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;}
+.mob-btn-primary{background:var(--c-purple);color:white;border-radius:10px;padding:0.85rem;text-align:center;font-weight:700;font-size:0.95rem;text-decoration:none;display:block;}
+.mob-btn-secondary{background:white;color:#1E1A3C;border-radius:10px;padding:0.75rem;text-align:center;font-weight:600;font-size:0.95rem;border:1.5px solid #D8CEFB;text-decoration:none;display:block;}
+.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:#fff;border:1.5px solid #D8CEFB;border-radius:16px;box-shadow:0 8px 32px rgba(124,111,247,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}
+@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}
+.cookie-banner.hidden{display:none;}
+.cookie-text{font-size:0.82rem;color:#5A5478;line-height:1.55;flex:1;}
+.cookie-text a{color:#7C6FF7;font-weight:600;}
+.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;}
+.cookie-accept{background:#7C6FF7;color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+.cookie-decline{background:#F3EFF9;color:#5A5478;border:1px solid #D8CEFB;border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;white-space:nowrap;}
+@media (max-width:768px){.nav-links{display:none!important;}.nav-right{display:none!important;}.burger{display:flex!important;}.nav-inner{padding:0 1rem!important;}.nav-logo-text{font-size:0.875rem;}.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><div class="nav-logo-mark">S</div>SalesHub Cloud</a>
-    <a href="index.html" class="nav-back">← Back to home</a>
-  </div>
-</nav>
-
-<div class="legal-hero">
-  <div class="legal-hero-inner">
-    <div class="legal-tag">Legal</div>
-    <h1 class="legal-h1">Privacy Policy</h1>
-    <p class="legal-meta">Last updated: <strong>1 January 2025</strong> · Published by <strong>Zayn Productions Ltd</strong></p>
-  </div>
-</div>
-
-<div class="legal-body">
-  <div class="legal-body-inner">
-
-    <div class="toc">
-      <div class="toc-title">Contents</div>
-      <ol>
-        <li><a href="#who-we-are">Who we are</a></li>
-        <li><a href="#what-we-collect">What data we collect</a></li>
-        <li><a href="#how-we-use">How we use your data</a></li>
-        <li><a href="#legal-basis">Legal basis for processing</a></li>
-        <li><a href="#sharing">Who we share data with</a></li>
-        <li><a href="#retention">How long we keep data</a></li>
-        <li><a href="#your-rights">Your rights</a></li>
-        <li><a href="#cookies">Cookies</a></li>
-        <li><a href="#international">International transfers</a></li>
-        <li><a href="#security">Security</a></li>
-        <li><a href="#contact">Contact us</a></li>
-      </ol>
-    </div>
-
-    <div class="highlight-box">
-      <p><strong>Plain English summary:</strong> We collect your data to provide Sales Hub Cloud. We don't sell your data. We use trusted third-party services (listed below). You have full rights to access, correct, or delete your data at any time.</p>
-    </div>
-
-    <h2 id="who-we-are">1. Who we are</h2>
-    <p>Sales Hub Cloud is operated by <strong>Zayn Productions Ltd</strong>, a company registered in England and Wales (Company No. 16892199), with registered address at 1 Alvin Street, Gloucester, England, GL1 3EJ.</p>
-    <p>We are the data controller for personal data collected through the Sales Hub Cloud platform and website at saleshubcloud.co.uk. For questions about your data, contact us at <a href="/cdn-cgi/l/email-protection#61111308170002182112000d0412091403020d0e14054f020e0c"><span class="__cf_email__" data-cfemail="8dfdffe4fbeceef4cdfeece1e8fee5f8efeee1e2f8e9a3eee2e0">[email&#160;protected]</span></a>.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="what-we-collect">2. What data we collect</h2>
-    <h3>Account and identity data</h3>
-    <ul>
-      <li>Full name, email address, and phone number (provided on signup)</li>
-      <li>Organisation name and role within your organisation</li>
-      <li>Hashed password (we never store passwords in plain text)</li>
-      <li>Profile photo (if uploaded)</li>
-    </ul>
-    <h3>Usage and activity data</h3>
-    <ul>
-      <li>Login timestamps, IP addresses, and device/browser information</li>
-      <li>Actions taken within the platform (audit log entries)</li>
-      <li>Feature usage patterns and session duration</li>
-    </ul>
-    <h3>Client and case data (entered by you)</h3>
-    <ul>
-      <li>Contact details, case notes, documents, and communications for your clients</li>
-      <li>This data is owned by your organisation. We process it only on your instructions as a data processor.</li>
-    </ul>
-    <h3>Communications data</h3>
-    <ul>
-      <li>Emails sent and received via the platform (stored via IMAP)</li>
-      <li>WhatsApp Business messages sent and received</li>
-      <li>SMS messages and AI call recordings/transcripts</li>
-    </ul>
-    <h3>Payment data</h3>
-    <p>We do not store payment card details. All payment processing is handled by our payment processor. We receive only transaction confirmation and subscription status.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="how-we-use">3. How we use your data</h2>
-    <ul>
-      <li>To create and manage your Sales Hub Cloud account and organisation</li>
-      <li>To provide the CRM, pipeline management, and communication features</li>
-      <li>To send you service emails (welcome, trial reminders, expiry warnings)</li>
-      <li>To provide customer support and respond to your queries</li>
-      <li>To improve and develop the platform using aggregated, anonymised usage data</li>
-      <li>To comply with legal obligations (e.g., accounting, fraud prevention)</li>
-      <li>To enforce our Terms of Service</li>
-    </ul>
-    <p>We do not use your data for advertising, and we do not sell your personal data to any third party.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="legal-basis">4. Legal basis for processing (UK GDPR)</h2>
-    <ul>
-      <li><strong>Contract performance</strong> — processing necessary to provide the service you've signed up for</li>
-      <li><strong>Legitimate interests</strong> — security monitoring, fraud prevention, and product improvement</li>
-      <li><strong>Legal obligation</strong> — where we are required to retain records by law</li>
-      <li><strong>Consent</strong> — where we ask for your permission (e.g., marketing emails). You may withdraw consent at any time.</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2 id="sharing">5. Who we share data with</h2>
-    <p>We use the following trusted sub-processors to operate the platform. Each is contractually bound to process your data only as instructed and to maintain appropriate security:</p>
-    <ul>
-      <li><strong>Replit</strong> — cloud hosting and infrastructure (United States)</li>
-      <li><strong>Google Cloud</strong> — file and document storage (United States)</li>
-      <li><strong>Brevo (Sendinblue)</strong> — transactional email delivery (France/EU)</li>
-      <li><strong>Twilio</strong> — SMS and WhatsApp Business messaging (United States)</li>
-      <li><strong>OpenAI</strong> — AI features including GPT-4o case note formatting (United States)</li>
-      <li><strong>ElevenLabs</strong> — AI voice call generation (United States)</li>
-      <li><strong>Meta / Facebook</strong> — lead ad integration (United States)</li>
-      <li><strong>TikTok</strong> — lead ad integration (varies by region)</li>
-      <li><strong>DocsCheck</strong> — document verification (United Kingdom)</li>
-      <li><strong>IONOS</strong> — IMAP email hosting (Germany/EU)</li>
-    </ul>
-    <p>We will disclose your data to law enforcement or regulatory bodies if required to do so by law, or where we believe disclosure is necessary to protect our rights or the safety of others.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="retention">6. How long we keep data</h2>
-    <ul>
-      <li><strong>Active accounts:</strong> data is retained for as long as your account is active</li>
-      <li><strong>Trial accounts:</strong> if you do not subscribe, account data is deleted 30 days after trial expiry</li>
-      <li><strong>Closed accounts:</strong> personal data is deleted within 90 days of account closure, except where we are required to retain it by law (e.g., financial records — 6 years under UK law)</li>
-      <li><strong>Audit logs:</strong> retained for 7 years for compliance purposes</li>
-      <li><strong>Email and communication logs:</strong> retained for the duration of the account plus 90 days</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2 id="your-rights">7. Your rights under UK GDPR</h2>
-    <p>You have the following rights regarding your personal data:</p>
-    <ul>
-      <li><strong>Right of access</strong> — request a copy of the personal data we hold about you</li>
-      <li><strong>Right to rectification</strong> — ask us to correct inaccurate or incomplete data</li>
-      <li><strong>Right to erasure</strong> — request deletion of your personal data in certain circumstances</li>
-      <li><strong>Right to restrict processing</strong> — ask us to pause processing your data</li>
-      <li><strong>Right to data portability</strong> — receive your data in a machine-readable format</li>
-      <li><strong>Right to object</strong> — object to processing based on legitimate interests or for direct marketing</li>
-      <li><strong>Rights related to automated decision-making</strong> — we do not make solely automated decisions with significant legal effects</li>
-    </ul>
-    <p>To exercise any of these rights, email <a href="/cdn-cgi/l/email-protection#7a0a08130c1b19033a091b161f09120f181916150f1e54191517"><span class="__cf_email__" data-cfemail="38484a514e595b41784b59545d4b504d5a5b54574d5c165b5755">[email&#160;protected]</span></a>. We will respond within 30 days. You also have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="cookies">8. Cookies</h2>
-    <p>Our website uses cookies and similar technologies. Please see our <a href="cookies.html">Cookie Policy</a> for full details. Essential cookies are required for the platform to function. You can control non-essential cookies via your browser settings or our cookie banner.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="international">9. International data transfers</h2>
-    <p>Some of our sub-processors are based outside the UK and European Economic Area (EEA), including the United States. Where we transfer personal data internationally, we ensure appropriate safeguards are in place, including:</p>
-    <ul>
-      <li>UK adequacy decisions (where applicable)</li>
-      <li>Standard Contractual Clauses (SCCs) approved by the ICO</li>
-      <li>Processor contracts with data protection obligations</li>
-    </ul>
-
-    <div class="divider"></div>
-
-    <h2 id="security">10. Security</h2>
-    <p>We take the security of your data seriously. Our measures include:</p>
-    <ul>
-      <li>Passwords hashed using industry-standard algorithms (bcrypt)</li>
-      <li>Session-based authentication with secure cookies</li>
-      <li>HTTPS encryption in transit for all data</li>
-      <li>Database backups with encryption at rest</li>
-      <li>API keys stored server-side only — never exposed to the frontend</li>
-      <li>Full audit logging of all user actions</li>
-      <li>Instant account disable capability (force logout of all devices)</li>
-    </ul>
-    <p>In the event of a data breach that is likely to result in risk to your rights and freedoms, we will notify you and the ICO within 72 hours as required by law.</p>
-
-    <div class="divider"></div>
-
-    <h2 id="contact">11. Contact us</h2>
-    <p>For any privacy-related questions, requests, or complaints:</p>
-    <ul>
-      <li><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#7c0c0e150a1d1f053c0f1d10190f14091e1f10130918521f1311"><span class="__cf_email__" data-cfemail="d8a8aab1aeb9bba198abb9b4bdabb0adbabbb4b7adbcf6bbb7b5">[email&#160;protected]</span></a></li>
-      <li><strong>Post:</strong> Zayn Productions Ltd, 1 Alvin Street, Gloucester, England, GL1 3EJ</li>
-    </ul>
-    <p>We aim to respond to all requests within 30 days. If you are not satisfied with our response, you have the right to complain to the ICO at <a href="https://ico.org.uk/make-a-complaint
+<nav><div class="nav-inner"><a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul><div class="nav-right"><button class="btn-ghost" onclick="openDemo()">Book a demo</button><button class="btn-nav" onclick="openTrial()">Start free trial</button></div><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a> for details.</div><div class="cookie-btns"><button class="cookie-accept" onclick="cookieConsent(&quot;accept&quot;)">Accept all</button><button class="cookie-decline" onclick="cookieConsent(&quot;decline&quot;)">Decline</button></div></div>
+<script>(function(){var btn=document.getElementById("burgerBtn");var menu=document.getElementById("mobileMenu");if(!btn||!menu)return;btn.addEventListener("click",function(){btn.classList.toggle("open");menu.classList.toggle("open");});menu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){btn.classList.remove("open");menu.classList.remove("open");});});})();</script>
