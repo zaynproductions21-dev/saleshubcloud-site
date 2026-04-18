@@ -6,11 +6,11 @@ const PRICE_TO_PLAN = {
   'price_1TMvyH8rk99sE9j0Q1iof8o5': 'scale',
 };
 
-async function activateSubscription(email, plan) {
+async function activateSubscription(email, plan, stripeCustomerId, stripeSubscriptionId) {
   const res = await fetch('https://api.saleshubcloud.com/api/internal/activate-subscription', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, plan }),
+    headers: { 'Content-Type': 'application/json', 'x-internal-key': 'zaynprod2024' },
+    body: JSON.stringify({ email, plan, stripeCustomerId, stripeSubscriptionId }),
   });
   if (!res.ok) {
     console.error('activate-subscription failed:', res.status, await res.text());
@@ -20,7 +20,7 @@ async function activateSubscription(email, plan) {
 async function deactivateSubscription(email) {
   const res = await fetch('https://api.saleshubcloud.com/api/internal/activate-subscription', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json', 'x-internal-key': 'zaynprod2024' },
     body: JSON.stringify({ email, plan: 'cancelled' }),
   });
   if (!res.ok) {
@@ -74,7 +74,7 @@ module.exports = async function handler(req, res) {
         const sub = await stripe.subscriptions.retrieve(session.subscription);
         const priceId = sub.items.data[0]?.price.id;
         const plan = PRICE_TO_PLAN[priceId] || 'essentials';
-        await activateSubscription(email, plan);
+        await activateSubscription(email, plan, session.customer, session.subscription);
         console.log(`Subscription activated: ${email} → ${plan}`);
       }
       break;
