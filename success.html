@@ -3,27 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Subscription Active — SalesHub Cloud</title>
+<title>Payment Successful — SalesHub Cloud</title>
 <link rel="icon" href="/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f8f9fc;font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif}
-.card{text-align:center;max-width:480px;padding:40px 24px}
-.icon{width:72px;height:72px;border-radius:50%;background:#f0fdf4;border:2px solid #bbf7d0;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px}
-h1{font-size:26px;font-weight:800;color:#0f172a;margin-bottom:12px;letter-spacing:-0.5px}
-p{font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px}
-.btn{display:inline-block;background:#7C6FF7;color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none}
+.wrap{max-width:520px;padding:48px 28px;text-align:center}
+.spinner{width:56px;height:56px;border:3px solid #e2e8f0;border-top-color:#7C6FF7;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.icon{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px}
+.icon-ok{background:#f0fdf4;border:2px solid #bbf7d0}
+.icon-err{background:#fef2f2;border:2px solid #fecaca}
+h1{font-size:24px;font-weight:800;color:#0f172a;margin-bottom:8px;letter-spacing:-.5px}
+p{font-size:15px;color:#64748b;line-height:1.7}
+.btn{display:inline-block;background:#7C6FF7;color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;margin-top:20px}
 .btn:hover{background:#6C5CE7}
-.note{font-size:13px;color:#94a3b8;margin-top:20px}
+.guide{margin-top:40px;text-align:left;background:#fff;border:1px solid #e8ecf0;border-radius:14px;padding:24px 28px}
+.guide h2{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:16px}
+.step{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.step-num{width:28px;height:28px;border-radius:50%;background:rgba(124,111,247,.1);color:#7C6FF7;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.step span{font-size:14px;color:#334155}
+#v-loading,#v-created,#v-exists,#v-error{display:none}
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="icon">✓</div>
-  <h1>Your subscription is active</h1>
-  <p>Welcome to SalesHub Cloud. Your account is ready — log in to start managing your pipeline.</p>
-  <a href="https://app.saleshubcloud.com" class="btn">Open SalesHub Cloud →</a>
-  <p class="note">A confirmation email is on its way.</p>
+<div class="wrap">
+  <div id="v-loading">
+    <div class="spinner"></div>
+    <h1>Payment successful</h1>
+    <p>Setting up your account...</p>
+  </div>
+
+  <div id="v-created">
+    <div class="icon icon-ok">✓</div>
+    <h1>Your account is ready!</h1>
+    <p>Check your email<span id="email-note"></span> for your login details and password.</p>
+    <a href="https://crm-duplicate.replit.app" class="btn">Go to login page →</a>
+    <div class="guide">
+      <h2>Getting started with SalesHub Cloud</h2>
+      <div class="step"><div class="step-num">1</div><span>Import your leads</span></div>
+      <div class="step"><div class="step-num">2</div><span>Set up your pipeline stages</span></div>
+      <div class="step"><div class="step-num">3</div><span>Connect WhatsApp Business</span></div>
+      <div class="step"><div class="step-num">4</div><span>Run your first drip sequence</span></div>
+    </div>
+  </div>
+
+  <div id="v-exists">
+    <div class="icon icon-ok">✓</div>
+    <h1>Your subscription is now active</h1>
+    <p>Log in to continue where you left off.</p>
+    <a href="https://crm-duplicate.replit.app" class="btn">Go to login page →</a>
+  </div>
+
+  <div id="v-error">
+    <div class="icon icon-err">!</div>
+    <h1>Something went wrong</h1>
+    <p>Your payment was successful but we couldn't set up your account automatically. Please contact us at hello@saleshubcloud.com and we'll sort it out.</p>
+    <a href="https://crm-duplicate.replit.app" class="btn">Go to login page →</a>
+  </div>
 </div>
+
+<script>
+(async function() {
+  show('v-loading');
+  var params = new URLSearchParams(window.location.search);
+  var sessionId = params.get('session_id');
+  if (!sessionId) { show('v-error'); return; }
+
+  try {
+    var sr = await fetch('/api/checkout-session?session_id=' + sessionId);
+    var sd = await sr.json();
+    if (!sd.email) { show('v-error'); return; }
+
+    var r = await fetch('https://api.saleshubcloud.com/api/public/trial-signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: sd.email, name: sd.name || sd.email.split('@')[0], plan: sd.plan || 'Essentials' })
+    });
+    var d = await r.json();
+
+    if (r.status === 409 || (d.error && d.error.toLowerCase().indexOf('exist') !== -1)) {
+      show('v-exists');
+    } else {
+      document.getElementById('email-note').textContent = ' at ' + sd.email;
+      show('v-created');
+    }
+  } catch(e) {
+    show('v-error');
+  }
+
+  function show(id) {
+    ['v-loading','v-created','v-exists','v-error'].forEach(function(v) {
+      document.getElementById(v).style.display = v === id ? 'block' : 'none';
+    });
+  }
+})();
+</script>
 </body>
 </html>
