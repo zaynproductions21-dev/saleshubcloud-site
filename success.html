@@ -23,6 +23,8 @@ p{font-size:15px;color:#64748b;line-height:1.7}
 .step{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .step-num{width:28px;height:28px;border-radius:50%;background:rgba(124,111,247,.1);color:#7C6FF7;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
 .step span{font-size:14px;color:#334155}
+.support{font-size:13px;color:#94a3b8;margin-top:24px;line-height:1.6}
+.support a{color:#7C6FF7}
 #v-loading,#v-created,#v-exists,#v-error{display:none}
 </style>
 </head>
@@ -37,15 +39,17 @@ p{font-size:15px;color:#64748b;line-height:1.7}
   <div id="v-created">
     <div class="icon icon-ok">✓</div>
     <h1>Your account is ready!</h1>
-    <p>Check your email<span id="email-note"></span> for your login details and password.</p>
+    <p>Check your email at <strong id="email-display" style="color:#0f172a"></strong> for your login credentials and temporary password.</p>
     <a href="https://app.saleshubcloud.com" class="btn">Go to login page →</a>
     <div class="guide">
       <h2>Getting started with SalesHub Cloud</h2>
-      <div class="step"><div class="step-num">1</div><span>Import your leads</span></div>
-      <div class="step"><div class="step-num">2</div><span>Set up your pipeline stages</span></div>
-      <div class="step"><div class="step-num">3</div><span>Connect WhatsApp Business</span></div>
-      <div class="step"><div class="step-num">4</div><span>Run your first drip sequence</span></div>
+      <div class="step"><div class="step-num">1</div><span>Log in with the details emailed to you</span></div>
+      <div class="step"><div class="step-num">2</div><span>Import or add your first leads</span></div>
+      <div class="step"><div class="step-num">3</div><span>Set up your pipeline stages</span></div>
+      <div class="step"><div class="step-num">4</div><span>Connect WhatsApp Business</span></div>
+      <div class="step"><div class="step-num">5</div><span>Run your first drip sequence</span></div>
     </div>
+    <p class="support">Need help? Email <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a> or call <a href="tel:02039605143">020 3960 5143</a></p>
   </div>
 
   <div id="v-exists">
@@ -53,12 +57,13 @@ p{font-size:15px;color:#64748b;line-height:1.7}
     <h1>Your subscription is now active</h1>
     <p>Log in to continue where you left off.</p>
     <a href="https://app.saleshubcloud.com" class="btn">Go to login page →</a>
+    <p class="support">Need help? Email <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a> or call <a href="tel:02039605143">020 3960 5143</a></p>
   </div>
 
   <div id="v-error">
     <div class="icon icon-err">!</div>
     <h1>Something went wrong</h1>
-    <p>Your payment was successful but we couldn't set up your account automatically. Please contact us at hello@saleshubcloud.com and we'll sort it out.</p>
+    <p>Your payment was successful but we couldn't set up your account automatically. Please contact us at <a href="mailto:hello@saleshubcloud.com" style="color:#7C6FF7">hello@saleshubcloud.com</a> or call <a href="tel:02039605143" style="color:#7C6FF7">020 3960 5143</a> and we'll sort it out.</p>
     <a href="https://app.saleshubcloud.com" class="btn">Go to login page →</a>
   </div>
 </div>
@@ -85,7 +90,7 @@ p{font-size:15px;color:#64748b;line-height:1.7}
     if (r.status === 409 || (d.error && d.error.toLowerCase().indexOf('exist') !== -1)) {
       show('v-exists');
     } else {
-      document.getElementById('email-note').textContent = ' at ' + sd.email;
+      document.getElementById('email-display').textContent = sd.email;
       show('v-created');
     }
   } catch(e) {
