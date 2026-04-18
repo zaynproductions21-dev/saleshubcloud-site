@@ -433,7 +433,8 @@ document.querySelectorAll('.mobile-menu a').forEach(function(a){
         <div class="price-desc">Everything a small firm needs to get started and manage their pipeline.</div>
         <div class="price-amount"><span class="price-currency">£</span><span class="price-num">24</span><span class="price-per">/user/mo</span></div>
         <div class="price-billed">Billed monthly · save 20% annually</div>
-        <button class="price-cta price-cta-outline" onclick="openTrial('Essentials')">Start 14-day free trial</button>
+        <button class="price-cta price-cta-outline" onclick="handleCheckout('price_1TMvyG8rk99sE9j0unH2AkNy', this)">Subscribe now</button>
+        <a href="javascript:openTrial('Essentials')" style="display:block;text-align:center;margin-top:8px;font-size:12px;color:var(--text-dim,#888);text-decoration:underline">or start free trial</a>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>Pipeline &amp; CRM (Contacts, Leads, Cases)</li>
@@ -459,7 +460,8 @@ document.querySelectorAll('.mobile-menu a').forEach(function(a){
         <div class="price-desc">Full automation, AI, and multi-channel comms for growing firms.</div>
         <div class="price-amount"><span class="price-currency">£</span><span class="price-num">39</span><span class="price-per">/user/mo</span></div>
         <div class="price-billed">Billed monthly · save 20% annually</div>
-        <button class="price-cta price-cta-primary" onclick="openTrial('Professional')">Start 14-day free trial</button>
+        <button class="price-cta price-cta-primary" onclick="handleCheckout('price_1TMvyG8rk99sE9j0cPNiEwyW', this)">Subscribe now</button>
+        <a href="javascript:openTrial('Professional')" style="display:block;text-align:center;margin-top:8px;font-size:12px;color:rgba(255,255,255,0.7);text-decoration:underline">or start free trial</a>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>Everything in Essentials</li>
@@ -483,7 +485,8 @@ document.querySelectorAll('.mobile-menu a').forEach(function(a){
         <div class="price-desc">Multi-org, full control, and advanced compliance for larger practices.</div>
         <div class="price-amount"><span class="price-currency">£</span><span class="price-num">59</span><span class="price-per">/user/mo</span></div>
         <div class="price-billed">Billed monthly · save 20% annually</div>
-        <button class="price-cta price-cta-outline" onclick="openTrial('Scale')">Start 14-day free trial</button>
+        <button class="price-cta price-cta-outline" onclick="handleCheckout('price_1TMvyH8rk99sE9j0Q1iof8o5', this)">Subscribe now</button>
+        <a href="javascript:openTrial('Scale')" style="display:block;text-align:center;margin-top:8px;font-size:12px;color:var(--text-dim,#888);text-decoration:underline">or start free trial</a>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li>Everything in Professional</li>
@@ -772,6 +775,32 @@ document.querySelectorAll('.reveal').forEach(el =>
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   }, {threshold: 0.08}).observe(el)
 );
+
+/* STRIPE CHECKOUT */
+async function handleCheckout(priceId, btn) {
+  var orig = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Redirecting...';
+  try {
+    var res = await fetch('/api/checkout', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ priceId: priceId, quantity: 1 })
+    });
+    var data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert(data.error || 'Something went wrong. Please try again.');
+      btn.disabled = false;
+      btn.textContent = orig;
+    }
+  } catch (e) {
+    alert('Connection error. Please try again.');
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
 
 /* MODALS */
 function openTrial(plan) {
