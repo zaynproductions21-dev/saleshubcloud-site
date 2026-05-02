@@ -878,6 +878,21 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     if(!isOpen) item.classList.add('open');
   });
 });
+
+/* COOKIE BANNER */
+function cookieConsent(choice) {
+  try { localStorage.setItem('cookieConsent', choice); } catch (e) {}
+  var banner = document.getElementById('cookieBanner');
+  if (banner) banner.classList.add('hidden');
+}
+(function() {
+  try {
+    if (localStorage.getItem('cookieConsent')) {
+      var banner = document.getElementById('cookieBanner');
+      if (banner) banner.classList.add('hidden');
+    }
+  } catch (e) {}
+})();
 </script>
 </body>
 </html>
