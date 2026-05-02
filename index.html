@@ -846,7 +846,7 @@ async function submitTrial() {
   btn.disabled = true;
   btn.textContent = 'Creating your account…';
   try {
-    const res = await fetch('https://api.saleshubcloud.com/api/public/trial-signup', {
+    const res = await fetch('https://app.saleshubcloud.com/api/public/trial-signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({ fullName, organisationName: firm, email, password: pass, phone: phone || undefined, plan })
@@ -870,4 +870,14 @@ async function submitTrial() {
 }
 
 /* FAQ */
-document
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

@@ -80,7 +80,7 @@ p{font-size:15px;color:#64748b;line-height:1.7}
     var sd = await sr.json();
     if (!sd.email) { show('v-error'); return; }
 
-    var r = await fetch('https://api.saleshubcloud.com/api/public/trial-signup', {
+    var r = await fetch('https://app.saleshubcloud.com/api/public/trial-signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: sd.email, name: sd.name || sd.email.split('@')[0], plan: sd.plan || 'Essentials' })

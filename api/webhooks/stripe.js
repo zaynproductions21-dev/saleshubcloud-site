@@ -7,7 +7,7 @@ const PRICE_TO_PLAN = {
 };
 
 async function activateSubscription(email, plan, stripeCustomerId, stripeSubscriptionId) {
-  const res = await fetch('https://api.saleshubcloud.com/api/internal/activate-subscription', {
+  const res = await fetch('https://app.saleshubcloud.com/api/internal/activate-subscription', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-internal-key': 'zaynprod2024' },
     body: JSON.stringify({ email, plan, stripeCustomerId, stripeSubscriptionId }),
@@ -18,7 +18,7 @@ async function activateSubscription(email, plan, stripeCustomerId, stripeSubscri
 }
 
 async function deactivateSubscription(email) {
-  const res = await fetch('https://api.saleshubcloud.com/api/internal/activate-subscription', {
+  const res = await fetch('https://app.saleshubcloud.com/api/internal/activate-subscription', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-internal-key': 'zaynprod2024' },
     body: JSON.stringify({ email, plan: 'cancelled' }),
