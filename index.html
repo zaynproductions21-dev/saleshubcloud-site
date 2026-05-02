@@ -849,7 +849,7 @@ async function submitTrial() {
     const res = await fetch('https://app.saleshubcloud.com/api/public/trial-signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ fullName, organisationName: firm, email, password: pass, phone: phone || undefined, plan })
+      body: JSON.stringify({ name: fullName, organisationName: firm, email, password: pass, phone: phone || undefined, plan, jobTitle: plan || undefined })
     });
     if(res.ok) {
       document.getElementById('trialFormWrap').style.display = 'none';
