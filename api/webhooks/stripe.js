@@ -6,22 +6,22 @@ const PRICE_TO_PLAN = {
   'price_1TMvyH8rk99sE9j0Q1iof8o5': 'scale',
 };
 
-async function activateSubscription(email, plan, stripeCustomerId, stripeSubscriptionId) {
+async function activateSubscription(email, plan, stripeCustomerId, stripeSubscriptionId, eventId) {
   const res = await fetch('https://app.saleshubcloud.com/api/internal/activate-subscription', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-internal-key': 'zaynprod2024' },
-    body: JSON.stringify({ email, plan, stripeCustomerId, stripeSubscriptionId }),
+    body: JSON.stringify({ email, plan, stripeCustomerId, stripeSubscriptionId, eventId }),
   });
   if (!res.ok) {
     console.error('activate-subscription failed:', res.status, await res.text());
   }
 }
 
-async function deactivateSubscription(email) {
+async function deactivateSubscription(email, eventId) {
   const res = await fetch('https://app.saleshubcloud.com/api/internal/activate-subscription', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-internal-key': 'zaynprod2024' },
-    body: JSON.stringify({ email, plan: 'cancelled' }),
+    body: JSON.stringify({ email, plan: 'cancelled', eventId }),
   });
   if (!res.ok) {
     console.error('deactivate-subscription failed:', res.status);
@@ -74,7 +74,7 @@ module.exports = async function handler(req, res) {
         const sub = await stripe.subscriptions.retrieve(session.subscription);
         const priceId = sub.items.data[0]?.price.id;
         const plan = PRICE_TO_PLAN[priceId] || 'essentials';
-        await activateSubscription(email, plan, session.customer, session.subscription);
+        await activateSubscription(email, plan, session.customer, session.subscription, event.id);
         console.log(`Subscription activated: ${email} → ${plan}`);
       }
       break;
@@ -91,7 +91,7 @@ module.exports = async function handler(req, res) {
       const sub = event.data.object;
       const customer = await stripe.customers.retrieve(sub.customer);
       if (customer.email) {
-        await deactivateSubscription(customer.email);
+        await deactivateSubscription(customer.email, event.id);
         await triggerEmailSequence(customer.email, customer.name || customer.email.split('@')[0], 'cancelled');
         console.log(`Subscription cancelled: ${customer.email}`);
       }
