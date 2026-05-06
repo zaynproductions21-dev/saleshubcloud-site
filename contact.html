@@ -226,3 +226,318 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a> for details.</div><div class="cookie-btns"><button class="cookie-accept" onclick="cookieConsent(&quot;accept&quot;)">Accept all</button><button class="cookie-decline" onclick="cookieConsent(&quot;decline&quot;)">Decline</button></div></div><nav><div class="nav-inner"><a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html" class="active">Contact</a></li></ul><div class="nav-right"><button class="btn-ghost" onclick="openDemo()">Book a demo</button><button class="btn-nav" onclick="openTrial()">Start free trial</button></div><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
 <script>(function(){var btn=document.getElementById("burgerBtn");var menu=document.getElementById("mobileMenu");if(!btn||!menu)return;btn.addEventListener("click",function(){btn.classList.toggle("open");menu.classList.toggle("open");});menu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){btn.classList.remove("open");menu.classList.remove("open");});});})();</script>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Features</a>
+  <a href="index.html#pricing">Pricing</a>
+  <a href="index.html#platform">Platform</a>
+  <a href="index.html#faq">FAQ</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+  <div class="mob-cta-wrap">
+    <a href="contact.html" class="mob-btn-primary">Book a demo</a>
+    <a href="trial.html" class="mob-btn-secondary">Start free trial</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="hero-tag-dot"></span> Get in touch</div>
+    <h1 class="hero-h1">Let's <em>talk</em></h1>
+    <p class="hero-sub">Whether you're ready for a demo, have a question, or want to explore how SalesHub Cloud fits your firm — we'd love to hear from you.</p>
+  </div>
+</section>
+
+<!-- MAIN LAYOUT -->
+<div class="contact-body">
+
+  <!-- LEFT PANEL -->
+  <div class="contact-info">
+    <div class="info-card">
+      <div class="info-icon" style="background:var(--c-purple-light);color:var(--c-purple);">&#9993;</div>
+      <div>
+        <div class="info-label">Email us</div>
+        <div class="info-value"><a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a></div>
+        <div class="info-note">We reply within 4 business hours</div>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <div class="info-icon" style="background:var(--c-teal-light);color:var(--c-teal);">&#9742;</div>
+      <div>
+        <div class="info-label">Call us</div>
+        <div class="info-value"><a href="tel:02039605143">020 3960 5143</a></div>
+        <div class="info-note">Mon–Fri, 9am–5pm GMT</div>
+      </div>
+    </div>
+
+    <div class="hours-card">
+      <div class="hours-title">Office hours</div>
+      <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">9:00 – 17:00</span></div>
+      <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-closed">Closed</span></div>
+      <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-closed">Closed</span></div>
+    </div>
+
+    <div class="response-card">
+      <div class="response-title">Average response time</div>
+      <div class="response-body">We aim to respond to all enquiries within 4 business hours. For urgent matters, call us directly.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL — FORM -->
+  <div class="contact-form-wrap">
+    <div id="formContent">
+      <h2 class="form-heading">Send us a message</h2>
+      <p class="form-sub">Fill in the form below and we'll get back to you as soon as possible.</p>
+
+      <!-- TABS -->
+      <div class="form-tabs">
+        <button class="form-tab active" onclick="switchTab('general',this)">General enquiry</button>
+        <button class="form-tab" onclick="switchTab('demo',this)">Book a demo</button>
+        <button class="form-tab" onclick="switchTab('support',this)">Support</button>
+      </div>
+
+      <div id="formError" class="form-error" style="display:none;"></div>
+
+      <!-- GENERAL TAB -->
+      <div id="tab-general" class="tab-panel active">
+        <div class="form-row">
+          <div class="form-group"><label for="g-name">Full name *</label><input id="g-name" type="text" placeholder="Jane Smith" required></div>
+          <div class="form-group"><label for="g-email">Email address *</label><input id="g-email" type="email" placeholder="jane@example.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="g-company">Company</label><input id="g-company" type="text" placeholder="Acme Law"></div>
+          <div class="form-group"><label for="g-phone">Phone</label><input id="g-phone" type="tel" placeholder="020 1234 5678"></div>
+        </div>
+        <div class="form-group"><label for="g-message">Message *</label><textarea id="g-message" placeholder="Tell us how we can help..." required></textarea></div>
+      </div>
+
+      <!-- DEMO TAB -->
+      <div id="tab-demo" class="tab-panel">
+        <div class="form-row">
+          <div class="form-group"><label for="d-name">Full name *</label><input id="d-name" type="text" placeholder="Jane Smith" required></div>
+          <div class="form-group"><label for="d-email">Email address *</label><input id="d-email" type="email" placeholder="jane@example.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="d-company">Company *</label><input id="d-company" type="text" placeholder="Acme Law" required></div>
+          <div class="form-group"><label for="d-phone">Phone</label><input id="d-phone" type="tel" placeholder="020 1234 5678"></div>
+        </div>
+        <div class="form-group"><label for="d-requirements">What would you like to see in the demo?</label><textarea id="d-requirements" placeholder="Tell us about your use case..."></textarea></div>
+      </div>
+
+      <!-- SUPPORT TAB -->
+      <div id="tab-support" class="tab-panel">
+        <div class="form-row">
+          <div class="form-group"><label for="s-name">Full name *</label><input id="s-name" type="text" placeholder="Jane Smith" required></div>
+          <div class="form-group"><label for="s-email">Email address *</label><input id="s-email" type="email" placeholder="jane@example.com" required></div>
+        </div>
+        <div class="form-group"><label for="s-company">Company</label><input id="s-company" type="text" placeholder="Acme Law"></div>
+        <div class="form-group"><label for="s-message">Describe your issue *</label><textarea id="s-message" placeholder="Please describe the issue you're experiencing..." required></textarea></div>
+      </div>
+
+      <!-- Turnstile widget -->
+      <div id="turnstileWidget" style="margin-bottom:1rem;"></div>
+
+      <button class="form-submit" id="submitBtn" onclick="submitEnquiry()">Send message →</button>
+      <p class="form-note">By submitting you agree to our <a href="privacy.html" style="color:var(--c-purple);">Privacy Policy</a>. We'll never share your data.</p>
+    </div>
+
+    <!-- SUCCESS STATE -->
+    <div id="formSuccess" class="form-success" style="display:none;">
+      <div class="form-success-icon">&#10003;</div>
+      <h3>Message sent!</h3>
+      <p>Thanks for getting in touch. We'll get back to you within 4 business hours.<br>Your reference: <strong id="enquiryRef"></strong></p>
+      <button class="form-success-back" onclick="resetForm()">&#8592; Send another message</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADDRESS STRIP -->
+<div class="address-strip">
+  <div class="address-strip-inner">
+    <div>
+      <div class="address-label">Registered office</div>
+      <div class="address-name">Zayn Productions Ltd</div>
+      <div class="address-lines">1 Alvin Street<br>Gloucester<br>GL1 3EJ<br>United Kingdom</div>
+      <div class="address-reg">Company No. 16892199</div>
+    </div>
+    <div class="map-embed">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2457.2!2d-2.2458!3d51.8642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDUxJzUxLjEiTiAywrAxNCc0NC45Ilc!5e0!3m2!1sen!2suk!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <h2>Ready to close more cases?</h2>
+  <p>Start your 14-day free trial today. No credit card required.</p>
+  <a href="trial.html" class="btn-white">Start free trial →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg>
+          <span class="footer-logo-text">SalesHub Cloud</span>
+        </div>
+        <p class="footer-tagline">The all-in-one CRM built for law firms that need to move fast.</p>
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://twitter.com/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="Twitter / X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="https://facebook.com/saleshubcloud" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-nav-cols">
+        <div class="footer-col">
+          <div class="footer-col-title">Product</div>
+          <a href="index.html#features">Features</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#platform">Platform</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="https://app.saleshubcloud.com" target="_blank" rel="noopener">Customer Login</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact us</a>
+          <a href="contact.html">Book a demo</a>
+          <a href="mailto:hello@saleshubcloud.com">hello@saleshubcloud.com</a>
+          <a href="tel:02039605143">020 3960 5143</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Zayn Productions Ltd · Co. No. 16892199 · 1 Alvin Street, Gloucester, GL1 3EJ</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cloudflare Turnstile -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad" async defer></script>
+<script>
+/* TABS */
+var currentTab = 'general';
+function switchTab(tab, el) {
+  currentTab = tab;
+  document.querySelectorAll('.form-tab').forEach(function(t) { t.classList.remove('active'); });
+  el.classList.add('active');
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+/* TURNSTILE */
+var turnstileToken = '';
+function onTurnstileLoad() {
+  turnstile.render('#turnstileWidget', {
+    sitekey: '0x4AAAAAADKI5BaseSCYFE9P',
+    callback: function(token) { turnstileToken = token; },
+    'expired-callback': function() { turnstileToken = ''; },
+    'error-callback': function() { turnstileToken = ''; }
+  });
+}
+
+/* SUBMIT */
+async function submitEnquiry() {
+  var btn = document.getElementById('submitBtn');
+  var errEl = document.getElementById('formError');
+  errEl.style.display = 'none';
+
+  var prefix = currentTab === 'general' ? 'g' : currentTab === 'demo' ? 'd' : 's';
+  var name = document.getElementById(prefix + '-name').value.trim();
+  var email = document.getElementById(prefix + '-email').value.trim();
+  var companyEl = document.getElementById(prefix + '-company');
+  var company = companyEl ? companyEl.value.trim() : '';
+  var phoneEl = document.getElementById(prefix + '-phone');
+  var phone = phoneEl ? phoneEl.value.trim() : '';
+  var msgEl = document.getElementById(prefix + '-message') || document.getElementById(prefix + '-requirements');
+  var message = msgEl ? msgEl.value.trim() : '';
+
+  if (!name || !email) {
+    errEl.textContent = 'Please fill in all required fields.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  if (!turnstileToken) {
+    errEl.textContent = 'Please complete the security check.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    var typeMap = { general: 'General enquiry', demo: 'Book a demo', support: 'Support' };
+    var res = await fetch('/api/enquiry', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        company: company,
+        phone: phone,
+        type: typeMap[currentTab],
+        message: message,
+        'cf-turnstile-response': turnstileToken
+      })
+    });
+    var data = await res.json();
+    if (res.ok && data.ok) {
+      document.getElementById('enquiryRef').textContent = data.ref || '';
+      document.getElementById('formContent').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    } else {
+      errEl.textContent = data.error || 'Something went wrong. Please try again or email hello@saleshubcloud.com.';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send message →';
+    }
+  } catch (err) {
+    errEl.textContent = 'Unable to connect. Please try again or email hello@saleshubcloud.com.';
+    errEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send message →';
+  }
+}
+
+function resetForm() {
+  document.getElementById('formContent').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+  document.querySelectorAll('.tab-panel input, .tab-panel textarea').forEach(function(el) { el.value = ''; });
+  turnstileToken = '';
+  if (typeof turnstile !== 'undefined') turnstile.reset('#turnstileWidget');
+}
+
+/* MODAL STUBS (for nav buttons) */
+function openDemo() { window.location.href = 'contact.html'; }
+function openTrial() { window.location.href = 'trial.html'; }
+
+/* COOKIE BANNER */
+function cookieConsent(choice) {
+  try { localStorage.setItem('cookieConsent', choice); } catch (e) {}
+  var banner = document.getElementById('cookieBanner');
+  if (banner) banner.classList.add('hidden');
+}
+(function() {
+  try {
+    if (localStorage.getItem('cookieConsent')) {
+      var banner = document.getElementById('cookieBanner');
+      if (banner) banner.classList.add('hidden');
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>

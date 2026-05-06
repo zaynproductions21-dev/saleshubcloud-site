@@ -21,6 +21,23 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', ORIGIN);
 
   const { name, email, organisation, company, phone, type, message, requirements } = req.body;
+  const turnstileToken = req.body['cf-turnstile-response'];
+
+  // Turnstile verification
+  if (!turnstileToken) return res.status(400).json({ error: 'Security check required' });
+  try {
+    const cfRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: process.env.TURNSTILE_SECRET_KEY, response: turnstileToken })
+    });
+    const cfData = await cfRes.json();
+    if (!cfData.success) return res.status(200).json({ ok: true, ref: 'SHC-000000' });
+  } catch (e) {
+    console.log('Turnstile verification failed:', e.message);
+    return res.status(200).json({ ok: true, ref: 'SHC-000000' });
+  }
+
   const cName = name || '';
   const cEmail = email || '';
   if (!cEmail) return res.status(400).json({ error: 'Email required' });
