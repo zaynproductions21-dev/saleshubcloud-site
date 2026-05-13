@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5LT39NMP');</script>
-<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (consent-gated) -->
+<script>
+(function(){
+  function loadGTM(){
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LT39NMP');
+  }
+  if (localStorage.getItem('shc_cookie_consent') === 'accepted') loadGTM();
+  window.__loadGTMOnAccept = function(){ localStorage.setItem('shc_cookie_consent','accepted'); loadGTM(); };
+  window.__declineGTMConsent = function(){ localStorage.setItem('shc_cookie_consent','declined'); };
+})();
+</script>
+<!-- End Google Tag Manager (consent-gated) -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You Ñ SalesHub Cloud</title>
@@ -59,11 +68,6 @@ p{font-size:0.95rem;color:#5A5478;line-height:1.7;margin-bottom:1.5rem;}
 </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LT39NMP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <div class="card">
   <div class="icon">?</div>
   <div class="ref" id="refNum">REF #SHC-000000</div>
@@ -95,5 +99,25 @@ document.getElementById('refNum').textContent = 'REF #' + ref;
 // ?? Meta Pixel conversion event (uncomment when Pixel is set up) ??
 // fbq('track', 'Lead', { currency: 'GBP', value: 99 });
 </script>
+<!-- Cookie consent banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,0.18);z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:13.5px;color:#1a1a1a;line-height:1.5;">
+  <div style="margin-bottom:12px;">We use cookies to understand site traffic. Accept to allow analytics. No marketing or third-party trackers. <a href="/privacy.html" style="color:#7C6FF7;text-decoration:underline;">Privacy policy</a>.</div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;">
+    <button onclick="__cookieDecline()" style="padding:8px 16px;background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit;">Decline</button>
+    <button onclick="__cookieAccept()" style="padding:8px 16px;background:#7C6FF7;border:none;color:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var key='shc_cookie_consent';
+  function showBanner(){ var el=document.getElementById('cookie-banner'); if(el) el.style.display='block'; }
+  if(localStorage.getItem(key)===null){
+    if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', showBanner); } else { showBanner(); }
+  }
+  window.__cookieAccept=function(){ var el=document.getElementById('cookie-banner'); if(el)el.style.display='none'; if(typeof __loadGTMOnAccept==='function')__loadGTMOnAccept(); };
+  window.__cookieDecline=function(){ var el=document.getElementById('cookie-banner'); if(el)el.style.display='none'; if(typeof __declineGTMConsent==='function')__declineGTMConsent(); };
+})();
+</script>
+<!-- End Cookie consent banner -->
 </body>
 </html><script>(function(){if(localStorage.getItem("shc_cookie_consent"))document.getElementById("cookieBanner").classList.add("hidden");})();function cookieConsent(c){localStorage.setItem("shc_cookie_consent",c);document.getElementById("cookieBanner").classList.add("hidden");}</script>

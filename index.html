@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5LT39NMP');</script>
-<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (consent-gated) -->
+<script>
+(function(){
+  function loadGTM(){
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5LT39NMP');
+  }
+  if (localStorage.getItem('shc_cookie_consent') === 'accepted') loadGTM();
+  window.__loadGTMOnAccept = function(){ localStorage.setItem('shc_cookie_consent','accepted'); loadGTM(); };
+  window.__declineGTMConsent = function(){ localStorage.setItem('shc_cookie_consent','declined'); };
+})();
+</script>
+<!-- End Google Tag Manager (consent-gated) -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2716%27 fill=%27%237C6FF7%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%279%27 fill=%27%235BC4C0%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%274%27 fill=%27white%27/%3E%3C/svg%3E">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -260,10 +269,6 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .footer-col{display:flex;flex-direction:column;gap:0.5rem;}.footer-col-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}.footer-col a:hover{color:var(--c-purple);}.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}.footer-copy{font-size:0.78rem;color:var(--c-text3);}.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 6px;height:24px;flex-shrink:0;}.stripe-badge{padding:3px 8px;background:#f6f9fc;}.stripe-badge svg{height:16px;width:auto;}.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:var(--c-white);border:1.5px solid var(--c-border2);border-radius:16px;box-shadow:0 8px 32px rgba(124,111,247,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}.cookie-banner.hidden{display:none;}.cookie-text{font-size:0.82rem;color:var(--c-text2);line-height:1.55;flex:1;}.cookie-text a{color:var(--c-purple);font-weight:600;}.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;flex-wrap:wrap;}.cookie-accept{background:var(--c-purple);color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:700;cursor:pointer;font-family:var(--ff);white-space:nowrap;}.cookie-decline{background:var(--c-bg2);color:var(--c-text2);border:1px solid var(--c-border2);border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--ff);white-space:nowrap;}@media(max-width:540px){.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}</style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LT39NMP"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a> for details.</div><div class="cookie-btns"><button class="cookie-accept" onclick="cookieConsent(&quot;accept&quot;)">Accept all</button><button class="cookie-decline" onclick="cookieConsent(&quot;decline&quot;)">Decline</button></div></div><nav>
   <div class="nav-inner">
     <a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;flex-wrap:nowrap;">
@@ -908,5 +913,25 @@ function cookieConsent(choice) {
   } catch (e) {}
 })();
 </script>
+<!-- Cookie consent banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,0.18);z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:13.5px;color:#1a1a1a;line-height:1.5;">
+  <div style="margin-bottom:12px;">We use cookies to understand site traffic. Accept to allow analytics. No marketing or third-party trackers. <a href="/privacy.html" style="color:#7C6FF7;text-decoration:underline;">Privacy policy</a>.</div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;">
+    <button onclick="__cookieDecline()" style="padding:8px 16px;background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit;">Decline</button>
+    <button onclick="__cookieAccept()" style="padding:8px 16px;background:#7C6FF7;border:none;color:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var key='shc_cookie_consent';
+  function showBanner(){ var el=document.getElementById('cookie-banner'); if(el) el.style.display='block'; }
+  if(localStorage.getItem(key)===null){
+    if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', showBanner); } else { showBanner(); }
+  }
+  window.__cookieAccept=function(){ var el=document.getElementById('cookie-banner'); if(el)el.style.display='none'; if(typeof __loadGTMOnAccept==='function')__loadGTMOnAccept(); };
+  window.__cookieDecline=function(){ var el=document.getElementById('cookie-banner'); if(el)el.style.display='none'; if(typeof __declineGTMConsent==='function')__declineGTMConsent(); };
+})();
+</script>
+<!-- End Cookie consent banner -->
 </body>
 </html>
