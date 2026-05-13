@@ -128,6 +128,30 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 <!-- schema.org JSON-LD injected by PublishOS audit -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SalesHub Cloud","url":"https://saleshubcloud.com","description":"AI-driven sales intelligence platform. Pipeline management, lead scoring, and CRM automation for UK sales teams.","areaServed":"GB","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@saleshubcloud.com","areaServed":"GB"},"sameAs":["https://twitter.com/SalesHubCloud"],"parentOrganization":{"@type":"Organization","name":"Zayn Productions Ltd","url":"https://www.zaynit.com"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SalesHub Cloud","url":"https://saleshubcloud.com","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"AI that works the pipeline for you \u2014 scoring leads, flagging risks, automating follow-ups. Built for UK B2B sales teams.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"59.00","url":"https://saleshubcloud.com/pricing"}}</script>
+<!-- PostHog product analytics (consent-gated) -->
+<script>
+(function(){
+  function loadPostHog(){
+    if (window.__posthogLoaded) return; window.__posthogLoaded = true;
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://eu-assets.i.posthog.com/static/array.js';
+    document.head.appendChild(s);
+    s.onload = function(){
+      try {
+        window.posthog.init('phc_rJmyyFtKADpwEYUz9ufrd9cREaaoDq37ZeUrAyek5fnM', {
+          api_host: 'https://eu.i.posthog.com',
+          capture_pageview: true, autocapture: true,
+          person_profiles: 'identified_only',
+        });
+        window.posthog.register({ site: 'saleshub-cloud', site_name: 'SalesHub Cloud', site_domain: 'saleshubcloud.com' });
+      } catch(e) {}
+    };
+  }
+  if (localStorage.getItem('shc_cookie_consent') === 'accepted') loadPostHog();
+  var prev = window.__loadGTMOnAccept;
+  window.__loadGTMOnAccept = function(){ if (prev) prev(); loadPostHog(); };
+})();
+</script>
 </head>
 <body>
 <nav><div class="nav-inner"><a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul><div class="nav-right"><button class="btn-ghost" onclick="openDemo()">Book a demo</button><button class="btn-nav" onclick="openTrial()">Start free trial</button></div><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>

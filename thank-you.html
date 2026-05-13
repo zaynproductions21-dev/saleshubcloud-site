@@ -69,6 +69,30 @@ p{font-size:0.95rem;color:#5A5478;line-height:1.7;margin-bottom:1.5rem;}
 <!-- schema.org JSON-LD injected by PublishOS audit -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"SalesHub Cloud","url":"https://saleshubcloud.com","description":"AI-driven sales intelligence platform. Pipeline management, lead scoring, and CRM automation for UK sales teams.","areaServed":"GB","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@saleshubcloud.com","areaServed":"GB"},"sameAs":["https://twitter.com/SalesHubCloud"],"parentOrganization":{"@type":"Organization","name":"Zayn Productions Ltd","url":"https://www.zaynit.com"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SalesHub Cloud","url":"https://saleshubcloud.com","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"AI that works the pipeline for you \u2014 scoring leads, flagging risks, automating follow-ups. Built for UK B2B sales teams.","offers":{"@type":"Offer","priceCurrency":"GBP","price":"59.00","url":"https://saleshubcloud.com/pricing"}}</script>
+<!-- PostHog product analytics (consent-gated) -->
+<script>
+(function(){
+  function loadPostHog(){
+    if (window.__posthogLoaded) return; window.__posthogLoaded = true;
+    var s = document.createElement('script'); s.async = true;
+    s.src = 'https://eu-assets.i.posthog.com/static/array.js';
+    document.head.appendChild(s);
+    s.onload = function(){
+      try {
+        window.posthog.init('phc_rJmyyFtKADpwEYUz9ufrd9cREaaoDq37ZeUrAyek5fnM', {
+          api_host: 'https://eu.i.posthog.com',
+          capture_pageview: true, autocapture: true,
+          person_profiles: 'identified_only',
+        });
+        window.posthog.register({ site: 'saleshub-cloud', site_name: 'SalesHub Cloud', site_domain: 'saleshubcloud.com' });
+      } catch(e) {}
+    };
+  }
+  if (localStorage.getItem('shc_cookie_consent') === 'accepted') loadPostHog();
+  var prev = window.__loadGTMOnAccept;
+  window.__loadGTMOnAccept = function(){ if (prev) prev(); loadPostHog(); };
+})();
+</script>
 </head>
 <body>
 <div class="card">
