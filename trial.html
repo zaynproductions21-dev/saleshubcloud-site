@@ -22,26 +22,26 @@
   <title>Start Free Trial — SalesHub Cloud</title>
   <meta name="description" content="Start your 14-day free trial of SalesHub Cloud. AI-driven CRM for UK sales teams. No credit card required." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f0f9ff 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
-    .card { background: #fff; border-radius: 20px; padding: 40px; max-width: 520px; width: 100%; box-shadow: 0 20px 60px rgba(37,99,235,0.12); }
+    body { font-family: 'Public Sans', sans-serif; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #f0f9ff 100%); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+    .card { background: #fff; border-radius: 12px; padding: 40px; max-width: 520px; width: 100%; box-shadow: 0 20px 60px rgba(37,99,235,0.12); }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 32px; justify-content: center; }
-    .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: #2563eb; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; font-weight: 800; }
-    .logo-text { font-size: 18px; font-weight: 700; color: #1e293b; }
-    h1 { font-size: 26px; font-weight: 800; color: #1e293b; margin-bottom: 8px; text-align: center; letter-spacing: -0.5px; }
+    .logo-icon { width: 36px; height: 36px; border-radius: 10px; background: #2563eb; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; font-weight: 600; }
+    .logo-text { font-size: 18px; font-weight: 500; color: #1e293b; }
+    h1 { font-size: 26px; font-weight: 600; color: #1e293b; margin-bottom: 8px; text-align: center; letter-spacing: -0.5px; }
     .subtitle { font-size: 14px; color: #64748b; text-align: center; margin-bottom: 24px; line-height: 1.6; }
     .badge-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 28px; flex-wrap: wrap; }
-    .badge { font-size: 11px; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 4px 10px; border-radius: 20px; border: 1px solid #bfdbfe; }
-    .pill { display: inline-block; padding: 4px 14px; border-radius: 20px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 11px; font-weight: 700; color: #2563eb; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
+    .badge { font-size: 11px; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 4px 10px; border-radius: 12px; border: 1px solid #bfdbfe; }
+    .pill { display: inline-block; padding: 4px 14px; border-radius: 12px; background: #eff6ff; border: 1px solid #bfdbfe; font-size: 11px; font-weight: 500; color: #2563eb; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
     .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    label { font-size: 11px; font-weight: 700; color: #475569; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+    label { font-size: 11px; font-weight: 500; color: #475569; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
     input, select { width: 100%; padding: 12px 16px; border-radius: 10px; border: 1.5px solid #e2e8f0; font-size: 14px; font-family: inherit; color: #1e293b; background: #fff; transition: all 0.15s; }
     input:hover, select:hover { border-color: #bfdbfe; }
     input:focus, select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.12); outline: none; }
     .form-stack { display: flex; flex-direction: column; gap: 16px; }
-    .btn { width: 100%; padding: 15px; border-radius: 12px; border: none; background: #2563eb; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.15s; box-shadow: 0 6px 20px rgba(37,99,235,0.3); }
+    .btn { width: 100%; padding: 15px; border-radius: 12px; border: none; background: #2563eb; color: #fff; font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; transition: all 0.15s; box-shadow: 0 6px 20px rgba(37,99,235,0.3); }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 28px rgba(37,99,235,0.4); }
     .btn:disabled { background: #cbd5e1; box-shadow: none; cursor: not-allowed; transform: none; }
     .fine-print { font-size: 11px; color: #94a3b8; text-align: center; line-height: 1.6; }
@@ -149,17 +149,17 @@
   <!-- Success screen -->
   <div class="card" id="successCard" style="display:none;max-width:480px;text-align:center;">
     <div style="font-size:56px;margin-bottom:16px;">🎉</div>
-    <h2 style="font-size:26px;font-weight:800;color:#1e293b;margin-bottom:12px;" id="successTitle">Your account is ready!</h2>
+    <h2 style="font-size:26px;font-weight:600;color:#1e293b;margin-bottom:12px;" id="successTitle">Your account is ready!</h2>
     <p style="font-size:14px;color:#64748b;line-height:1.7;margin-bottom:20px;">
       We've sent your login details to <strong id="successEmail"></strong>.
       Your 14-day free trial starts now — full access, no credit card needed.
     </p>
     <div id="trialBadge" style="display:none;padding:12px 16px;background:#eff6ff;border-radius:10px;border:1px solid #bfdbfe;font-size:13px;color:#2563eb;font-weight:600;margin-bottom:20px;"></div>
     <div id="loginBtnWrap" style="display:none;margin-bottom:16px;">
-      <a id="loginBtn" href="https://app.saleshubcloud.com" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#2563eb;color:#fff;font-size:14px;font-weight:700;text-decoration:none;">Go to SalesHub Cloud →</a>
+      <a id="loginBtn" href="https://app.saleshubcloud.com" style="display:inline-block;padding:12px 28px;border-radius:10px;background:#2563eb;color:#fff;font-size:14px;font-weight:500;text-decoration:none;">Go to SalesHub Cloud →</a>
     </div>
     <div id="waitingMsg" style="padding:16px;background:#eff6ff;border-radius:12px;border:1px solid #bfdbfe;font-size:13px;color:#2563eb;font-weight:500;">
-      💡 Explore our <a href="/#features" style="color:#2563eb;font-weight:700;">features</a> while we set up your account.
+      💡 Explore our <a href="/#features" style="color:#2563eb;font-weight:500;">features</a> while we set up your account.
     </div>
   </div>
 
@@ -273,11 +273,11 @@
     });
   </script>
 <!-- Cookie consent banner -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,0.18);z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:13.5px;color:#1a1a1a;line-height:1.5;">
-  <div style="margin-bottom:12px;">We use cookies to understand site traffic. Accept to allow analytics. No marketing or third-party trackers. <a href="/privacy.html" style="color:#7C6FF7;text-decoration:underline;">Privacy policy</a>.</div>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,0.18);z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:13.5px;color:#1a1a1a;line-height:1.5;">
+  <div style="margin-bottom:12px;">We use cookies to understand site traffic. Accept to allow analytics. No marketing or third-party trackers. <a href="/privacy.html" style="color:#0BAEAB;text-decoration:underline;">Privacy policy</a>.</div>
   <div style="display:flex;gap:8px;justify-content:flex-end;">
     <button onclick="__cookieDecline()" style="padding:8px 16px;background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit;">Decline</button>
-    <button onclick="__cookieAccept()" style="padding:8px 16px;background:#7C6FF7;border:none;color:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Accept</button>
+    <button onclick="__cookieAccept()" style="padding:8px 16px;background:#0BAEAB;border:none;color:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Accept</button>
   </div>
 </div>
 <script>

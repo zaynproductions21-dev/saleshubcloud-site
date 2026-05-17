@@ -23,24 +23,24 @@
 <link rel="icon" href="/favicon.ico">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f8f9fc;font-family:'Plus Jakarta Sans',Helvetica,Arial,sans-serif}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f8f9fc;font-family:'Public Sans',Helvetica,Arial,sans-serif}
 .wrap{max-width:520px;padding:48px 28px;text-align:center}
-.spinner{width:56px;height:56px;border:3px solid #e2e8f0;border-top-color:#7C6FF7;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 24px}
+.spinner{width:56px;height:56px;border:3px solid #e2e8f0;border-top-color:#0BAEAB;border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 24px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .icon{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px}
 .icon-ok{background:#f0fdf4;border:2px solid #bbf7d0}
 .icon-err{background:#fef2f2;border:2px solid #fecaca}
-h1{font-size:24px;font-weight:800;color:#0f172a;margin-bottom:8px;letter-spacing:-.5px}
+h1{font-size:24px;font-weight:600;color:#0f172a;margin-bottom:8px;letter-spacing:-.5px}
 p{font-size:15px;color:#64748b;line-height:1.7}
-.btn{display:inline-block;background:#7C6FF7;color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;margin-top:20px}
+.btn{display:inline-block;background:#0BAEAB;color:#fff;padding:14px 32px;border-radius:10px;font-size:15px;font-weight:500;text-decoration:none;margin-top:20px}
 .btn:hover{background:#6C5CE7}
-.guide{margin-top:40px;text-align:left;background:#fff;border:1px solid #e8ecf0;border-radius:14px;padding:24px 28px}
-.guide h2{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:16px}
+.guide{margin-top:40px;text-align:left;background:#fff;border:1px solid #e8ecf0;border-radius:10px;padding:24px 28px}
+.guide h2{font-size:15px;font-weight:500;color:#0f172a;margin-bottom:16px}
 .step{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.step-num{width:28px;height:28px;border-radius:50%;background:rgba(124,111,247,.1);color:#7C6FF7;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.step-num{width:28px;height:28px;border-radius:50%;background:rgba(58,53,65,.1);color:#0BAEAB;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0}
 .step span{font-size:14px;color:#334155}
 .support{font-size:13px;color:#94a3b8;margin-top:24px;line-height:1.6}
-.support a{color:#7C6FF7}
+.support a{color:#0BAEAB}
 #v-loading,#v-created,#v-exists,#v-error{display:none}
 </style>
 <!-- schema.org JSON-LD injected by PublishOS audit -->
@@ -106,7 +106,7 @@ p{font-size:15px;color:#64748b;line-height:1.7}
   <div id="v-error">
     <div class="icon icon-err">!</div>
     <h1>Something went wrong</h1>
-    <p>Your payment was successful but we couldn't set up your account automatically. Please contact us at <a href="mailto:hello@saleshubcloud.com" style="color:#7C6FF7">hello@saleshubcloud.com</a> or call <a href="tel:02039605143" style="color:#7C6FF7">020 3960 5143</a> and we'll sort it out.</p>
+    <p>Your payment was successful but we couldn't set up your account automatically. Please contact us at <a href="mailto:hello@saleshubcloud.com" style="color:#0BAEAB">hello@saleshubcloud.com</a> or call <a href="tel:02039605143" style="color:#0BAEAB">020 3960 5143</a> and we'll sort it out.</p>
     <a href="https://app.saleshubcloud.com" class="btn">Go to login page →</a>
   </div>
 </div>
@@ -148,11 +148,11 @@ p{font-size:15px;color:#64748b;line-height:1.7}
 })();
 </script>
 <!-- Cookie consent banner -->
-<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,0.18);z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:13.5px;color:#1a1a1a;line-height:1.5;">
-  <div style="margin-bottom:12px;">We use cookies to understand site traffic. Accept to allow analytics. No marketing or third-party trackers. <a href="/privacy.html" style="color:#7C6FF7;text-decoration:underline;">Privacy policy</a>.</div>
+<div id="cookie-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px 22px;box-shadow:0 10px 30px rgba(0,0,0,0.18);z-index:9999;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:13.5px;color:#1a1a1a;line-height:1.5;">
+  <div style="margin-bottom:12px;">We use cookies to understand site traffic. Accept to allow analytics. No marketing or third-party trackers. <a href="/privacy.html" style="color:#0BAEAB;text-decoration:underline;">Privacy policy</a>.</div>
   <div style="display:flex;gap:8px;justify-content:flex-end;">
     <button onclick="__cookieDecline()" style="padding:8px 16px;background:#fff;border:1px solid #d1d5db;color:#374151;border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit;">Decline</button>
-    <button onclick="__cookieAccept()" style="padding:8px 16px;background:#7C6FF7;border:none;color:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Accept</button>
+    <button onclick="__cookieAccept()" style="padding:8px 16px;background:#0BAEAB;border:none;color:#fff;border-radius:8px;cursor:pointer;font-size:13px;font-weight:500;font-family:inherit;">Accept</button>
   </div>
 </div>
 <script>
