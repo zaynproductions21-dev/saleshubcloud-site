@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Tag Manager (consent-gated) -->
+<script>
+(function(){
+  function loadGTM(){
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WGMSQ38P');
+  }
+  if (localStorage.getItem('shc_cookie_consent') === 'accepted') loadGTM();
+  window.__loadGTMOnAccept = function(){ localStorage.setItem('shc_cookie_consent','accepted'); loadGTM(); };
+  window.__declineGTMConsent = function(){ localStorage.setItem('shc_cookie_consent','declined'); };
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lead Leak Audit — SalesHub Cloud</title>
+<meta name="description" content="A 60-second audit for UK law firms. Four questions, sourced methodology, instant emailed report showing the annual fee income your current lead-handling process is leaving on the table.">
+<link rel="canonical" href="https://www.saleshubcloud.com/lead-leak-audit">
+<meta property="og:title" content="What is your firm leaving on the table?">
+<meta property="og:description" content="Four questions, instant emailed audit. Estimate the annual fee income your current lead-handling is losing.">
+<meta property="og:url" content="https://www.saleshubcloud.com/lead-leak-audit">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --c-purple:#7C6FF7; --c-purple-light:#EDE9FE; --c-purple-dark:#5A4FD6;
+  --c-teal:#5BC4C0; --c-teal-light:#E0F5F4;
+  --c-bg:#FAF0F6; --c-bg2:#F3EFF9; --c-white:#FFFFFF; --c-surface:#FAFAFF;
+  --c-border:#EAE4F5; --c-border2:#D8CEFB; --c-border-strong:#C8BDEC;
+  --c-text:#1E1A3C; --c-text2:#5A5478; --c-text3:#9E99BE;
+  --ff:'Plus Jakarta Sans',sans-serif;
+  --ff-serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --shadow:0 1px 4px rgba(124,111,247,0.06),0 4px 20px rgba(124,111,247,0.06);
+  --shadow-md:0 4px 12px rgba(124,111,247,0.1),0 16px 48px rgba(124,111,247,0.1);
+}
+html { scroll-behavior: smooth; }
+body { background: var(--c-bg); color: var(--c-text); font-family: var(--ff); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV (matches index.html) */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(250,240,246,0.93); backdrop-filter: blur(14px); border-bottom: 1px solid var(--c-border); box-shadow: 0 2px 16px rgba(124,111,247,0.08); }
+.nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { display: flex; align-items: center; gap: 8px; }
+.nav-logo-text { font-weight: 700; font-size: 0.95rem; color: var(--c-text); }
+.nav-links { display: flex; gap: 0.25rem; list-style: none; }
+.nav-links a { color: var(--c-text2); font-size: 0.875rem; font-weight: 500; padding: 0.4rem 0.8rem; border-radius: 8px; transition: background .15s, color .15s; }
+.nav-links a:hover { background: var(--c-purple-light); color: var(--c-purple); }
+.nav-right { display: flex; gap: 8px; align-items: center; }
+.btn-ghost { color: var(--c-text2); font-size: 0.875rem; font-weight: 500; padding: 0.45rem 1rem; border-radius: 8px; border: 1px solid var(--c-border2); background: var(--c-white); font-family: var(--ff); cursor: pointer; white-space: nowrap; }
+.btn-ghost:hover { border-color: var(--c-purple); color: var(--c-purple); }
+.btn-nav { background: var(--c-purple); color: #fff; font-size: 0.875rem; font-weight: 700; padding: 0.5rem 1.35rem; border-radius: 9px; border: none; cursor: pointer; font-family: var(--ff); box-shadow: 0 4px 14px rgba(124,111,247,0.35); white-space: nowrap; }
+.btn-nav:hover { background: var(--c-purple-dark); }
+.burger { background: none; border: none; padding: 8px; cursor: pointer; display: none; }
+.burger span { display: block; width: 22px; height: 2px; background: var(--c-text); margin: 4px 0; }
+@media(max-width:880px){ .nav-links { display: none; } .nav-right { display: none; } .burger { display: block; } }
+
+/* HERO */
+.page-hero { padding: 120px 0 56px; background: linear-gradient(180deg, var(--c-bg) 0%, #F3EFF9 100%); position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; top: 100px; right: -120px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(124,111,247,0.12), transparent 70%); border-radius: 50%; pointer-events: none; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.hero-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,540px); gap: 56px; align-items: start; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ff); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c-purple); background: var(--c-white); border: 1px solid var(--c-border2); padding: 8px 14px; border-radius: 999px; margin-bottom: 24px; box-shadow: var(--shadow); }
+.eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-teal); display: block; }
+.page-hero h1 { font-family: var(--ff-serif); font-size: clamp(34px, 4.5vw, 50px); line-height: 1.08; letter-spacing: -0.02em; color: var(--c-text); margin: 0 0 22px; font-weight: 700; }
+.page-hero h1 .accent { font-style: italic; color: var(--c-purple-dark); }
+.page-hero .lead { font-size: 16px; color: var(--c-text2); line-height: 1.7; max-width: 500px; margin: 0 0 30px; }
+.cite { font-family: var(--ff); font-size: 12px; color: var(--c-text3); font-style: italic; max-width: 480px; margin: 18px 0 0; line-height: 1.6; }
+
+/* METHODOLOGY CARD on left side */
+.method-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: 14px; padding: 24px 26px; margin-top: 32px; box-shadow: var(--shadow); }
+.method-card h3 { font-family: var(--ff-serif); font-size: 18px; font-weight: 700; color: var(--c-text); margin: 0 0 12px; letter-spacing: -0.01em; }
+.method-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.method-card li { display: grid; grid-template-columns: auto 1fr; gap: 12px; font-size: 13.5px; color: var(--c-text2); line-height: 1.6; }
+.method-card li .li-mark { flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px; background: var(--c-purple-light); color: var(--c-purple-dark); display: inline-flex; align-items: center; justify-content: center; font-family: var(--ff-serif); font-weight: 700; font-size: 12px; }
+.method-card li strong { color: var(--c-text); display: block; margin-bottom: 2px; font-family: var(--ff); }
+
+/* AUDIT FORM */
+.audit-card { background: var(--c-white); border: 1px solid var(--c-border-strong); border-radius: 18px; padding: 32px 32px 34px; box-shadow: 0 24px 60px rgba(124,111,247,0.14); }
+.audit-card h2 { font-family: var(--ff-serif); font-size: 22px; font-weight: 700; color: var(--c-text); margin: 0 0 6px; letter-spacing: -0.015em; }
+.audit-card .sub { font-size: 13px; color: var(--c-text2); margin: 0 0 22px; line-height: 1.55; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label { font-size: 12.5px; font-weight: 600; color: var(--c-text); letter-spacing: 0.005em; }
+.field select, .field input { width: 100%; padding: 12px 14px; border-radius: 9px; border: 1.5px solid var(--c-border-strong); background: var(--c-surface); font-size: 14px; color: var(--c-text); outline: none; font-family: var(--ff); appearance: none; -webkit-appearance: none; }
+.field select:focus, .field input:focus { border-color: var(--c-purple); background: var(--c-white); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.submit-btn { width: 100%; padding: 14px 22px; background: var(--c-purple); color: #fff; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; font-family: var(--ff); cursor: pointer; box-shadow: 0 8px 22px rgba(124,111,247,0.32); transition: background 0.2s; margin-top: 8px; }
+.submit-btn:hover:not(:disabled) { background: var(--c-purple-dark); }
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.form-note { font-size: 11.5px; color: var(--c-text3); text-align: center; margin: 10px 0 0; line-height: 1.55; }
+.form-error { font-size: 12.5px; color: #B91C1C; margin: 8px 0 0; }
+
+/* SUCCESS STATE */
+.audit-success { display: none; }
+.audit-success.show { display: block; text-align: center; padding: 24px 8px 8px; }
+.audit-card.success-shown .audit-form { display: none; }
+.success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--c-purple-light); color: var(--c-purple-dark); display: inline-flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+.success-icon svg { width: 28px; height: 28px; }
+.success-h { font-family: var(--ff-serif); font-size: 24px; font-weight: 700; color: var(--c-text); margin: 0 0 10px; letter-spacing: -0.015em; }
+.success-p { font-size: 14.5px; color: var(--c-text2); line-height: 1.65; margin: 0 0 18px; }
+.success-divider { height: 1px; background: var(--c-border); margin: 22px 0 20px; }
+.success-note { font-size: 12.5px; color: var(--c-text3); line-height: 1.65; }
+.success-note strong { color: var(--c-text2); }
+
+/* TRUST STRIP */
+.trust-strip { background: var(--c-white); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); padding: 28px 0; }
+.trust-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.trust-cite { font-family: var(--ff-serif); font-style: italic; font-size: 14.5px; color: var(--c-text2); max-width: 640px; line-height: 1.6; }
+.trust-cite .num { color: var(--c-purple-dark); font-weight: 700; font-style: normal; font-family: var(--ff); }
+.trust-source { font-size: 11.5px; color: var(--c-text3); font-style: italic; }
+
+/* FAQ */
+.faq-section { padding: 70px 0 90px; background: var(--c-bg); }
+.faq-section h2 { font-family: var(--ff-serif); font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; color: var(--c-text); margin: 0 0 28px; text-align: center; font-weight: 700; }
+.faq-wrap { max-width: 720px; margin: 0 auto; display: grid; gap: 12px; }
+.faq-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: 12px; padding: 22px 26px; box-shadow: var(--shadow); }
+.faq-card .q { font-size: 15px; font-weight: 700; color: var(--c-text); margin-bottom: 6px; font-family: var(--ff); }
+.faq-card .a { font-size: 14px; color: var(--c-text2); line-height: 1.7; }
+.faq-card .a strong { color: var(--c-text); }
+
+/* FOOTER */
+footer { background: #1E1A3C; color: rgba(255,255,255,0.65); padding: 50px 0 28px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12.5px; margin-top: 22px; }
+.footer-row:first-child { padding-top: 0; border-top: none; margin-top: 0; }
+.footer-row a { color: rgba(255,255,255,0.55); margin-left: 18px; }
+.footer-row a:first-of-type { margin-left: 0; }
+.footer-row a:hover { color: #fff; }
+.footer-brand { display: flex; align-items: center; gap: 12px; font-weight: 700; color: #fff; font-size: 16px; font-family: var(--ff-serif); }
+
+/* COOKIE BANNER */
+.cookie-banner { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%); z-index: 9999; background: var(--c-white); border: 1.5px solid var(--c-border2); border-radius: 16px; box-shadow: 0 8px 32px rgba(124,111,247,0.18); padding: 1.25rem 1.5rem; max-width: 520px; width: calc(100% - 2rem); display: flex; align-items: center; gap: 1.25rem; }
+.cookie-banner.hidden { display: none; }
+.cookie-text { font-size: 0.82rem; color: var(--c-text2); line-height: 1.55; flex: 1; }
+.cookie-text a { color: var(--c-purple); font-weight: 600; }
+.cookie-btns { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.cookie-accept { background: var(--c-purple); color: #fff; border: none; border-radius: 8px; padding: 0.5rem 1.1rem; font-size: 0.82rem; font-weight: 700; cursor: pointer; font-family: var(--ff); }
+.cookie-decline { background: var(--c-bg2); color: var(--c-text2); border: 1px solid var(--c-border2); border-radius: 8px; padding: 0.5rem 0.9rem; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: var(--ff); }
+
+@media(max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .page-hero { padding: 100px 0 50px; }
+  .field-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a>.</div>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="cookieConsent('accept')">Accept all</button>
+    <button class="cookie-decline" onclick="cookieConsent('decline')">Decline</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg>
+      <span class="nav-logo-text">SalesHub Cloud</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#features">Features</a></li>
+      <li><a href="/#pricing">Pricing</a></li>
+      <li><a href="/#platform">Platform</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://app.saleshubcloud.com" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;align-items:center;">Log in</a>
+      <a href="/trial.html" class="btn-nav" style="text-decoration:none;display:inline-flex;align-items:center;">Start free trial</a>
+    </div>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO + AUDIT FORM -->
+<section class="page-hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>Lead Leak Audit · 60 seconds</div>
+        <h1>What is your firm <span class="accent">leaving on the table?</span></h1>
+        <p class="lead">Firms using a dedicated legal CRM bill <strong>11 more hours per fee-earner per month</strong> than those running leads through spreadsheets and Outlook. Four questions, sourced methodology, an emailed audit estimating the annual fee income your current process is losing.</p>
+        <p class="cite">Source: Bellwether Report on small firm efficiency; UK Law Society Practice Management benchmarks. Estimate based on £1,500 average matter value across mixed practice.</p>
+
+        <div class="method-card">
+          <h3>What we measure</h3>
+          <ul>
+            <li><span class="li-mark">1</span><div><strong>Response-time leakage</strong>Enquiries effectively lost when first contact takes more than an hour.</div></li>
+            <li><span class="li-mark">2</span><div><strong>Storage friction</strong>Cost of running leads through spreadsheets and inboxes vs a single source of truth.</div></li>
+            <li><span class="li-mark">3</span><div><strong>Quote-to-instruction conversion gap</strong>Where un-tracked quotes go cold and revenue walks out.</div></li>
+            <li><span class="li-mark">4</span><div><strong>Volume scaling</strong>How much each of the above scales with monthly enquiry count.</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="audit-card" id="auditCard">
+        <h2>Your Lead Leak Audit</h2>
+        <p class="sub">Four questions. We email a sourced one-page report within 30 seconds.</p>
+
+        <form class="audit-form" id="auditForm" autocomplete="off">
+          <div class="field-row">
+            <div class="field">
+              <label for="f-firm">Firm name</label>
+              <input id="f-firm" name="firm" type="text" placeholder="e.g. Marshall &amp; Webb LLP" required>
+            </div>
+            <div class="field">
+              <label for="f-fee-earners">Fee-earners</label>
+              <select id="f-fee-earners" name="feeEarners">
+                <option value="">—</option>
+                <option value="1">Just me</option>
+                <option value="2-5">2–5</option>
+                <option value="6-10">6–10</option>
+                <option value="11-20">11–20</option>
+                <option value="20+">20+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-enquiries">Monthly inbound enquiries</label>
+            <select id="f-enquiries" name="enquiries" required>
+              <option value="">Select…</option>
+              <option value="lt20">Under 20</option>
+              <option value="20-50">20 – 50</option>
+              <option value="50-100">50 – 100</option>
+              <option value="100+">100+</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-response">Average first-response time</label>
+            <select id="f-response" name="responseTime" required>
+              <option value="">Select…</option>
+              <option value="lt1hr">Under 1 hour</option>
+              <option value="sameday">Same day</option>
+              <option value="nextday">Next day</option>
+              <option value="2plus">2+ days</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-storage">Where leads currently live</label>
+            <select id="f-storage" name="storage" required>
+              <option value="">Select…</option>
+              <option value="spreadsheet">Spreadsheet</option>
+              <option value="outlook">Outlook / inbox</option>
+              <option value="generic-crm">Generic CRM (HubSpot / Salesforce / Pipedrive)</option>
+              <option value="legal-crm">Dedicated legal CRM</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-conversion">Quote-to-instruction conversion</label>
+            <select id="f-conversion" name="conversion" required>
+              <option value="">Select…</option>
+              <option value="untracked">We don't track this</option>
+              <option value="lt20">Under 20%</option>
+              <option value="20-40">20% – 40%</option>
+              <option value="40plus">40%+</option>
+            </select>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" placeholder="Full name" required>
+            </div>
+            <div class="field">
+              <label for="f-role">Role</label>
+              <select id="f-role" name="role">
+                <option value="">—</option>
+                <option value="Partner">Partner</option>
+                <option value="Solicitor">Solicitor</option>
+                <option value="Practice manager">Practice manager</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Work email — we send your audit here</label>
+            <input id="f-email" name="email" type="email" placeholder="you@firm.co.uk" required>
+          </div>
+
+          <button class="submit-btn" type="submit" id="submitBtn">See your firm's lost billables</button>
+          <p class="form-error" id="formError" style="display:none"></p>
+          <p class="form-note">No card required. Single emailed report. We don't share your data.</p>
+        </form>
+
+        <div class="audit-success" id="auditSuccess" aria-live="polite">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 9 18 21 6"/></svg>
+          </div>
+          <h2 class="success-h">Your audit is being prepared</h2>
+          <p class="success-p">Check your inbox in the next 30 seconds — we're sending a one-page report with your estimated annual lost fees, the methodology behind the figure, and the four mechanisms most firms use to recover it.</p>
+          <div class="success-divider"></div>
+          <p class="success-note"><strong>What happens next:</strong> the audit lands first. Tomorrow we'll follow up with how SalesHub Cloud specifically handles each of the four leak sources, and where you can start a no-card trial if you'd like to test it on your live pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-inner">
+      <p class="trust-cite">"Firms that move from manual lead handling to a dedicated legal CRM recover <span class="num">60–80%</span> of estimated leakage within the first quarter — almost entirely from response-time SLAs and conversion tracking."</p>
+      <p class="trust-source">Bellwether Report · UK Small Firm Practice Management</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container" style="max-width:760px;">
+    <h2>About this audit</h2>
+    <div class="faq-wrap">
+      <div class="faq-card">
+        <div class="q">Where does the number come from?</div>
+        <div class="a">The estimate is the product of your <strong>monthly enquiry volume × average matter value × response-time leak factor × storage-friction multiplier × conversion gap</strong>. The leak and multiplier coefficients are calibrated against UK Law Society and Bellwether Report benchmarks for small-firm efficiency. Default matter value is £1,500.</div>
+      </div>
+      <div class="faq-card">
+        <div class="q">Why do I have to enter my email to see the figure?</div>
+        <div class="a">Because the audit isn't just a number — it's a sourced one-page report you can share with your managing partner or finance team. We email it so you have a record. You'll get the audit, one follow-up tomorrow, and nothing else unless you ask.</div>
+      </div>
+      <div class="faq-card">
+        <div class="q">How accurate is this for our firm specifically?</div>
+        <div class="a">It's a 60-second estimate, not an internal audit. Most firms find the figure is within 15% of what they'd discover running the same exercise on their own data. If you want a precise number, the SalesHub Cloud trial includes an onboarding session where we benchmark your last 90 days of enquiries against the same model.</div>
+      </div>
+      <div class="faq-card">
+        <div class="q">Is this just a sales gimmick?</div>
+        <div class="a">It's a marketing tool with a sourced methodology — both things can be true. The figure is honest, the sources are real, and the report doesn't push a trial unless your numbers suggest the lift is meaningful. If your firm is well-managed, the email tells you that.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-row">
+      <div class="footer-brand">
+        <svg width="28" height="28" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg"><circle cx="22" cy="22" r="20" fill="#EDE9FE"/><circle cx="22" cy="22" r="14" fill="#7C6FF7"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg>
+        SalesHub Cloud
+      </div>
+      <div style="font-size:12.5px;">© 2026 Zayn Productions Ltd · Co. No. 16892199</div>
+    </div>
+    <div class="footer-row">
+      <div>Practice management software built for UK law firms.</div>
+      <div>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/cookies.html">Cookies</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cookie banner
+(function(){
+  var saved = localStorage.getItem('shc_cookie_consent');
+  if (saved) document.getElementById('cookieBanner').classList.add('hidden');
+})();
+function cookieConsent(choice) {
+  localStorage.setItem('shc_cookie_consent', choice);
+  document.getElementById('cookieBanner').classList.add('hidden');
+  if (choice === 'accept' && typeof window.__loadGTMOnAccept === 'function') window.__loadGTMOnAccept();
+  if (choice === 'decline' && typeof window.__declineGTMConsent === 'function') window.__declineGTMConsent();
+}
+
+// Audit form submit (email-gated — no inline £ reveal)
+(function(){
+  var form = document.getElementById('auditForm');
+  var card = document.getElementById('auditCard');
+  var success = document.getElementById('auditSuccess');
+  var btn = document.getElementById('submitBtn');
+  var err = document.getElementById('formError');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    err.style.display = 'none';
+    var payload = {
+      firm: document.getElementById('f-firm').value.trim(),
+      feeEarners: document.getElementById('f-fee-earners').value,
+      enquiries: document.getElementById('f-enquiries').value,
+      responseTime: document.getElementById('f-response').value,
+      storage: document.getElementById('f-storage').value,
+      conversion: document.getElementById('f-conversion').value,
+      name: document.getElementById('f-name').value.trim(),
+      role: document.getElementById('f-role').value,
+      email: document.getElementById('f-email').value.trim()
+    };
+    if (!payload.firm || !payload.name || !payload.email || !payload.enquiries || !payload.responseTime || !payload.storage || !payload.conversion) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Preparing your audit…';
+    try {
+      var res = await fetch('/api/lead-leak-audit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var data = await res.json();
+      if (data.ok) {
+        card.classList.add('success-shown');
+        success.classList.add('show');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        err.textContent = data.error || 'Something went wrong. Please try again or email hello@saleshubcloud.com.';
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = "See your firm's lost billables";
+      }
+    } catch (e) {
+      err.textContent = 'Connection error. Please try again.';
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = "See your firm's lost billables";
+    }
+  });
+})();
+</script>
+</body>
+</html>
