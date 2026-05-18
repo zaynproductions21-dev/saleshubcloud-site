@@ -23,6 +23,7 @@
 <title>Privacy Policy — Sales Hub Cloud</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -33,6 +34,31 @@
   --c-text:#2F2B3D;--c-text2:#444050;--c-text3:#8A8D93;
   --ff:'Public Sans',sans-serif;
 }
+[data-theme="dark"]{
+  --c-bg:#28243D;--c-bg2:#312D4B;--c-white:#312D4B;--c-surface:#3D3759;
+  --c-border:#4A4458;--c-border2:#534D6C;
+  --c-text:#E7E3FC;--c-text2:#B4B0CC;--c-text3:#7F7B98;
+  --c-purple-light:rgba(11,174,171,0.16);
+  --c-teal-light:rgba(91,196,192,0.16);
+  --c-coral-light:rgba(244,150,126,0.16);
+  --c-green-light:rgba(86,202,0,0.16);
+  --c-amber-light:rgba(255,180,0,0.16);
+  --c-info-light:rgba(22,177,255,0.16);
+  --c-danger-light:rgba(255,76,81,0.16);
+  --c-indigo-light:rgba(105,108,255,0.16);
+  --shadow:0 1px 4px rgba(15,12,30,0.30),0 4px 20px rgba(15,12,30,0.20);
+  --shadow-md:0 4px 12px rgba(15,12,30,0.40),0 16px 48px rgba(15,12,30,0.30);
+}
+[data-theme="dark"] nav{background:rgba(40,36,61,0.93);}
+[data-theme="dark"] footer{background:#312D4B;}
+[data-theme="dark"] .modal-overlay{background:rgba(15,12,30,0.65);}
+[data-theme="dark"] .stripe-badge{background:#FFFFFF;}
+html,body{transition:background-color .25s ease,color .25s ease;}
+.theme-toggle{width:38px;height:38px;border-radius:8px;border:1px solid var(--c-border2);background:var(--c-white);color:var(--c-text2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,color .15s,background .15s;padding:0;flex-shrink:0;}
+.theme-toggle:hover{border-color:var(--c-purple);color:var(--c-purple);}
+.theme-toggle .material-symbols-rounded{font-size:20px;}
+.theme-toggle-fixed{position:fixed;top:1rem;right:1rem;z-index:300;box-shadow:0 4px 12px rgba(58,53,65,0.15);}
+
 html{scroll-behavior:smooth}
 body{background:var(--c-bg);color:var(--c-text);font-family:var(--ff);font-size:16px;line-height:1.7;overflow-x:hidden;}
 a{color:var(--c-purple);text-decoration:none;}
@@ -158,6 +184,7 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 </script>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#E6F7F7"/><circle cx="22" cy="22" r="14" fill="#0BAEAB"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul><div class="nav-right"><button class="btn-ghost" onclick="openDemo()">Book a demo</button><button class="btn-nav" onclick="openTrial()">Start free trial</button></div><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
+<nav><div class="nav-inner"><a href="index.html" class="nav-logo" style="display:flex;align-items:center;gap:8px;text-decoration:none;white-space:nowrap;flex-shrink:0;"><svg width="32" height="32" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><circle cx="22" cy="22" r="20" fill="#E6F7F7"/><circle cx="22" cy="22" r="14" fill="#0BAEAB"/><circle cx="22" cy="22" r="8" fill="#5BC4C0"/><circle cx="22" cy="22" r="3" fill="white"/></svg><span class="nav-logo-text">SalesHub Cloud</span></a><ul class="nav-links"><li><a href="index.html">Features</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul><div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme"><span class="material-symbols-rounded theme-icon">dark_mode</span></button><button class="btn-ghost" onclick="openDemo()">Book a demo</button><button class="btn-nav" onclick="openTrial()">Start free trial</button></div><button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-text">We use cookies to improve your experience and analyse site usage. See our <a href="cookies.html">Cookie Policy</a> for details.</div><div class="cookie-btns"><button class="cookie-accept" onclick="cookieConsent(&quot;accept&quot;)">Accept all</button><button class="cookie-decline" onclick="cookieConsent(&quot;decline&quot;)">Decline</button></div></div>
 <script>(function(){var btn=document.getElementById("burgerBtn");var menu=document.getElementById("mobileMenu");if(!btn||!menu)return;btn.addEventListener("click",function(){btn.classList.toggle("open");menu.classList.toggle("open");});menu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){btn.classList.remove("open");menu.classList.remove("open");});});})();</script>

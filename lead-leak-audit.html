@@ -27,6 +27,7 @@
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -40,6 +41,31 @@
   --shadow:0 1px 4px rgba(58,53,65,0.06),0 4px 20px rgba(58,53,65,0.06);
   --shadow-md:0 4px 12px rgba(58,53,65,0.1),0 16px 48px rgba(58,53,65,0.1);
 }
+[data-theme="dark"]{
+  --c-bg:#28243D;--c-bg2:#312D4B;--c-white:#312D4B;--c-surface:#3D3759;
+  --c-border:#4A4458;--c-border2:#534D6C;
+  --c-text:#E7E3FC;--c-text2:#B4B0CC;--c-text3:#7F7B98;
+  --c-purple-light:rgba(11,174,171,0.16);
+  --c-teal-light:rgba(91,196,192,0.16);
+  --c-coral-light:rgba(244,150,126,0.16);
+  --c-green-light:rgba(86,202,0,0.16);
+  --c-amber-light:rgba(255,180,0,0.16);
+  --c-info-light:rgba(22,177,255,0.16);
+  --c-danger-light:rgba(255,76,81,0.16);
+  --c-indigo-light:rgba(105,108,255,0.16);
+  --shadow:0 1px 4px rgba(15,12,30,0.30),0 4px 20px rgba(15,12,30,0.20);
+  --shadow-md:0 4px 12px rgba(15,12,30,0.40),0 16px 48px rgba(15,12,30,0.30);
+}
+[data-theme="dark"] nav{background:rgba(40,36,61,0.93);}
+[data-theme="dark"] footer{background:#312D4B;}
+[data-theme="dark"] .modal-overlay{background:rgba(15,12,30,0.65);}
+[data-theme="dark"] .stripe-badge{background:#FFFFFF;}
+html,body{transition:background-color .25s ease,color .25s ease;}
+.theme-toggle{width:38px;height:38px;border-radius:8px;border:1px solid var(--c-border2);background:var(--c-white);color:var(--c-text2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .15s,color .15s,background .15s;padding:0;flex-shrink:0;}
+.theme-toggle:hover{border-color:var(--c-purple);color:var(--c-purple);}
+.theme-toggle .material-symbols-rounded{font-size:20px;}
+.theme-toggle-fixed{position:fixed;top:1rem;right:1rem;z-index:300;box-shadow:0 4px 12px rgba(58,53,65,0.15);}
+
 html { scroll-behavior: smooth; }
 body { background: var(--c-bg); color: var(--c-text); font-family: var(--ff); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
@@ -176,6 +202,7 @@ footer { background: #2F2B3D; color: rgba(255,255,255,0.65); padding: 50px 0 28p
       <li><a href="/contact.html">Contact</a></li>
     </ul>
     <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme"><span class="material-symbols-rounded theme-icon">dark_mode</span></button>
       <a href="https://app.saleshubcloud.com" target="_blank" rel="noopener" class="btn-ghost" style="display:inline-flex;align-items:center;">Log in</a>
       <a href="/trial.html" class="btn-nav" style="text-decoration:none;display:inline-flex;align-items:center;">Start free trial</a>
     </div>
@@ -435,5 +462,6 @@ function cookieConsent(choice) {
   });
 })();
 </script>
+<script>(function(){function applyTheme(t){document.documentElement.setAttribute('data-theme',t);document.querySelectorAll('.theme-icon').forEach(function(i){i.textContent=t==='dark'?'light_mode':'dark_mode';});try{localStorage.setItem('shc_theme',t);}catch(e){}}window.toggleTheme=function(){var cur=document.documentElement.getAttribute('data-theme')||'light';applyTheme(cur==='dark'?'light':'dark');};var saved=null;try{saved=localStorage.getItem('shc_theme');}catch(e){}var sys=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';applyTheme(saved||sys);})();</script>
 </body>
 </html>

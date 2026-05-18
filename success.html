@@ -70,6 +70,7 @@ p{font-size:15px;color:#64748b;line-height:1.7}
   window.__loadGTMOnAccept = function(){ if (prev) prev(); loadPostHog(); };
 })();
 </script>
+<style>[data-theme="dark"]{--c-bg:#28243D;--c-bg2:#312D4B;--c-white:#312D4B;--c-surface:#3D3759;--c-border:#4A4458;--c-border2:#534D6C;--c-text:#E7E3FC;--c-text2:#B4B0CC;--c-text3:#7F7B98;--c-purple-light:rgba(11,174,171,0.16);--c-teal-light:rgba(91,196,192,0.16);--c-info-light:rgba(22,177,255,0.16);--shadow:0 1px 4px rgba(15,12,30,0.30);--shadow-md:0 4px 12px rgba(15,12,30,0.40);}[data-theme="dark"] nav{background:rgba(40,36,61,0.93);}[data-theme="dark"] footer{background:#312D4B;}html,body{transition:background-color .25s ease,color .25s ease;}.theme-toggle{width:38px;height:38px;border-radius:8px;border:1px solid var(--c-border2,#D5D5DA);background:var(--c-white,#fff);color:var(--c-text2,#444);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0;flex-shrink:0;}.theme-toggle:hover{border-color:#0BAEAB;color:#0BAEAB;}.theme-toggle .material-symbols-rounded{font-size:20px;}.theme-toggle-fixed{position:fixed;top:1rem;right:1rem;z-index:300;box-shadow:0 4px 12px rgba(58,53,65,0.15);}</style>
 </head>
 <body>
 <div class="wrap">
@@ -167,5 +168,7 @@ p{font-size:15px;color:#64748b;line-height:1.7}
 })();
 </script>
 <!-- End Cookie consent banner -->
+<button class="theme-toggle theme-toggle-fixed" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme"><span class="material-symbols-rounded theme-icon">dark_mode</span></button>
+<script>(function(){function applyTheme(t){document.documentElement.setAttribute('data-theme',t);document.querySelectorAll('.theme-icon').forEach(function(i){i.textContent=t==='dark'?'light_mode':'dark_mode';});try{localStorage.setItem('shc_theme',t);}catch(e){}}window.toggleTheme=function(){var cur=document.documentElement.getAttribute('data-theme')||'light';applyTheme(cur==='dark'?'light':'dark');};var saved=null;try{saved=localStorage.getItem('shc_theme');}catch(e){}var sys=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';applyTheme(saved||sys);})();</script>
 </body>
 </html>
