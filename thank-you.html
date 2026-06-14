@@ -84,6 +84,7 @@ p{font-size:0.95rem;color:#444050;line-height:1.7;margin-bottom:1.5rem;}
           api_host: 'https://eu.i.posthog.com',
           capture_pageview: true, autocapture: true,
           person_profiles: 'identified_only',
+          session_recording: { maskAllInputs: true, maskTextSelector: '*' },
         });
         window.posthog.register({ site: 'saleshub-cloud', site_name: 'SalesHub Cloud', site_domain: 'saleshubcloud.com' });
       } catch(e) {}
