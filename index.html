@@ -635,12 +635,12 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
   function loadPostHog(){
     if (window.__posthogLoaded) return; window.__posthogLoaded = true;
     var s = document.createElement('script'); s.async = true;
-    s.src = 'https://eu-assets.i.posthog.com/static/array.js';
+    s.src = '/ingest/static/array.js';
     document.head.appendChild(s);
     s.onload = function(){
       try {
         window.posthog.init('phc_rJmyyFtKADpwEYUz9ufrd9cREaaoDq37ZeUrAyek5fnM', {
-          api_host: 'https://eu.i.posthog.com',
+          api_host: '/ingest', ui_host: 'https://eu.posthog.com',
           capture_pageview: true, autocapture: true,
           person_profiles: 'identified_only',
           session_recording: { maskAllInputs: true, maskTextSelector: '*' },
