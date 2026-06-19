@@ -24,6 +24,50 @@ function compute(enquiries, responseTime, storage, conversion, matter) {
   return { monthly, annual: monthly * 12, enquiries: e, matterValue: m };
 }
 
+// ---- anti-spam helpers ----
+const isVowel = (c) => 'aeiouAEIOU'.indexOf(c) !== -1;
+
+// Flags single-token gibberish like "RpjibBXUnzZynrYp" / "GYCAltwaCYIOPjmbRq".
+// Conservative on purpose: only judges spaceless tokens of 10+ letters and needs
+// two of three signals (low vowel ratio, camelCase noise, long consonant run).
+function looksRandom(raw) {
+  const s = (raw || '').trim();
+  if (!s || /\s/.test(s)) return false;             // real names/firms have spaces or are short
+  const letters = s.replace(/[^A-Za-z]/g, '');
+  if (letters.length < 10) return false;
+
+  let vowels = 0, run = 0, maxRun = 0;
+  for (const ch of letters) {
+    if (isVowel(ch)) { vowels++; run = 0; }
+    else { run++; if (run > maxRun) maxRun = run; }
+  }
+  const vowelRatio = vowels / letters.length;
+
+  let internalCaps = 0;                              // capitals mid-word (camelCase noise)
+  for (let i = 1; i < s.length; i++) {
+    if (/[A-Z]/.test(s[i]) && /[a-z]/.test(s[i - 1])) internalCaps++;
+  }
+
+  // 3+ mid-word capitals is a near-certain random-string signature on its own
+  // (real names top out at one, e.g. "McDonald"); otherwise need two weaker signals.
+  if (internalCaps >= 3) return true;
+  const signals = (vowelRatio < 0.25 ? 1 : 0) + (internalCaps >= 2 ? 1 : 0) + (maxRun >= 5 ? 1 : 0);
+  return signals >= 2;
+}
+
+// Best-effort in-memory rate limit, scoped to a warm Fluid Compute instance.
+const RL_MAX = 5, RL_WINDOW = 10 * 60 * 1000;
+const rlHits = new Map();
+function rateLimited(ip) {
+  if (!ip) return false;
+  const now = Date.now();
+  const hits = (rlHits.get(ip) || []).filter((t) => now - t < RL_WINDOW);
+  hits.push(now);
+  rlHits.set(ip, hits);
+  if (rlHits.size > 5000) rlHits.clear();            // crude memory cap
+  return hits.length > RL_MAX;
+}
+
 async function sendEmail(apiKey, from, fromName, to, subject, html) {
   return fetch(BREVO, {
     method: 'POST',
@@ -122,9 +166,27 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
   res.setHeader('Access-Control-Allow-Origin', ORIGIN);
 
-  const { email, name, firm, role, feeEarners, enquiries, responseTime, storage, conversion, matterValue } = req.body || {};
+  const { email, name, firm, role, feeEarners, enquiries, responseTime, storage, conversion, matterValue, website, elapsedMs } = req.body || {};
+
+  // Honeypot + suspiciously-fast submit: silently accept so the bot doesn't learn, but do nothing.
+  if (website || (typeof elapsedMs === 'number' && elapsedMs < 2500)) {
+    return res.status(200).json({ ok: true, ref: 'SHC-AUDIT-' + Date.now().toString(36).toUpperCase().slice(-6) });
+  }
+
+  // Best-effort rate limit per IP.
+  const ip = (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+  if (rateLimited(ip)) {
+    return res.status(429).json({ error: 'Too many requests. Please try again shortly.' });
+  }
+
   if (!email || !enquiries || !responseTime || !storage || !conversion) {
     return res.status(400).json({ error: 'Missing required fields' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Please enter a valid work email.' });
+  }
+  if (looksRandom(name) || looksRandom(firm)) {
+    return res.status(400).json({ error: 'Please enter your real name and firm.' });
   }
 
   const result = compute(enquiries, responseTime, storage, conversion, Number(matterValue) || null);

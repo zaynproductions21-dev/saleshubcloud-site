@@ -236,6 +236,10 @@ footer { background: #2F2B3D; color: rgba(255,255,255,0.65); padding: 50px 0 28p
         <p class="sub">Four questions. We email a sourced one-page report within 30 seconds.</p>
 
         <form class="audit-form" id="auditForm" autocomplete="off">
+          <!-- anti-spam honeypot: hidden from real users, must stay empty -->
+          <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;" tabindex="-1">
+            <label>Leave this field blank<input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></label>
+          </div>
           <div class="field-row">
             <div class="field">
               <label for="f-firm">Firm name</label>
@@ -412,6 +416,7 @@ function cookieConsent(choice) {
 
 // Audit form submit (email-gated — no inline £ reveal)
 (function(){
+  var formLoadedAt = Date.now();
   var form = document.getElementById('auditForm');
   var card = document.getElementById('auditCard');
   var success = document.getElementById('auditSuccess');
@@ -430,7 +435,9 @@ function cookieConsent(choice) {
       conversion: document.getElementById('f-conversion').value,
       name: document.getElementById('f-name').value.trim(),
       role: document.getElementById('f-role').value,
-      email: document.getElementById('f-email').value.trim()
+      email: document.getElementById('f-email').value.trim(),
+      website: document.getElementById('f-website').value,
+      elapsedMs: Date.now() - formLoadedAt
     };
     if (!payload.firm || !payload.name || !payload.email || !payload.enquiries || !payload.responseTime || !payload.storage || !payload.conversion) return;
 
