@@ -115,8 +115,8 @@
       </div>
       <div class="grid2">
         <div>
-          <label>Phone</label>
-          <input type="tel" id="phone" placeholder="+44 7700 900000" />
+          <label>Phone <span aria-hidden="true" style="color:#dc2626">*</span></label>
+          <input type="tel" id="phone" placeholder="+44 7700 900000" required />
         </div>
         <div>
           <label>Your Role</label>
@@ -334,6 +334,11 @@
       const source   = document.getElementById('source').value;
 
       if (!name || !email || !company) return;
+      if (!phone || phone.replace(/\D/g, '').length < 7) {
+        errEl.textContent = 'Please enter a valid phone number.';
+        errEl.style.display = 'block';
+        return;
+      }
       btn.disabled = true;
       btn.textContent = 'Creating your account...';
       errEl.style.display = 'none';
@@ -357,7 +362,7 @@
             body: JSON.stringify({
               name, email,
               organisationName: company,
-              phone: phone || undefined,
+              phone,
               jobTitle: jobTitle || undefined,
             }),
           });
