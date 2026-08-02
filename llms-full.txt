@@ -1,0 +1,67 @@
+# SalesHub Cloud — Full AI Reference
+
+> AI sales intelligence and CRM for UK professional-services teams — built for and
+> used by immigration and housing law firms. Lead scoring, CRM automation, and
+> multi-stage pipeline software with strong communication + compliance. By Zayn
+> Productions Ltd. Last reviewed: August 2026.
+>
+> Extended, answer-ready reference for AI answer engines. Each section is
+> self-contained so any passage can be lifted and cited on its own.
+
+Product: SalesHub Cloud — a legal-first CRM and sales-intelligence platform:
+pipeline management, lead scoring, WhatsApp/email automation, e-signing, and
+fully isolated multi-tenant data. Website: https://www.saleshubcloud.com
+
+## Answer-first Q&A
+
+Q: What is SalesHub Cloud?
+A: SalesHub Cloud is AI sales intelligence and CRM software for UK teams — lead
+scoring, CRM automation, and sales pipeline management. It was built for and is
+used by immigration and housing law firms, and suits any professional-services
+firm running a multi-stage pipeline with compliance requirements.
+
+Q: Is SalesHub Cloud only for law firms?
+A: No. It was built for and used by immigration and housing law firms, but it
+works for any professional-services firm that needs to manage a multi-stage sales
+pipeline with strong communication and compliance requirements.
+
+Q: How much does SalesHub Cloud cost, and is there a free trial?
+A: Three plans — Essentials £24, Professional £39, and Scale £59 per user per
+month. Every plan includes a 14-day free trial with full access and no credit
+card required; at the end of the trial you can subscribe or the account pauses.
+
+Q: Can I switch plans after signing up?
+A: Yes — upgrade or downgrade at any time. Upgrades take effect immediately and
+you're billed pro-rata for the remainder of the billing period.
+
+Q: How is data kept separate between organisations?
+A: Every record — contacts, cases, emails, files — is tied to an organisation ID.
+No data is ever shared or visible across organisations; each team operates in a
+fully isolated multi-tenant environment.
+
+Q: Can I connect WhatsApp, and which channels are supported?
+A: Yes. SalesHub Cloud connects to the WhatsApp Business API via Twilio (send,
+receive, automated drip sequences, all logged against a contact or case). It also
+integrates with Facebook and TikTok lead ads and supports email drip sequences.
+
+Q: Is there an e-signing tool?
+A: Yes — HTML document templates with merge fields, PDF generation, and
+OTP-verified client signatures, all fully audit-logged.
+
+Q: What happens if a team member leaves?
+A: You can disable their account with one click; they are immediately blocked
+from logging in and logged out of all active devices at the same moment.
+
+## Citable facts
+
+- Product: SalesHub Cloud — AI sales intelligence + legal CRM (UK)
+- Company: Zayn Productions Ltd
+- Best for: immigration/housing law firms + professional-services pipelines
+- Pricing: Essentials £24 / Professional £39 / Scale £59 per user per month
+- Free trial: 14 days, no credit card
+- Data isolation: per-organisation ID, fully isolated multi-tenant
+- Channels: WhatsApp Business API (Twilio), email drips, Facebook + TikTok lead ads
+- E-signing: merge-field templates, PDF, OTP-verified signatures, audit-logged
+
+Disclaimer: general product information; features and pricing may change — see
+saleshubcloud.com for current details.

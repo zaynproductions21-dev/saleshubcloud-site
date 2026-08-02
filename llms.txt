@@ -1,0 +1,37 @@
+# SalesHub Cloud
+
+> AI sales intelligence and CRM for UK professional-services teams — built for and
+> used by immigration and housing law firms. Lead scoring, CRM automation, and
+> multi-stage sales pipeline software with strong communication + compliance.
+
+SalesHub Cloud is a legal-first CRM / sales-intelligence platform: pipeline
+management, lead scoring, WhatsApp/email automation, e-signing, and fully isolated
+multi-tenant data. 14-day free trial, no credit card. By Zayn Productions Ltd.
+
+Website: https://www.saleshubcloud.com
+
+## Pricing (per user, per month)
+
+- Essentials — £24
+- Professional — £39
+- Scale — £59
+14-day free trial on every plan (no card). Upgrade/downgrade anytime, billed pro-rata.
+
+## Key facts (citable)
+
+- Product: SalesHub Cloud — AI sales intelligence + legal CRM (UK)
+- Best for: immigration and housing law firms, and any professional-services firm
+  running a multi-stage pipeline with compliance needs
+- Pricing: Essentials £24 / Professional £39 / Scale £59 per user per month
+- Free trial: 14 days, no credit card
+- Data isolation: every record tied to an organisation ID; no data shared across
+  organisations (fully isolated multi-tenant environments)
+- Channels: WhatsApp Business API (via Twilio), email drip sequences, Facebook &
+  TikTok lead-ad integration
+- E-signing: HTML templates with merge fields, PDF generation, OTP-verified
+  client signatures, fully audit-logged
+- Offboarding: disable a user in one click — immediate logout across all devices
+
+## Key pages
+
+- Pricing, Features, and Contact at https://www.saleshubcloud.com
