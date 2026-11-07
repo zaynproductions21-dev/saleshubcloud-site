@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 48" role="img" aria-label="SalesHub Cloud">
+  <g fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 7V41M37 7V41" stroke="currentColor"/>
+    <path d="M11 18C25 18 23 30 37 30" stroke="var(--accent, currentColor)"/>
+  </g>
+  <text x="54" y="34" font-family="'Schibsted Grotesk', sans-serif" font-size="29" letter-spacing="-0.6" fill="currentColor"><tspan font-weight="700">SalesHub</tspan><tspan font-weight="400" dx="7" opacity="0.62">Cloud</tspan></text>
+</svg>

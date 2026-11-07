@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 374 84" role="img" aria-label="SalesHub Cloud">
+  <path d="M33.59 40.77A15 10 0 1 0 20 55A15 10 0 1 1 6.41 69.23M94 55A20 20 0 1 0 54 55A20 20 0 1 0 94 55M94 35V75M111 5V75M132 55H172A20 20 0 1 0 166.14 69.14M221.59 40.77A15 10 0 1 0 208 55A15 10 0 1 1 194.41 69.23" stroke="currentColor" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M245 5V75M245 55A20 20 0 0 1 285 55A20 20 0 0 0 325 55M325 5V75M325 55A20 20 0 1 0 365 55A20 20 0 1 0 325 55" stroke="var(--accent, currentColor)" fill="none" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

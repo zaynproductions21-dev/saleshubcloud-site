@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298 48" role="img" aria-label="SalesHub Cloud">
+  <rect x="5" y="6" width="25" height="10" rx="3.5" fill="currentColor"/>
+  <rect x="11.5" y="19" width="25" height="10" rx="3.5" fill="currentColor"/>
+  <rect x="18" y="32" width="25" height="10" rx="3.5" fill="var(--accent, currentColor)"/>
+  <text x="56" y="34" font-family="'Figtree', sans-serif" font-size="29" letter-spacing="-0.7" fill="currentColor"><tspan font-weight="800">SalesHub</tspan><tspan font-weight="400" dx="7" opacity="0.62">Cloud</tspan></text>
+</svg>
