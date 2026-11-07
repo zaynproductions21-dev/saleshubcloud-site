@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296 48" role="img" aria-label="SalesHub Cloud">
+  <path d="M39 10H18A7 7 0 0 0 18 24H24" stroke="currentColor" fill="none" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M24 24H30A7 7 0 0 1 30 38H9" stroke="var(--accent, currentColor)" fill="none" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+  <text x="56" y="34" font-family="'Archivo', sans-serif" font-size="29" letter-spacing="-0.7" fill="currentColor"><tspan font-weight="800">SalesHub</tspan><tspan font-weight="400" dx="7" opacity="0.62">Cloud</tspan></text>
+</svg>

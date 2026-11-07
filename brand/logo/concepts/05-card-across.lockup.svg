@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 48" role="img" aria-label="SalesHub Cloud">
+  <mask id="m05"><rect width="48" height="48" fill="#fff"/><rect x="10" y="16" width="28" height="16" rx="5" fill="#000"/></mask>
+  <g mask="url(#m05)" fill="currentColor"><rect x="5" y="5" width="11" height="38" rx="4"/><rect x="32" y="5" width="11" height="38" rx="4"/></g>
+  <rect x="12" y="18" width="24" height="12" rx="3.5" fill="var(--accent, currentColor)"/>
+  <text x="56" y="34" font-family="'Manrope', sans-serif" font-size="29" letter-spacing="-0.7" fill="currentColor"><tspan font-weight="800">SalesHub</tspan><tspan font-weight="400" dx="7" opacity="0.62">Cloud</tspan></text>
+</svg>
