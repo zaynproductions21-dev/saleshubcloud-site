@@ -265,6 +265,26 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
 .cookie-accept{background:#0BAEAB;color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;cursor:pointer;white-space:nowrap;}
 .cookie-decline{background:#EEEFF4;color:#444050;border:1px solid #D5D5DA;border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;white-space:nowrap;}
 @media (max-width:768px){.nav-links{display:none!important;}.nav-right{display:none!important;}.burger{display:flex!important;}.nav-inner{padding:0 1rem!important;}.nav-logo-text{font-size:0.875rem;}.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}
+
+/*
+  hello@saleshubcloud.com is 165px wide with no space or hyphen to break on, so
+  it is one word. It sits in a footer column that is half of a 272px grid, and
+  again in .contact-info. A grid item's automatic minimum is its content's
+  min-content, so neither overflowed its track — they STRETCHED it, and the
+  page could be dragged 8px sideways at 320px. Matched by protocol rather than
+  by class: any long address lands in the same trap. min-width:0 is the guard
+  against the next long string, not the fix — on its own the address would spill
+  out of the narrowed track instead and the page would still drag.
+*/
+a[href^="mailto:"]{overflow-wrap:anywhere;}
+.contact-body > *, .footer-top > *, .footer-nav-cols > *{min-width:0;}
+/*
+  2.5rem of card padding is 80px of a 320px phone, which left 174px of usable
+  width for a form whose tab row needs 211px and whose textarea needs 213px.
+  Narrowing the grid track with min-width:0 above does not help that — it only
+  moves the overflow inside the card. The padding is the lever.
+*/
+@media(max-width:560px){ .contact-form-wrap{padding:1rem;} .form-tabs{flex-wrap:wrap;} }
 </style>
 <!-- schema.org JSON-LD — Contact page -->
 <script type="application/ld+json">

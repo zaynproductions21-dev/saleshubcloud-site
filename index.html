@@ -408,7 +408,51 @@ footer{background:var(--c-white);border-top:1px solid var(--c-border);padding:3r
   .nav-inner{padding:0 1rem!important;}
   .nav-logo-text{font-size:0.875rem;}
 }
-.footer-col{display:flex;flex-direction:column;gap:0.5rem;}.footer-col-title{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}.footer-col a:hover{color:var(--c-purple);}.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}.footer-copy{font-size:0.78rem;color:var(--c-text3);}.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 6px;height:24px;flex-shrink:0;}.stripe-badge{padding:3px 8px;background:#f6f9fc;}.stripe-badge svg{height:16px;width:auto;}.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:var(--c-white);border:1.5px solid var(--c-border2);border-radius:16px;box-shadow:0 8px 32px rgba(58,53,65,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}.cookie-banner.hidden{display:none;}.cookie-text{font-size:0.82rem;color:var(--c-text2);line-height:1.55;flex:1;}.cookie-text a{color:var(--c-purple);font-weight:600;}.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;flex-wrap:wrap;}.cookie-accept{background:var(--c-purple);color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;cursor:pointer;font-family:var(--ff);white-space:nowrap;}.cookie-decline{background:var(--c-bg2);color:var(--c-text2);border:1px solid var(--c-border2);border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--ff);white-space:nowrap;}@media(max-width:540px){.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}</style>
+.footer-col{display:flex;flex-direction:column;gap:0.5rem;}.footer-col-title{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-text3);margin-bottom:0.25rem;}.footer-col a{font-size:0.85rem;color:var(--c-text2);font-weight:500;transition:color .15s;}.footer-col a:hover{color:var(--c-purple);}.footer-bottom{border-top:1px solid var(--c-border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}.footer-copy{font-size:0.78rem;color:var(--c-text3);}.footer-payment{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;}.footer-payment-label{font-size:0.72rem;color:var(--c-text3);font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-right:0.25rem;}.payment-badge{display:inline-flex;align-items:center;justify-content:center;border-radius:5px;overflow:hidden;border:1px solid var(--c-border);background:var(--c-white);padding:2px 6px;height:24px;flex-shrink:0;}.stripe-badge{padding:3px 8px;background:#f6f9fc;}.stripe-badge svg{height:16px;width:auto;}.cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:var(--c-white);border:1.5px solid var(--c-border2);border-radius:16px;box-shadow:0 8px 32px rgba(58,53,65,0.18);padding:1.25rem 1.5rem;max-width:520px;width:calc(100% - 2rem);display:flex;align-items:center;gap:1.25rem;animation:slideUp .35s ease;}@keyframes slideUp{from{transform:translateX(-50%) translateY(20px);opacity:0;}to{transform:translateX(-50%) translateY(0);opacity:1;}}.cookie-banner.hidden{display:none;}.cookie-text{font-size:0.82rem;color:var(--c-text2);line-height:1.55;flex:1;}.cookie-text a{color:var(--c-purple);font-weight:600;}.cookie-btns{display:flex;gap:0.5rem;flex-shrink:0;flex-wrap:wrap;}.cookie-accept{background:var(--c-purple);color:#fff;border:none;border-radius:8px;padding:0.5rem 1.1rem;font-size:0.82rem;font-weight:500;cursor:pointer;font-family:var(--ff);white-space:nowrap;}.cookie-decline{background:var(--c-bg2);color:var(--c-text2);border:1px solid var(--c-border2);border-radius:8px;padding:0.5rem 0.9rem;font-size:0.82rem;font-weight:600;cursor:pointer;font-family:var(--ff);white-space:nowrap;}@media(max-width:540px){.cookie-banner{flex-direction:column;align-items:flex-start;}.cookie-btns{width:100%;}.cookie-accept,.cookie-decline{flex:1;text-align:center;}}
+
+/*
+  ── Mobile overflow guards ──────────────────────────────────────────────────
+  The homepage could be dragged 90px sideways on a 390px phone and 160px on a
+  320px one, which also opened a gap down the right edge of every section. Four
+  separate causes, all the same shape: a grid or flex item's automatic minimum
+  is its content's min-content, so an item that cannot shrink does not overflow
+  its track — it STRETCHES the track, and takes the document with it.
+
+  1. .seq-flow — five white-space:nowrap pills with flex-shrink:0 and four
+     connectors. Its min-content is 390px, and the Automation card's interior
+     is 276px at 390px wide. A diagram that is intrinsically wider than a phone
+     has to change shape, not shrink: below 560px it becomes a vertical
+     sequence and the connectors turn from horizontal rules into vertical ones.
+  2. .pipe-demo — four kanban columns whose headings ("Qualified", "Retainer")
+     and ticket names ("Mohammed K.") are unbreakable words. min-width:0 was
+     already on .pipe-col, which is why this did not spill out of the card, but
+     it does not reduce the container's own min-content of 292px. Below 560px it
+     becomes a two-by-two grid rather than a wrapping flex row: flex items
+     shrink before they wrap, so flex-wrap alone left all four columns on one
+     line at 46px each, still unable to hold "Qualified".
+  3. hello@saleshubcloud.com — 165px with nothing to break on, in a footer
+     column that is half of a 272px grid. Matched by protocol, not by class:
+     any long address lands in the same trap.
+  4. .lb-bar-wrap's fixed 90px and the inline-styled 1fr 1fr stat grid inside
+     .sf-visual. Both are art direction that only works with room; below 560px
+     the bars are allowed to shrink and the two stat tiles stack.
+
+  The three `> * { min-width: 0 }` rules at the end are the guard rather than
+  the fix: they stop any FUTURE unbreakable string stretching one of these
+  tracks. On their own they would not be enough — the oversized child would
+  spill out of the narrowed track instead and the page would still drag.
+*/
+a[href^="mailto:"]{overflow-wrap:anywhere;}
+.bento > *, .scroll-feat > *, .footer-top > *, .footer-nav-cols > *{min-width:0;}
+@media(max-width:560px){
+  .seq-flow{flex-direction:column;align-items:stretch;}
+  .seq-arrow{flex:0 0 auto;width:1px;height:12px;min-width:0;margin-inline:auto;}
+  .pipe-demo{display:grid;grid-template-columns:1fr 1fr;}
+  .lb-bar-wrap{flex:0 1 90px;min-width:40px;}
+  .sf-visual{padding:1.25rem;}
+  .sf-visual > div[style*="1fr 1fr"]{grid-template-columns:1fr !important;}
+}
+</style>
 <!-- schema.org JSON-LD — consolidated homepage schemas -->
 <script type="application/ld+json">
 [

@@ -66,7 +66,11 @@ h1.pr-title{font-family:'Public Sans',sans-serif;font-weight:700;font-size:clamp
 .news-hero{padding:64px 0 14px;}
 .news-hero h1{font-family:'Public Sans',sans-serif;font-weight:700;font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-0.02em;color:#0C2826;margin-bottom:14px;}
 .news-hero p{font-size:17px;color:#3D5654;max-width:560px;}
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;padding:36px 0 80px;}
+/* min(330px,100%): a fixed track floor is only ever a floor, so on a 320px
+   phone this grid demanded 330px and the whole page could be dragged 34px
+   sideways. Collapsing the floor to the container width keeps every wider
+   layout byte-identical. */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:20px;padding:36px 0 80px;}
 .news-card{display:block;background:#fff;border:1px solid #DCEAE9;border-radius:16px;padding:26px 26px 22px;text-decoration:none;transition:all .18s;}
 .news-card:hover{border-color:#0BAEAB;box-shadow:0 8px 30px rgba(0,0,0,.06);transform:translateY(-2px);}
 .news-card .eyebrow{margin-bottom:14px;}
